@@ -1,0 +1,223 @@
+.navigation
+{
+    @extend .fixed-width;
+    height: 99px;
+    background: #71c4ea;
+    
+    a
+    {
+        color:white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .logo
+    {
+        display: block;
+        float: left;
+        height: 99px;
+        width: 115px;
+        background:$blue-medium;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        
+        &::before
+        {
+            content:"";
+            position: absolute;
+            width: 9999px;
+            height: 100%;
+            right: 100%;
+            background:$blue-medium;
+        }
+        
+        &::after
+        {
+            content:"";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 100%;
+            border-style: solid;
+            border-width: 50px 0 49px 33px;
+            border-color: transparent transparent transparent #1b75bc;
+            -moz-transform: scale(.9999);
+        }
+        
+        img
+        {
+            display: inline-block;
+            height: 79px;
+            width: 79px;
+            position: relative;
+            top: 10px;
+        }
+    }
+    
+    .address,
+    .phone,
+    .social
+    {
+        position: absolute;
+        right: 0;
+        height: 33px;
+        width: 145px;
+        line-height: 33px;
+        padding: 0 0 0 22px;
+        font-size: 0.7em;
+        text-align: right;
+        background-position: left center;
+        background-repeat: no-repeat;
+        
+        .content a
+        {
+            display: block;
+            width: 100%;
+            padding-left: 32px;
+            margin-left: -32px;
+            position: relative;
+            z-index: 1;
+            
+            &:hover, &:focus
+            {
+                text-decoration: underline;
+            }
+        }
+        
+        &::before
+        {
+            content:"";
+            position: absolute;
+            left: -11px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16.5px 11px 16.5px 0;
+            border-color: transparent;
+            -moz-transform: scale(.9999);
+        }
+        &::after
+        {
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            height: 33px;
+            width: 9999px;
+        }
+    }
+    .address
+    {
+        top: 0;
+        background-color: $blue-medium;
+        background-image: url(../img/icon-mail.png);
+        
+        &::before
+        {
+            border-right-color: $blue-medium;
+        }
+        &::after
+        {
+            background: $blue-medium;
+        }
+    }
+    .phone
+    {
+        top: 33px;
+        background-color: $blue-dark;
+        background-image: url(../img/icon-phone.png);
+        font-weight: bold;
+        
+        &::before
+        {
+            border-right-color: $blue-dark;
+        }
+        &::after
+        {
+            background: $blue-dark;
+        }
+    }
+    .social
+    {
+        top: 66px;
+        background-color: $blue-medium;
+        
+        &::before
+        {
+            border-right-color: $blue-medium;
+        }
+        &::after
+        {
+            background: $blue-medium;
+        }
+        
+        .content a
+        {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            background-repeat:no-repeat;
+            margin-left: 10px;
+            font-size: 0;
+            color: transparent;
+            padding-left: 0;
+        }
+        .facebook
+        {
+            background-image: url(../img/fb.png);
+        }
+        .twitter
+        {
+            background-image: url(../img/tw.png);
+        }
+    }
+}
+
+body.front .navigation
+{
+    background: rgba(41,171,226, 0.6);
+}
+
+#block-system-main-menu
+{    
+    .content ul
+    {
+        list-style: none;
+        margin: 0;
+        padding: 33px 175px 0 33px;
+        overflow: hidden;
+        text-align: center;
+        
+        li
+        {
+            list-style: none;
+            display: inline-block;
+            margin: 0;
+            padding: 2px 2px;
+            max-width: 75px;
+            line-height: 100%;
+            text-align: center;
+            
+            &:hover
+            {
+                border-bottom:2px solid white;
+                padding-bottom: 0;
+            }
+        }
+        
+        a
+        {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            display: table-cell;
+            vertical-align: middle;
+            height: 2em;
+            width: 100%;
+            line-height: 100%;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}

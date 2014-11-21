@@ -1,0 +1,358 @@
+.footer
+{
+    @extend .fixed-width;
+    background: $blue-dark;
+    overflow: hidden;
+    
+    & > div > div > div
+    {
+        min-height: 320px;
+        padding-right: 176px;
+    }
+    
+    a
+    {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        
+        &:hover, &:focus
+        {
+            text-decoration: underline;
+        }
+    }
+    
+    .logo
+    {
+        display: block;
+        float: left;
+        height: 99px;
+        width: 145px;
+        background:$blue-medium;
+        position: relative;
+        text-align: left;
+        z-index: 1;
+        margin-right: 33px;
+        
+        &::before
+        {
+            content:"";
+            position: absolute;
+            width: 9999px;
+            height: 100%;
+            right: 100%;
+            background:$blue-medium;
+        }
+        
+        &::after
+        {
+            content:"";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 100%;
+            border-style: solid;
+            border-width: 50px 0 49px 33px;
+            border-color: transparent transparent transparent #1b75bc;
+            -moz-transform: scale(.9999);
+        }
+        
+        img
+        {
+            display: inline-block;
+            height: 87px;
+            width: 128px;
+            position: relative;
+            top: 6px;
+        }
+    }
+    
+    .newsletter
+    {
+        position: absolute;
+        left: 0;
+        top: 99px;
+        height: 33px;
+        width: 115px;
+        line-height: 33px;
+        padding: 0 25px 0 5px;
+        font-size: 0.72em;
+        text-align: left;
+        background:$blue-light url(../img/icon-newsletter.png) no-repeat right center;
+        z-index: 1;
+        
+        .content a
+        {
+            display: block;
+        }
+        
+        &::before
+        {
+            content:"";
+            position: absolute;
+            top: 0;
+            right: 100%;
+            height: 33px;
+            width: 9999px;
+            background: $blue-light;
+        }
+        &::after
+        {
+            content:"";
+            position: absolute;
+            right: -11px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16.5px 0 16.5px 11px;
+            border-color: transparent;
+            border-left-color: $blue-light;
+            -moz-transform: scale(.9999);
+        }
+    }
+    
+    .address,
+    .phone,
+    .email,
+    .donate
+    {
+        position: absolute;
+        right: 0;
+        height: 33px;
+        width: 145px;
+        line-height: 33px;
+        padding: 0 0 0 22px;
+        font-size: 0.7em;
+        text-align: right;
+        z-index: 1;
+        background-position: left center;
+        background-repeat: no-repeat;
+        
+        .content a
+        {
+            display: block;
+            width: 100%;
+            padding-left: 32px;
+            margin-left: -32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        &::before
+        {
+            content:"";
+            position: absolute;
+            left: -11px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16.5px 11px 16.5px 0;
+            border-color: transparent;
+            -moz-transform: scale(.9999);
+        }
+        &::after
+        {
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            height: 33px;
+            width: 9999px;
+        }
+    }
+    .address
+    {
+        top: 0;
+        background-color: $blue-medium;
+        background-image: url(../img/icon-mail.png);
+        
+        &::before
+        {
+            border-right-color: $blue-medium;
+        }
+        &::after
+        {
+            background: $blue-medium;
+        }
+    }
+    .phone
+    {
+        top: 33px;
+        background-color: $blue-light;
+        background-image: url(../img/icon-phone.png);
+        font-weight: bold;
+        
+        &::before
+        {
+            border-right-color: $blue-light;
+        }
+        &::after
+        {
+            background: $blue-light;
+        }
+    }
+    .email
+    {
+        top: 66px;
+        background-color: $blue-medium;
+        background-image: url(../img/icon-email.png);
+        
+        &::before
+        {
+            border-right-color: $blue-medium;
+        }
+        &::after
+        {
+            background: $blue-medium;
+        }
+    }
+    .donate
+    {
+        top: 99px;
+        background-color: $blue-light;
+        background-image: url(../img/icon-donate.png);
+        font-weight: bold;
+        font-size: 0.9em;
+        
+        &::before
+        {
+            border-right-color: $blue-light;
+        }
+        &::after
+        {
+            background: $blue-light;
+        }
+    }
+    
+    .social
+    {
+        position: absolute;
+        left: 0;
+        top: 165px;
+        width: 145px;
+        text-align: center;
+        
+        .content a
+        {
+            display: inline-block;
+            width: 45px;
+            height: 43px;
+            background-repeat: no-repeat;
+            margin: 0 9px;
+            font-size: 0;
+            color: transparent;
+            vertical-align: top;
+        }
+        .facebook
+        {
+            background-image: url(../img/icon-facebook-large.png);
+        }
+        .twitter
+        {
+            background-image: url(../img/icon-twitter-large.png);
+        }
+    }
+    
+    .logos
+    {
+        position: absolute;
+        right: 0;
+        top: 165px;
+        width: 165px;
+        text-align: center;
+        
+        a
+        {
+            display: block;
+        }
+    }
+    
+    .menu-about-us,
+    .menu-programs-services,
+    .menu-other-links
+    {
+        float: left;
+        text-transform: uppercase;
+        width: 90px;
+        padding: 33px 45px;
+        
+        h2
+        {
+            font-size: 0.75em;
+            line-height: 100%;
+            height: 2em;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            vertical-align: top;
+            padding-bottom: 3px;
+        }
+        
+        .content ul
+        {
+            list-style: none;
+            margin: 0;
+            padding: 6px 0;
+            
+            li
+            {
+                list-style: none;
+                margin: 4px 0 0 0;
+                padding: 0;
+                font-size: 0.65em;
+            }
+            
+            a
+            {
+                color: white;
+                display: block;
+                padding: 3px 0;
+            }
+        }
+    }
+    .menu-other-links
+    {
+        width: 115px;
+        
+        .content ul
+        {
+            padding-top: 0;
+            
+            li
+            {
+                margin: 0 0 4px 0;
+                font-size: 0.75em;
+            }
+        }
+    }
+    
+    .site-by-cci
+    {
+        text-decoration: none;
+        color: white;
+        font-size: 0.85em;
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        font-weight: normal;
+        text-shadow: -1px 1px 2px rgba(0,0,0, 0.4);
+        
+        &:hover
+        {
+            text-decoration: underline;
+        }
+        
+        span
+        {
+            font-size: 0;
+            color: transparent;
+            display: inline-block;
+            height: 22px;
+            width: 48px;
+            background:url(../img/logo-cci.png) no-repeat center center;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+    }
+}
