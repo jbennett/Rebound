@@ -87,11 +87,11 @@
 
       <div class="content"><div><div>
         <a id="main-content"></a>
+        <?php print $messages; ?>
+        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?><div class="page-title"><h1><?php print $title; ?></h1></div><?php endif; ?>
         <?php print render($title_suffix); ?>
-        <?php print $messages; ?>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
         <?php print render($page['content']); ?>
       </div></div></div> <!-- /#content -->

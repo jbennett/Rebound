@@ -32,6 +32,22 @@ a
     }
 }
 
+.main-wrapper
+{
+    padding: 40px 0;
+}
+
+.page-title h1
+{
+    display: inline-block;
+    text-transform: uppercase;
+    line-height: 85%;
+    padding-bottom: 5px;
+    border-bottom: 4px solid white;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
 #block-system-main
 {
     p
@@ -45,12 +61,12 @@ a
     }
 }
 
-body.node-type-page
+body.node-type-page,
+body.node-type-about-us
 {
     .main-wrapper
     {
         @extend .fixed-width;
-        padding: 40px 0;
     }
     
     .page-title
@@ -70,18 +86,23 @@ body.node-type-page
         }
     }
     
-    .region-content::before
+    .region-content
     {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 269px;
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 56px 56px 56px 0;
-        border-color: transparent $blue-dark transparent transparent;
+        position: relative;
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 269px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 56px 56px 56px 0;
+            border-color: transparent $blue-dark transparent transparent;
+        }
     }
     
     #block-system-main
@@ -91,5 +112,61 @@ body.node-type-page
         position: relative;
         margin-right: 80px;
         padding: 15px;
+        min-height: 82px;
+    }
+}
+
+body.page-about-us
+{
+    .page-wrapper
+    {
+        background: $blue-very-very-light;
+    }
+    
+    .main-wrapper
+    {
+        @extend .fixed-width;
+    }
+    
+    .page-title
+    {
+        display: none;
+    }
+}
+
+body.page-in-the-news
+{
+    .main-wrapper
+    {
+        @extend .fixed-width;
+    }
+}
+
+.item-list .pager li
+{
+    margin-left: 0;
+    padding: 0.25em;
+    font-weight: bold;
+    
+    &.pager-next a
+    {
+        display: inline-block;
+        font-size: 0;
+        color: transparent;
+        width: 15px;
+        height: 21px;
+        background: url(../img/chevron-right.png) no-repeat center center;
+        vertical-align: top;
+    }
+    
+    a
+    {
+        color: white;
+        text-decoration: none;
+        
+        &:hover
+        {
+            text-decoration: underline;
+        }
     }
 }

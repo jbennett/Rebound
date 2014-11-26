@@ -3,6 +3,7 @@
     @extend .fixed-width;
     background: $blue-dark;
     overflow: hidden;
+    clear: both;
     
     & > div > div > div
     {

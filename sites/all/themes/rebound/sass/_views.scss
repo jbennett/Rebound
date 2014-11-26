@@ -1,0 +1,197 @@
+.view-about-us
+{
+    .view-content
+    {
+        min-height: 850px;
+    }
+    
+    .views-row
+    {
+        background: $blue-medium;
+        color: white;
+        border: 10px solid $blue-medium;
+        border-radius: 135px;
+        float: left;
+        cursor: pointer;
+        
+        & > div
+        {
+            width: 230px;
+            height: 230px;
+            border: 10px solid white;
+            border-radius: 125px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        &:hover
+        {
+            .views-field-title
+            {
+                display: none;
+            }
+            
+            .views-field-body-1
+            {
+                display: block;
+            }
+        }
+    }
+    
+    .views-field-body
+    {
+        display: none;
+    }
+    .views-field-body-1
+    {
+        display: none;
+        padding: 30px;
+        line-height: 85%;
+        font-weight: bold;
+        font-size: 0.9em;
+        
+        .read-more
+        {
+            color: white;
+            display: block;
+            margin-top: 1em;
+            text-decoration: none;
+        }
+    }
+    .views-field-title
+    {
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        border-bottom: 4px solid white;
+        display: inline-block;
+        line-height: 85%;
+        max-width: 180px;
+        padding-bottom: 3px;
+    }
+}
+
+.view-news
+{
+    .views-row
+    {
+        clear: both;
+        margin-bottom: 40px;
+    }
+    
+    .views-field-field-image
+    {
+        float: left;
+        width: 290px;
+        text-align: center;
+        position: relative;
+        padding-top: 3px;
+        min-height: 170px;
+        background: url(../img/logo-rebound.png) no-repeat top center;
+        background-size: 156px 156px;
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 155px;
+            height: 156px;
+            top: 0;
+            left: 50%;
+            margin-left: -78px;
+            background: url(../img/news-circle-mask.png) no-repeat;
+            z-index: 1;
+        }
+    }
+    
+    .views-field-the-rest
+    {
+        position: relative;
+        font-weight: bold;
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            border-style: solid;
+            border-width: 31px 31px 31px 0;
+            border-color: transparent $blue-navy transparent transparent;
+            left: 259px;
+            top: 0;
+        }
+        
+        & > div
+        {
+            background: $blue-navy;
+            overflow: hidden;
+            padding: 15px;
+        }
+    }
+    
+    .views-field-title a
+    {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+        
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+    
+    .views-field-field-date
+    {
+        float: left;
+        background: $blue-medium;
+        border-radius: 30px;
+        height: 40px;
+        width: 40px;
+        padding: 10px 9px 10px 11px;
+        text-align: center;
+        
+        .month
+        {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            line-height: 100%;
+        }
+        .day
+        {
+            font-size: 2.25em;
+            line-height: 80%;
+        }
+    }
+    
+    .views-field-body
+    {
+        padding-left: 75px;
+        line-height: 100%;
+        font-size: 0.9em;
+        margin-bottom: 1em;
+    }
+    
+    .views-field-path
+    {
+        padding-left: 75px;
+        
+        a
+        {
+            color: white;
+            font-size: 0.9em;
+            text-decoration: none;
+            padding-right: 20px;
+            background: url(../img/chevron-right.png) no-repeat right center;
+            
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+}
