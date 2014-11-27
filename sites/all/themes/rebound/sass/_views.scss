@@ -72,7 +72,10 @@
     }
 }
 
-.view-news
+.view-news,
+.view-news-page,
+.view-events,
+.view-event
 {
     .views-row
     {
@@ -101,7 +104,7 @@
             top: 0;
             left: 50%;
             margin-left: -78px;
-            background: url(../img/news-circle-mask.png) no-repeat;
+            background: url(../img/circle-mask-150.png) no-repeat;
             z-index: 1;
         }
     }
@@ -121,6 +124,7 @@
             border-color: transparent $blue-navy transparent transparent;
             left: 259px;
             top: 0;
+            z-index: 2;
         }
         
         & > div
@@ -193,5 +197,73 @@
                 text-decoration: underline;
             }
         }
+    }
+}
+.view-news-page,
+.view-event
+{
+    .views-row
+    {
+        margin-bottom: 0;
+        min-height: 300px;
+    }
+    
+    .views-field-field-image
+    {
+        width: 326px;
+        padding-top: 4px;
+        
+        &::before
+        {
+            width: 228px;
+            height: 229px;
+            background-image: url(../img/circle-mask-220.png);
+            margin-left: -114px;
+        }
+        
+        .noimage
+        {
+            background: $blue-very-light;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 229px;
+            z-index: 1;
+        }
+    }
+    
+    .views-field-the-rest
+    {
+        top: -68px;
+        margin-bottom: -68px;
+        
+        & > div
+        {
+            min-height: 82px;
+        }
+        
+        &::before
+        {
+            border-width: 56px 56px 56px 0;
+            left: 270px;
+        }
+    }
+    
+    .views-field-field-date
+    {
+        margin: 0 12px 10px 0;
+    }
+    
+    .views-field-body
+    {
+        padding-left: 0;
+    }
+    
+    .views-field-path
+    {
+        padding-left: 0;
+        display: block;
+        text-align: center;
     }
 }

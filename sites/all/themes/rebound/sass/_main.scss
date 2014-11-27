@@ -101,14 +101,14 @@ body.node-type-about-us
             height: 0px;
             border-style: solid;
             border-width: 56px 56px 56px 0;
-            border-color: transparent $blue-dark transparent transparent;
+            border-color: transparent $blue-navy transparent transparent;
         }
     }
     
     #block-system-main
     {
         overflow: hidden;
-        background: $blue-dark;
+        background: $blue-navy;
         position: relative;
         margin-right: 80px;
         padding: 15px;
@@ -134,7 +134,10 @@ body.page-about-us
     }
 }
 
-body.page-in-the-news
+body.page-in-the-news,
+body.node-type-news,
+body.page-events,
+body.node-type-event
 {
     .main-wrapper
     {
