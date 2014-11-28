@@ -89,23 +89,14 @@
         width: 290px;
         text-align: center;
         position: relative;
-        padding-top: 3px;
         min-height: 170px;
         background: url(../img/logo-rebound.png) no-repeat top center;
         background-size: 156px 156px;
         
-        &::before
+        img
         {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 155px;
-            height: 156px;
-            top: 0;
-            left: 50%;
-            margin-left: -78px;
-            background: url(../img/circle-mask-150.png) no-repeat;
-            z-index: 1;
+            border-radius: 75px;
+            border: 3px solid white;
         }
     }
     
@@ -211,14 +202,11 @@
     .views-field-field-image
     {
         width: 326px;
-        padding-top: 4px;
         
-        &::before
+        img
         {
-            width: 228px;
-            height: 229px;
-            background-image: url(../img/circle-mask-220.png);
-            margin-left: -114px;
+            border-radius: 110px;
+            border: 3px solid white;
         }
         
         .noimage
