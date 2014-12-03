@@ -1,0 +1,199 @@
+body.front
+{
+    .navigation
+    {
+        background: rgba(41,171,226, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    
+    .page-title
+    {
+        display: none;
+    }
+    
+    .main-wrapper
+    {
+        @extend .fixed-width;
+        background: $blue-very-very-light;
+        padding: 0;
+        position: relative;
+        height: 3250px;
+        overflow: hidden;
+    }
+    
+    #block-block-12
+    {
+        height: 640px;
+        width: 100%;
+        background: url(../img/bg-home.jpg) no-repeat center center;
+        background-size: cover;
+        position: fixed;
+        
+        & > .content
+        {
+            background: $blue-medium;
+            background: rgba(27,117,188, 0.69);
+            width: 286px;
+            height: 286px;
+            padding: 40px;
+            border-radius: 183px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -183px;
+            margin-left: -183px;
+            text-align: center;
+            font-size: 2em;
+            line-height: 100%;
+            text-shadow: 1px 1px 2px rgba(0,0,0, 0.3);
+            
+            img
+            {
+                height: 99px !important;
+                width: auto !important;
+                display: block;
+                margin: 10px auto 20px auto;
+            }
+        }
+    }
+}
+
+.region-content .circle
+{
+    border-radius: 50px;
+    border-width: 50px;
+    border-style: solid;
+    position: absolute;
+    margin-left: -50px;
+    
+    &.color-1
+    {
+        border-color: $blue-medium;
+    }
+    &.color-2
+    {
+        border-color: $blue-dark;
+    }
+    &.color-3
+    {
+        border-color: $blue-navy;
+    }
+    &.color-4
+    {
+        border-color: $blue-light;
+    }
+    &.color-5
+    {
+        border-color: $blue-very-light;
+    }
+    &.color-6
+    {
+        border-color: #6e84b7;
+    }
+    &.color-7
+    {
+        border-color: #c4cad1;
+    }
+    &.color-8
+    {
+        border-color: #6d7075;
+    }
+}
+
+.view-primary-circles .views-row,
+.view-secondary-circles .views-row,
+.view-red-circles .views-row
+{
+    bottom: 0;
+}
+
+.view-primary-circles .views-row-1
+{
+    top: 100px;
+    left: 0;
+    bottom: auto;
+}
+.view-primary-circles .views-row-2
+{
+    top: 400px;
+    right: 0;
+    bottom: auto;
+}
+.view-primary-circles .views-row-3
+{
+    top: 1500px;
+    right: 20px;
+    bottom: auto;
+}
+.view-primary-circles .views-row-4
+{
+    top: 2350px;
+    left: 20px;
+    bottom: auto;
+}
+.view-secondary-circles.view-display-id-block .views-row-1
+{
+    bottom: 200px;
+}
+.view-secondary-circles.view-display-id-block_1 .views-row-1
+{
+    top: 750px;
+    left: 0;
+    bottom: auto;
+}
+.view-secondary-circles.view-display-id-block_1 .views-row-2
+{
+    top: 1850px;
+    left: 0;
+    bottom: auto;
+}
+.view-red-circles .views-row-1
+{
+    top: 1250px;
+    left: 300px;
+    bottom: auto;
+}
+.view-red-circles .views-row-2
+{
+    top: 2250px;
+    left: 600px;
+    bottom: auto;
+}
+.view-photo-circles .views-row-1
+{
+    top: 400px;
+    left: 350px;
+    bottom: auto;
+    background: $blue-light;
+}
+.view-photo-circles .views-row-2
+{
+    top: 1150px;
+    left: 20px;
+    bottom: auto;
+    background: $blue-very-light;
+}
+.view-photo-circles .views-row-3
+{
+    top: 2200px;
+    left: 300px;
+    bottom: auto;
+    background: $blue-navy;
+}
+.view-photo-circles .views-row-4
+{
+    top: 2500px;
+    left: 425px;
+    bottom: auto;
+    background: $blue-light;
+}
+.view-photo-circles .views-row-5
+{
+    left: 550px;
+    top: 3000px;
+    background: #69a4d3;
+}

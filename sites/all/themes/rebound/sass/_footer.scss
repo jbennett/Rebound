@@ -4,11 +4,14 @@
     background: $blue-dark;
     overflow: hidden;
     clear: both;
+    position: relative;
+    z-index: 2;
     
     & > div > div > div
     {
         min-height: 320px;
         padding-right: 176px;
+        position: relative;
     }
     
     a
@@ -299,7 +302,7 @@
             li
             {
                 list-style: none;
-                margin: 4px 0 0 0;
+                margin: 5px 0 0 0;
                 padding: 0;
                 font-size: 0.65em;
             }
@@ -322,7 +325,6 @@
             
             li
             {
-                margin: 0 0 4px 0;
                 font-size: 0.75em;
             }
         }

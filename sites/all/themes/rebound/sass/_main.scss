@@ -1,6 +1,7 @@
 body
 {
     background: $blue-dark;
+    line-height: 1;
 }
 
 a
@@ -27,7 +28,7 @@ a
         
         & > div
         {
-            position: relative;
+            /*position: relative;*/
         }
     }
 }
@@ -61,14 +62,9 @@ a
     }
 }
 
-body.node-type-page,
+body.node-type-page.not-front,
 body.node-type-about-us
 {
-    .main-wrapper
-    {
-        @extend .fixed-width;
-    }
-    
     .page-title
     {
         float: left;
@@ -116,16 +112,13 @@ body.node-type-about-us
     }
 }
 
-body.page-about-us
+body.page-about-us,
+body.programs-and-services,
+body.photos
 {
     .page-wrapper
     {
         background: $blue-very-very-light;
-    }
-    
-    .main-wrapper
-    {
-        @extend .fixed-width;
     }
     
     .page-title
@@ -134,10 +127,7 @@ body.page-about-us
     }
 }
 
-body.page-in-the-news,
-body.node-type-news,
-body.page-events,
-body.node-type-event
+body.not-front
 {
     .main-wrapper
     {
@@ -172,4 +162,31 @@ body.node-type-event
             text-decoration: underline;
         }
     }
+}
+
+.block.volunteer-apply-now
+{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    
+    
+    .content a
+    {
+        display: block;
+        padding: 12px 25px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: $blue-medium;
+        border-radius: 5px;
+        border-bottom: 3px solid #13578d;
+        font-size: 1.85em;
+        font-weight: bold;
+    }
+}
+
+.ScrollSceneIndicators
+{
+    z-index: 0 !important;
 }

@@ -4,6 +4,11 @@
     height: 99px;
     background: #71c4ea;
     
+    .region-navigation
+    {
+        position: relative;
+    }
+    
     a
     {
         color:white;
@@ -173,11 +178,6 @@
             background-image: url(../img/tw.png);
         }
     }
-}
-
-body.front .navigation
-{
-    background: rgba(41,171,226, 0.6);
 }
 
 #block-system-main-menu

@@ -82,6 +82,10 @@
         
         <?php print render($page['navigation']); ?>
     </div></div></div></div>
+    
+    <div class="header"><div><div>
+        <?php print render($page['header']); ?>
+    </div></div></div>
 
     <div class="main-wrapper"><div><div>
 
