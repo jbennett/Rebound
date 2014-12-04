@@ -6,6 +6,9 @@ scripts[] = js/gsap/TweenMax.min.js
 scripts[] = js/jquery.scrollmagic.min.js
 scripts[] = js/jquery.scrollmagic.debug.js
 scripts[] = js/home.js
+scripts[] = js/jquery.throwable.js
+scripts[] = js/balls.js
+scripts[] = js/about.js
 
 stylesheets[all][] = css/screen.css
 

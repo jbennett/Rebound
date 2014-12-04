@@ -9,6 +9,16 @@ a
     color: $blue-light;
 }
 
+.region-content p
+{
+    margin-bottom: 0.75em;
+    
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
 .page-wrapper
 {
     overflow: hidden;
@@ -62,8 +72,7 @@ a
     }
 }
 
-body.node-type-page.not-front,
-body.node-type-about-us
+body.node-type-page.not-front
 {
     .page-title
     {
@@ -124,6 +133,16 @@ body.photos
     .page-title
     {
         display: none;
+    }
+    
+    .region-content
+    {
+        position: relative;
+    }
+    
+    .main-wrapper
+    {
+        position: relative;
     }
 }
 
@@ -189,4 +208,23 @@ body.not-front
 .ScrollSceneIndicators
 {
     z-index: 0 !important;
+}
+
+.about-us-overlay
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none !important;
+    background: black;
+    opacity: 0.3;
+    z-index: 1;
+    display: none;
+}
+
+#block-views-about-us-content-block
+{
+    position: static;
 }

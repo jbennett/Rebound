@@ -1,52 +1,49 @@
-.view-about-us,
-body > .view-about-us-row
+.view-about-us
 {
     .view-content
     {
         height: 850px;
+        position: relative;
+    }
+}
+.view-about-us-row
+{
+    background: $blue-medium;
+    color: white;
+    border: 10px solid $blue-medium;
+    border-radius: 135px;
+    cursor: pointer;
+    width: auto !important;
+    position: absolute;
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    & > div
+    {
+        width: 230px;
+        height: 230px;
+        border: 10px solid white;
+        border-radius: 125px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
     }
     
-    .views-row,
-    &.view-about-us-row
+    &:hover
     {
-        background: $blue-medium;
-        color: white;
-        border: 10px solid $blue-medium;
-        border-radius: 135px;
-        float: left;
-        cursor: pointer;
-        width: auto !important;
-        
-        & > div
+        .views-field-title
         {
-            width: 230px;
-            height: 230px;
-            border: 10px solid white;
-            border-radius: 125px;
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
+            display: none;
         }
         
-        &:hover
+        .views-field-body
         {
-            .views-field-title
-            {
-                display: none;
-            }
-            
-            .views-field-body-1
-            {
-                display: block;
-            }
+            display: block;
         }
     }
+
     
     .views-field-body
-    {
-        display: none;
-    }
-    .views-field-body-1
     {
         display: none;
         padding: 30px;
@@ -57,9 +54,11 @@ body > .view-about-us-row
         .read-more
         {
             color: white;
-            display: block;
+            display: inline-block;
             margin-top: 1em;
             text-decoration: none;
+            padding-right: 18px;
+            background: url(../img/chevron-right.png) no-repeat right center;
         }
     }
     .views-field-title
@@ -74,6 +73,141 @@ body > .view-about-us-row
         padding-bottom: 3px;
     }
 }
+.view-about-us-row.views-row-1
+{
+    top: 0;
+    left: 0;
+    
+    &:hover
+    {
+        background: $blue-medium;
+    }
+}
+.view-about-us-row.views-row-2
+{
+    top: 0;
+    left: 270px;
+    
+    &:hover
+    {
+        background: $blue-navy;
+    }
+}
+.view-about-us-row.views-row-3
+{
+    top: 0;
+    left: 600px;
+    
+    &:hover
+    {
+        background: $blue-light;
+    }
+}
+.view-about-us-row.views-row-4
+{
+    top: 270px;
+    left: 50px;
+    
+    &:hover
+    {
+        background: $blue-light;
+    }
+}
+.view-about-us-row.views-row-5
+{
+    top: 270px;
+    left: 320px;
+    
+    &:hover
+    {
+        background: $blue-medium;
+    }
+}
+.view-about-us-row.views-row-6
+{
+    top: 270px;
+    left: 550px;
+    
+    &:hover
+    {
+        background: #6d7075;
+    }
+}
+.view-about-us-row.views-row-7
+{
+    top: 540px;
+    left: 50%;
+    
+    &:hover
+    {
+        background: $blue-navy;
+    }
+}
+
+.view-about-us-content
+{
+    .views-row
+    {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        right: 40px;
+        background: $blue-light;
+        padding: 20px;
+        z-index: 10;
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 269px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 56px 56px 56px 0;
+            border-color: transparent $blue-navy transparent transparent;
+        }
+    }
+    
+    .views-field-title
+    {
+        float: left;
+        width: 200px;
+        margin-right: 80px;
+        text-align: center;
+        
+        h2
+        {
+            text-transform: uppercase;
+            line-height: 85%;
+            padding-bottom: 5px;
+            border-bottom: 4px solid white;
+            font-size: 2.5em;
+        }
+    }
+    
+    .views-field-body
+    {
+        background: $blue-navy;
+        padding: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .close
+    {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        background: url(../img/btn-close.png) no-repeat;
+        text-decoration: none;
+    }
+}
 
 .view-programs
 {
@@ -81,38 +215,40 @@ body > .view-about-us-row
     {
         min-height: 850px;
     }
+}
+.view-programs-row
+{
+    background: $blue-medium;
+    color: white;
+    border: 10px solid $blue-medium;
+    border-radius: 135px;
+    float: left;
+    cursor: pointer;
+    width: auto !important;
+    transform: none !important;
+    -webkit-transform: none !important;
     
-    .views-row
+    & > div
     {
-        background: $blue-medium;
-        color: white;
-        border: 10px solid $blue-medium;
-        border-radius: 135px;
-        float: left;
-        cursor: pointer;
-        
-        & > div
+        width: 230px;
+        height: 230px;
+        border: 10px solid white;
+        border-radius: 125px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    &:hover
+    {
+        .views-field-title
         {
-            width: 230px;
-            height: 230px;
-            border: 10px solid white;
-            border-radius: 125px;
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
+            display: none;
         }
         
-        &:hover
+        .views-field-body
         {
-            .views-field-title
-            {
-                display: none;
-            }
-            
-            .views-field-body
-            {
-                display: block;
-            }
+            display: block;
         }
     }
     
