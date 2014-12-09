@@ -246,26 +246,35 @@
             display: none;
         }
         
-        .views-field-body
+        .views-field-nothing
         {
             display: block;
         }
+        
+        .views-field-field-image
+        {
+            display: none;
+        }
     }
     
-    .views-field-body
+    .views-field-nothing
     {
         display: none;
         padding: 30px;
         line-height: 85%;
         font-weight: bold;
         font-size: 0.9em;
+        position: relative;
+        z-index: 1;
         
         .read-more
         {
             color: white;
-            display: block;
+            display: inline-block;
             margin-top: 1em;
             text-decoration: none;
+            padding-right: 18px;
+            background: url(../img/chevron-right.png) no-repeat right center;
         }
     }
     .views-field-title
@@ -278,6 +287,18 @@
         line-height: 85%;
         max-width: 180px;
         padding-bottom: 3px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .views-field-field-image img
+    {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 230px;
+        height: 230px;
+        border-radius: 115px;
     }
 }
 
@@ -286,8 +307,8 @@
     .views-row
     {
         display: none;
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 139px;
         left: 40px;
         right: 40px;
         background: $blue-light;
@@ -300,7 +321,7 @@
             display: block;
             position: absolute;
             top: 20px;
-            left: 269px;
+            left: 244px;
             width: 0px;
             height: 0px;
             border-style: solid;
@@ -332,6 +353,18 @@
         padding: 15px;
         overflow: hidden;
         position: relative;
+        min-height: 82px;
+    }
+    
+    .views-field-field-image img
+    {
+        float: left;
+        clear: left;
+        border-radius: 200px;
+        border: 5px solid white;
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
     }
     
     .close
@@ -343,6 +376,8 @@
         height: 30px;
         background: url(../img/btn-close.png) no-repeat;
         text-decoration: none;
+        font-size: 0;
+        color: transparent;
     }
 }
 

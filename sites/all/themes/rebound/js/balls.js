@@ -5,18 +5,32 @@
         if (container.length == 0) return;
         
         var height = $(window).height() - 139;
-        var min = 0;
-        //var min = Math.ceil(container.find(".views-row").length/3) * 225;
+        var width = $(window).width();
+        var min = Math.ceil(container.find(".views-row").length/Math.floor((width+10)/270))*250;
         if (height < min) height = min;
         container.height(height);
         
         var offset = container.offset();
-        var width = container.width();
         var options = {
             gravity: {x: 0, y: 1}, 
-            containment: [0, offset.top, $(window).width(), offset.top + height], 
-            shape: "circle"
+            containment: [0, offset.top, width, offset.top + height], 
+            shape: "circle",
+            drag: false
         };
-        container.find(".views-row").throwable(options);
+        container.find(".views-row")
+        .each(function(i){
+            var numPerRow = Math.floor((width+10)/270);
+            $(this).css({
+                "left":(i%numPerRow)*270+getRandom(-25,25)+"px",
+                "top":Math.floor(i/numPerRow)*270+"px",
+                "position":"absolute"
+            }).appendTo("body");
+        })
+        .throwable(options);
     });
+    
+    function getRandom(min, max)
+    {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 })(jQuery);

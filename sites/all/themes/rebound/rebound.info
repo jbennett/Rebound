@@ -8,7 +8,7 @@ scripts[] = js/jquery.scrollmagic.debug.js
 scripts[] = js/home.js
 scripts[] = js/jquery.throwable.js
 scripts[] = js/balls.js
-scripts[] = js/about.js
+scripts[] = js/popups.js
 
 stylesheets[all][] = css/screen.css
 

@@ -3,6 +3,8 @@
     @extend .fixed-width;
     height: 99px;
     background: #71c4ea;
+    position: relative;
+    z-index: 100;
     
     .region-navigation
     {

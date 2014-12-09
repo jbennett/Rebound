@@ -3,7 +3,7 @@
      
     $(function(){
         $(".view-about-us-row, .view-programs-row").click(clickOpen);
-        $("<a href='#' class='close'>&nbsp;</a>").click(close).prependTo(contentRows());
+        $("<a href='#' class='close' title='Close'>Close</a>").click(close).prependTo(contentRows());
         
         $(window).on("popstate", popState);
         
