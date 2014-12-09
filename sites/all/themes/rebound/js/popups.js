@@ -2,8 +2,8 @@
     var fadeTime = 300; 
      
     $(function(){
-        $(".view-about-us-row").click(clickOpen);
-        $("<a href='#' class='close'>&nbsp;</a>").click(close).prependTo(".view-about-us-content .views-row");
+        $(".view-about-us-row, .view-programs-row").click(clickOpen);
+        $("<a href='#' class='close'>&nbsp;</a>").click(close).prependTo(contentRows());
         
         $(window).on("popstate", popState);
         
@@ -25,8 +25,8 @@
     }
     function openPopupOnLoad()
     {
-        $(".view-about-us-content .views-row").each(function(i){
-        if (window.location.hash == "#!"+$(this).find(".views-field-title .field-content").text().toLowerCase().replace(" ","-"))
+        contentRows().each(function(i){
+            if (window.location.hash == "#!"+$(this).find(".views-field-title .field-content").text().toLowerCase().replace(" ","-"))
             {
                 openPopup(i);
                 openOverlay();
@@ -58,22 +58,31 @@
     
     function openPopup(i)
     {
-        $(".view-about-us-content .views-row").eq(i).fadeIn(fadeTime);
+        contentRows().eq(i).fadeIn(fadeTime);
     }
     function closePopup()
     {
-        $(".view-about-us-content .views-row").fadeOut(fadeTime);
+        contentRows().fadeOut(fadeTime);
     }
     
     function openOverlay()
     {
-        if($(".about-us-overlay").length == 0)
-            $("<div class='about-us-overlay'></div>").click(close).appendTo(".main-wrapper");
+        if($(".popup-overlay").length == 0)
+            $("<div class='popup-overlay'></div>").click(close).appendTo(".main-wrapper");
         
-        $(".about-us-overlay").fadeIn(fadeTime);
+        $(".popup-overlay").fadeIn(fadeTime);
     }
     function closeOverlay()
     {
-        $(".about-us-overlay").fadeOut(fadeTime);
+        $(".popup-overlay").fadeOut(fadeTime);
+    }
+    
+    function contentRows()
+    {
+        return containers().find(".views-row");
+    }
+    function containers()
+    {
+        return $(".view-about-us-content, .view-programs-content");
     }
 })(jQuery);

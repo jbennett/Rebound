@@ -39,8 +39,6 @@
             var duration = $(window).height() + movement + 100;
             var triggerPosition = startTop;
             
-            console.log("circle "+i+"... startTop:"+startTop+", duration:"+duration+", endTop:"+endTop+", triggerPosition:"+triggerPosition);
-            
             var tween = new TweenMax.fromTo($(this), 1, {"top":startTop+"px"}, {"top":endTop+"px"});
             
             new ScrollScene({offset: triggerPosition, "duration":duration})

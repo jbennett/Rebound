@@ -35,11 +35,6 @@ a
     {
         padding-left: 20px;
         padding-right: 20px;
-        
-        & > div
-        {
-            /*position: relative;*/
-        }
     }
 }
 
@@ -210,7 +205,7 @@ body.not-front
     z-index: 0 !important;
 }
 
-.about-us-overlay
+.popup-overlay
 {
     position: absolute;
     left: 0;
@@ -224,7 +219,8 @@ body.not-front
     display: none;
 }
 
-#block-views-about-us-content-block
+#block-views-about-us-content-block,
+#block-views-programs-content-block
 {
     position: static;
 }
