@@ -197,3 +197,36 @@ body.front
     top: 3000px;
     background: #69a4d3;
 }
+
+#block-block-13
+{
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    
+    .content
+    {
+        display: inline-block;
+        line-height: 27px;
+        padding-left: 45px;
+        background: url(../img/icon-hover-to-navigate.png) no-repeat left center;
+        cursor: default;
+        text-shadow: 0 0 4px rgba(0,0,0, 0.6);
+        
+        &::before
+        {
+            content: "";
+            position: absolute;
+            left: -99999px;
+        }
+        
+        &:hover, &::before
+        {
+            background-image: url(../img/icon-hover-to-navigate2.png);
+        }
+    }
+}
