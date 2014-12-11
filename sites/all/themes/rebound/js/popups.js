@@ -2,7 +2,7 @@
     var fadeTime = 300; 
      
     $(function(){
-        $(".view-about-us-row, .view-programs-row").click(clickOpen);
+        $(".view-about-us-row").click(clickOpen);
         $("<a href='#' class='close' title='Close'>Close</a>").click(close).prependTo(contentRows());
         
         $(window).on("popstate", popState);
@@ -11,6 +11,7 @@
         {
             openPopupOnLoad();
         }
+        $(window).on("hashchange", openPopupOnLoad());
     });
     
     function popState(e)
@@ -26,7 +27,7 @@
     function openPopupOnLoad()
     {
         contentRows().each(function(i){
-            if (window.location.hash == "#!"+$(this).find(".views-field-title .field-content").text().toLowerCase().replace(" ","-"))
+            if (window.location.hash == "#!"+$(this).find(".views-field-title .field-content").text().toLowerCase().replace(/ /g,"-"))
             {
                 openPopup(i);
                 openOverlay();
@@ -83,6 +84,6 @@
     }
     function containers()
     {
-        return $(".view-about-us-content, .view-programs-content");
+        return $(".view-about-us-content");
     }
 })(jQuery);

@@ -149,6 +149,18 @@ body.not-front
     }
 }
 
+body.node-type-programs-services .main-wrapper
+{
+    padding: 20px 0;
+    
+    & > div > div
+    {
+        background: $blue-light;
+        overflow: hidden;
+        padding: 20px;
+    }
+}
+
 .item-list .pager li
 {
     margin-left: 0;
