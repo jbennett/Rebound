@@ -161,6 +161,24 @@ body.node-type-programs-services .main-wrapper
     }
 }
 
+body.page-about-us-staff
+{
+    .main-wrapper
+    {
+        padding: 0;
+        
+        & > div
+        {
+            max-width: none;
+            
+            & > div
+            {
+                padding: 0;
+            }
+        }
+    }
+}
+
 .item-list .pager li
 {
     margin-left: 0;

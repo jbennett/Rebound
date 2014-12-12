@@ -1122,3 +1122,212 @@
         }
     }
 }
+
+.view-staff
+{
+    @extend .fixed-width;
+    text-align: center;
+    background: $blue-very-light;
+    padding: 40px 0;
+    
+    .page-title
+    {
+        display: block !important;
+        text-align: left;
+    }
+    
+    .views-row
+    {
+        display: inline-block;
+        width: 90px;
+        height: 70px;
+        padding: 20px 10px;
+        margin: 10px;
+        border-radius: 100px;
+        border: 2px solid white;
+        position: relative;
+        background: $blue-medium;
+        
+        &:hover
+        {    
+            .views-field-field-image
+            {
+                opacity: 0;
+            }
+            .body
+            {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .views-field-field-image
+    {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../img/bg-staff.png) no-repeat bottom center;
+        background-size: contain;
+        opacity: 1;
+        transition: opacity 0.2s;
+        border-radius: 100px;
+        
+        img
+        {
+            display: block;
+            border-radius: 100px;
+        }
+    }
+    
+    .body
+    {
+        display: table-cell;
+        width: 90px;
+        height: 70px;
+        vertical-align: middle;
+        font-weight: 500;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    .views-field-field-first-name
+    {
+        position: relative;
+        z-index: 1;
+    }
+    .views-field-field-last-name
+    {
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid white;
+        padding-bottom: 2px;
+    }
+    .views-field-field-title
+    {
+        position: relative;
+        z-index: 1;
+        font-style: italic;
+        padding-top: 2px;
+    }
+    
+    a
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        font-size: 0;
+        z-index: 2;
+    }
+}
+
+.view-staff-content
+{    
+    .views-row
+    {
+        @extend .fixed-width;
+        overflow: hidden;
+        padding: 40px 0;
+        
+        &.views-row-even
+        {
+            background: $blue-light;
+        }
+        
+        &:hover
+        {
+            .back-to-top
+            {
+                opacity: 1;
+            }
+        }
+        
+        & > div > div
+        {
+            position: relative;
+        }
+    }
+    
+    .views-field-field-image
+    {
+        float: left;
+        width: 220px;
+        height: 220px;
+        border-radius: 220px;
+        border: 5px solid white;
+        margin-right: 80px;
+        background: $blue-medium url(../img/bg-staff.png) no-repeat bottom center;
+        
+        img
+        {
+            border-radius: 220px
+        }
+    }
+    
+    .body-container
+    {
+        position: relative;
+        
+        & > div
+        {
+            overflow: hidden;
+            background: $blue-navy;
+            padding: 12px 20px;
+        }
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 254px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 56px 56px 56px 0;
+            border-color: transparent $blue-navy transparent transparent;
+        }
+    }
+    
+    .name h2
+    {
+        font-size: 1.75em;
+    }
+    .title
+    {
+        font-style: italic;
+        margin-bottom: 0.5em;
+    }
+    
+    .back-to-top
+    {
+        position: absolute;
+        right: 24px;
+        top: 100%;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.85em;
+        line-height: 40px;
+        vertical-align: middle;
+        padding-right: 18px;
+        background: url(../img/chevron-up.png) no-repeat right center;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s;
+        
+        &:hover, &:active
+        {
+            text-decoration: underline;
+        }
+    }
+    .views-row-odd .back-to-top
+    {
+        color: $blue-light;
+        background-image: url(../img/chevron-up-blue.png);
+    }
+}
