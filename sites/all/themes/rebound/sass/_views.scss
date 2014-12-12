@@ -721,19 +721,21 @@
     }
 }
 
-.view-photo-galleries
+
+.view-photo-galleries-row
 {
-    .views-row
+    position: relative;
+    float: left;
+    
+    &:hover
     {
-        position: relative;
-        float: left;
-        
-        &:hover
+        .views-field-title
         {
-            .views-field-title
-            {
-                display: none;
-            }
+            display: none;
+        }
+        .views-field-nothing
+        {
+            display: block;
         }
     }
     
@@ -747,7 +749,8 @@
         }
     }
     
-    .views-field-title
+    .views-field-title,
+    .views-field-nothing
     {
         position: absolute;
         left: 20px;
@@ -775,7 +778,13 @@
             }
         }
     }
+    .views-field-nothing
+    {
+        display: none;
+        background: none;
+    }
 }
+
 
 .view-primary-circles,
 .view-red-circles
