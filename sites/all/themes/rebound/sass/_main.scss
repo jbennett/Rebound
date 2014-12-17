@@ -72,8 +72,8 @@ body.node-type-page.not-front
     .page-title
     {
         float: left;
-        width: 225px;
-        margin-right: 100px;
+        width: 245px;
+        margin-right: 80px;
         
         h1
         {
@@ -179,6 +179,110 @@ body.page-about-us-staff
     }
 }
 
+body.contact-us
+{
+    .page-title
+    {
+        float: none !important;
+        
+        &::after
+        {
+            content: "";
+            width: 280px;
+            height: 201px;
+            background: url(../img/bg-contact.png) no-repeat top center;
+            float: left;
+            margin: 20px 25px 0 20px;
+        }
+    }
+    .main-wrapper .region-content
+    {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-top: 20px;
+        
+        &::before
+        {
+            border-width: 31px 31px 31px 0;
+            left: 294px;
+        }
+        
+        .address,
+        .email,
+        .phone,
+        .newsletter,
+        .donate,
+        .social
+        {
+            float: left;
+            padding-left: 40px;
+            line-height: 30px;
+            margin-bottom: 18px;
+            width: 210px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            
+            a
+            {
+                color: white;
+                text-decoration: none;
+                
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .address
+        {
+            background-image: url(../img/icon-white-address.png);
+        }
+        .email
+        {
+            background-image: url(../img/icon-white-email.png);
+        }
+        .phone
+        {
+            clear: left;
+            background-image: url(../img/icon-white-phone.png);
+        }
+        .newsletter
+        {
+            background-image: url(../img/icon-white-newsletter.png);
+        }
+        .donate
+        {
+            clear: left;
+            background-image: url(../img/icon-white-donate.png);
+        }
+        .social
+        {
+            padding-left: 0;
+            padding-right: 40px;
+            
+            a
+            {
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                background-repeat: no-repeat;
+                margin-right: 10px;
+                font-size: 0;
+                color: transparent;
+                padding-left: 0;
+            }
+            .facebook
+            {
+                background-image: url(../img/fb.png);
+            }
+            .twitter
+            {
+                background-image: url(../img/tw.png);
+            }
+        }
+    }
+}
+
 .item-list .pager li
 {
     margin-left: 0;
@@ -230,11 +334,6 @@ body.page-about-us-staff
     }
 }
 
-.ScrollSceneIndicators
-{
-    z-index: 0 !important;
-}
-
 .popup-overlay
 {
     position: absolute;
@@ -253,4 +352,14 @@ body.page-about-us-staff
 #block-views-programs-content-block
 {
     position: static;
+}
+
+#gmap
+{
+    height: 400px;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    margin-bottom: 40px;
+}
+
 }

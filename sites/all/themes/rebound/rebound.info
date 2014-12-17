@@ -10,6 +10,7 @@ scripts[] = js/balls.js
 scripts[] = js/popups.js
 scripts[] = js/youtube.js
 scripts[] = js/program-photos.js
+scripts[] = js/map.js
 
 stylesheets[all][] = css/screen.css
 
