@@ -117,8 +117,7 @@ body.node-type-page.not-front
 }
 
 body.page-about-us,
-body.programs-and-services,
-body.photos
+body.programs-and-services
 {
     .page-wrapper
     {
@@ -362,4 +361,10 @@ body.contact-us
     margin-bottom: 40px;
 }
 
+body.page-photos
+{
+    .main-wrapper
+    {
+        @extend .fixed-width;
+    }
 }

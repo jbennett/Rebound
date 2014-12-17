@@ -1,6 +1,6 @@
 (function($){    
     $(function(){
-        var container = $(".view-about-us, .view-programs, .view-photo-galleries").find(".view-content");
+        var container = $(".view-about-us, .view-programs").find(".view-content");
         
         if (container.length == 0) return;
         

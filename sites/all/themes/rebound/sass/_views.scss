@@ -724,20 +724,17 @@
 }
 
 
-.view-photo-galleries-row
+.view-photo-galleries
 {
-    position: relative;
-    float: left;
-    
-    &:hover
+    .views-row
     {
-        .views-field-title
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 40px;
+        
+        &:last-child
         {
-            display: none;
-        }
-        .views-field-nothing
-        {
-            display: block;
+            padding-bottom: 0;
         }
     }
     
@@ -746,47 +743,81 @@
         img
         {
             display: block;
-            border-radius: 135px;
-            border: 10px solid $blue-medium;
+            width: 220px;
+            height: 220px;
+            border-radius: 110px;
+            float: left;
+            margin-right: 80px;
+            position: relative;
+            z-index: 1;
         }
     }
     
-    .views-field-title,
-    .views-field-nothing
+    .views-field-title
     {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        right: 20px;
-        bottom: 20px;
-        background: $blue-medium;
-        border-radius: 125px;
-        font-weight: bold;
-        font-size: 2em;
-        line-height: 100%;
-        text-align: center;
+        position: relative;
+        top: 75px;
+        
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 269px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 31px 31px 31px 0;
+            border-color: transparent $blue-navy transparent transparent;
+        }
         
         & > div
         {
-            display: table-cell;
-            vertical-align: middle;
-            width: 215px;
-            height: 215px;
+            background: $blue-navy;
+            overflow: hidden;
             padding: 15px;
+            font-size: 2em;
+        }
+        
+        a
+        {
+            color: white;
+            text-decoration: none;
             
-            div
+            &:hover, &:focus
             {
-                border-bottom: 3px solid white;
+                text-decoration: underline;
             }
         }
     }
-    .views-field-nothing
+}
+.view-photo-gallery
+{
+    overflow: hidden;
+    
+    .views-field-field-photos ul
     {
-        display: none;
-        background: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        
+        li
+        {
+            list-style: none;
+            margin: 0;
+            padding: 7px;
+            display: inline-block;
+            
+            img
+            {
+                display: block;
+                border-radius: 110px;
+            }
+        }
     }
 }
-
 
 .view-primary-circles,
 .view-red-circles
