@@ -44,7 +44,7 @@
         var icon = {
             "url": "/sites/all/themes/rebound/img/map-marker.png",
             "origin": new google.maps.Point(0,0),
-            "anchor": new google.maps.Point(19,38)
+            "anchor": new google.maps.Point(21,63)
         };
         
         var marker = new google.maps.Marker({
