@@ -3,6 +3,7 @@
      
     $(function(){
         $(".view-about-us-row").click(clickOpen);
+        $(".view-about-us-row .views-field-field-link a").click(noPropagation);
         $("<a href='#' class='close' title='Close'>Close</a>").click(close).prependTo(contentRows());
         
         $(window).on("popstate", popState);
@@ -85,5 +86,10 @@
     function containers()
     {
         return $(".view-about-us-content");
+    }
+    
+    function noPropagation(e)
+    {
+        e.stopPropagation();
     }
 })(jQuery);
