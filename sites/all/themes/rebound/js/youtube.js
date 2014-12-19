@@ -1,6 +1,6 @@
 (function($){    
     $(function(){
-        $(".view-program .views-field-field-youtube-video-id").click(videoClick);
+        $(".views-field-field-youtube-video-id").click(videoClick);
     });
     
     function videoClick()

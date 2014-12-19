@@ -139,6 +139,17 @@ body.programs-and-services
         position: relative;
     }
 }
+body.annual-reports
+{
+    .page-wrapper
+    {
+        background: $blue-light;
+    }
+    .page-title
+    {
+        display: block;
+    }
+}
 
 body.not-front
 {
@@ -282,31 +293,81 @@ body.contact-us
     }
 }
 
-.item-list .pager li
+body.i-am-rebound .page-wrapper
 {
-    margin-left: 0;
-    padding: 0.25em;
-    font-weight: bold;
+    background: $blue-very-very-light;
     
-    &.pager-next a
+    .page-title
     {
-        display: inline-block;
-        font-size: 0;
-        color: transparent;
-        width: 15px;
-        height: 21px;
-        background: url(../img/chevron-right.png) no-repeat center center;
-        vertical-align: top;
+        position: relative;
+        z-index: 1;
+        padding-top: 20px;
+        padding-left: 20px;
+        margin-right: 75px;
+        width: 200px;
     }
     
-    a
+    #block-system-main
     {
-        color: white;
-        text-decoration: none;
+        overflow: visible;
+        background: $blue-light;
+        padding: 20px;
+        margin-right: 0;
         
-        &:hover
+        &::before
         {
-            text-decoration: underline;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 264px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 31px 31px 31px 0;
+            border-color: transparent $blue-navy transparent transparent;
+        }
+        
+        & > div
+        {
+            overflow: hidden;
+            background: $blue-navy;
+            padding: 15px;
+            min-height: 32px;
+        }
+    }
+}
+
+.item-list .pager
+{
+    margin-bottom: 0;
+    
+    li
+    {
+        margin-left: 0;
+        padding: 0.25em;
+        font-weight: bold;
+        
+        &.pager-next a
+        {
+            display: inline-block;
+            font-size: 0;
+            color: transparent;
+            width: 15px;
+            height: 16px;
+            background: url(../img/chevron-right.png) no-repeat center center;
+            vertical-align: top;
+        }
+        
+        a
+        {
+            color: white;
+            text-decoration: none;
+            
+            &:hover
+            {
+                text-decoration: underline;
+            }
         }
     }
 }
