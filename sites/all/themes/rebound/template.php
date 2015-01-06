@@ -13,4 +13,31 @@ function rebound_preprocess_page(&$variables)
     $googleMapsAPIKey = 'AIzaSyDtKJS-x4DNQEvl6lMYmk0iMkgPYpuh3to';
     drupal_add_js("https://maps.googleapis.com/maps/api/js?key=$googleMapsAPIKey", 'external');    
 }
+
+function rebound_form_alter(&$form, $form_state, $form_id) {
+    if ($form_id == 'webform_client_form_70')
+    {
+        $form['submitted']['email_address']['#attributes']['placeholder'] = 'Email Address';
+        $form['submitted']['email_address']['#attributes']['required'] = 'required';
+        $form['submitted']['antispam']['#attributes']['required'] = 'required';
+    }
+    else if ($form_id == 'user_login')
+    {
+        $form['name']['#description'] = '';
+        $form['pass']['#description'] = '';
+    }
+    else if ($form_id == 'webform_client_form_71')
+    {
+        //drupal_set_message('<pre>'.print_r($form, true).'</pre>');
+    }
+}
+
+function rebound_webform_date(&$variables)
+{
+    if ($variables['element']['year']['#type'] == 'textfield')
+    {
+        $variables['element']['year']['#attributes']['placeholder'] = 'Year';
+    }
+    return theme_webform_date($variables);
+}
 ?>

@@ -54,20 +54,8 @@ a
     font-size: 2.5em;
 }
 
-#block-system-main
-{
-    p
-    {
-        margin-bottom: 0.75em;
-        
-        &:last-of-type
-        {
-            margin-bottom: 0;
-        }
-    }
-}
-
-body.node-type-page.not-front
+body.node-type-page.not-front,
+body.node-type-webform
 {
     .page-title
     {
