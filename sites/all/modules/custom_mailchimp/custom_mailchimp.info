@@ -1,0 +1,4 @@
+name = Custom Mailchimp integration
+core = 7.x
+dependencies[] = webform
+version = "7.x-1.0"

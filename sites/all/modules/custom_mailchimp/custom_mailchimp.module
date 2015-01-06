@@ -1,0 +1,70 @@
+<?php
+require(dirname(__FILE__).'/mailchimp-api-php/Mailchimp.php');
+
+/**
+ * Implements hook_webform_submission_insert().
+ */
+function custom_mailchimp_webform_submission_insert($node, $submission)
+{
+
+    if ($node->nid == 70)
+    {
+        _custom_mailchimp_submission($node, $submission);
+    }
+}
+
+/**
+* Function to convert webform submissions into a nicely-mapped array.
+*
+* @see http://www.drupalcoder.com/story/678-additional-processing-in-drupals-webform-3-module
+*/
+function _custom_mailchimp_webform_component_mapping($node)
+{
+    $mapping = array();
+    $components = $node->webform['components'];
+    foreach ($components as $i => $component)
+    {
+        $key = $component['form_key'];
+        $mapping[$key] = $i;
+    }
+    return $mapping;
+}
+
+function _custom_mailchimp_submission($node, $submission)
+{
+    $mapping = _custom_mailchimp_webform_component_mapping($node);
+    
+    $email = $submission->data[$mapping['email']][0];
+    $lists = $submission->data[$mapping['lists']];
+    
+    if (in_array('newsletters', $lists))
+    {
+        $listID = '66df6671f6';
+        _custom_mailchimp_subscribe($email, $listID);
+    }
+    if (in_array('reports', $lists))
+    {
+        $listID = 'cde84ef1c4';
+        _custom_mailchimp_subscribe($email, $listID);
+    }
+}
+
+function _custom_mailchimp_subscribe($email, $listID)
+{
+    
+    
+    $apikey = 'aadcfbf94341043dd56f6639684fc8a5-us9';
+    $customFields = array('CTYPE'=>'Written', 'COMMENTS'=>'Consented by submitting the form on the website', 'CDATE'=>date('Y-m-d'));
+    
+    $mc = new Mailchimp($apikey);
+    
+    try
+    {
+        $result = $mc->lists->subscribe($listID, array('email'=>$email), $customFields, 'html', false, true);
+    }
+    catch (Mailchimp_Error $e)
+    {
+        drupal_set_message($e->getMessage());
+    }
+}
+?>

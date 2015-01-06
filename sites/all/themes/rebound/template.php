@@ -17,18 +17,14 @@ function rebound_preprocess_page(&$variables)
 function rebound_form_alter(&$form, $form_state, $form_id) {
     if ($form_id == 'webform_client_form_70')
     {
-        $form['submitted']['email_address']['#attributes']['placeholder'] = 'Email Address';
-        $form['submitted']['email_address']['#attributes']['required'] = 'required';
+        $form['submitted']['email']['#attributes']['placeholder'] = 'Email Address';
+        $form['submitted']['email']['#attributes']['required'] = 'required';
         $form['submitted']['antispam']['#attributes']['required'] = 'required';
     }
     else if ($form_id == 'user_login')
     {
         $form['name']['#description'] = '';
         $form['pass']['#description'] = '';
-    }
-    else if ($form_id == 'webform_client_form_71')
-    {
-        //drupal_set_message('<pre>'.print_r($form, true).'</pre>');
     }
 }
 
