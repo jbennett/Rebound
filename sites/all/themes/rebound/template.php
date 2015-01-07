@@ -36,4 +36,12 @@ function rebound_webform_date(&$variables)
     }
     return theme_webform_date($variables);
 }
+
+function rebound_form_webform_client_form_alter(&$form){
+    foreach ($form['submitted'] as &$field){
+        if (is_array($field) && isset($field['#required']) && $field['#required'] == 1){
+            $field['#attributes']['required'] = 'required';
+        }
+    }
+}
 ?>
