@@ -9,6 +9,20 @@ a
     color: $blue-light;
 }
 
+.button
+{
+    display: inline-block;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $blue-medium;
+    border-radius: 5px;
+    border-bottom: 3px solid #13578d;
+    font-size: 1.85em;
+    font-weight: bold;
+}
+
 .region-content p
 {
     margin-bottom: 0.75em;
@@ -365,21 +379,6 @@ body.i-am-rebound .page-wrapper
     position: absolute;
     top: 80px;
     left: 0;
-    
-    
-    .content a
-    {
-        display: block;
-        padding: 12px 25px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        background: $blue-medium;
-        border-radius: 5px;
-        border-bottom: 3px solid #13578d;
-        font-size: 1.85em;
-        font-weight: bold;
-    }
 }
 
 .popup-overlay
@@ -416,4 +415,13 @@ body.page-photos
     {
         @extend .fixed-width;
     }
+}
+
+body.calendar
+{
+    width: auto;
+}
+body.page-events .page-title
+{
+    float: left;
 }
