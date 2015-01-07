@@ -14,7 +14,8 @@
         
         
         var mapOptions = {
-            zoom: 15
+            zoom: 15,
+            scrollwheel: false
         }
         map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
         
