@@ -1,0 +1,143 @@
+@media screen and (max-width:960px)
+{
+    #block-system-main-menu .content ul
+    {
+        width: 300px;
+        margin: 0 auto;
+        padding-top: 15px;
+        
+        li
+        {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+    }
+    
+    .region-footer
+    {
+        text-align: center;
+        
+        .block
+        {
+            text-align: left;
+            
+            &.address,
+            &.phone,
+            &.email,
+            &.donate
+            {
+                text-align: right;
+            }
+        }
+        
+        .menu-about-us,
+        .menu-programs-services,
+        .menu-other-links
+        {
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .menu-about-us
+        {
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+        .menu-programs-services
+        {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .menu-other-links
+        {
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+    }
+    
+    .view-red-circles .views-row-2
+    {
+        left: auto;
+        right: 5px;
+    }
+    .view-photo-circles .views-row-1
+    {
+        top: 300px;
+    }
+    
+    body.node-type-page.not-front,
+    body.node-type-webform
+    {
+        #block-system-main
+        {
+            margin-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width:800px)
+{
+    .footer
+    {
+        .menu-about-us,
+        .menu-programs-services,
+        .menu-other-links
+        {
+            display: none;
+        }
+    }
+    
+    .view-about-us-content
+    {
+        .views-row::before
+        {
+            display: none;
+        }
+        
+        .views-field-title
+        {
+            width: auto;
+            float: none;
+            margin-right: 0;
+        }
+        
+        .views-field-body
+        {
+            margin-top: 75px;
+            overflow: visible;
+            
+            &::before
+            {
+                content: "";
+                display: block;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 0 56px 56px 56px;
+                border-color: transparent transparent #222f7e transparent;
+                position: absolute;
+                top: -56px;
+                left: 50%;
+                margin-left: -56px;
+            }
+        }
+    }
+    
+    form#webform-client-form-71 /* volunteer application */
+    {    
+        .webform-component-textfield,
+        .webform-component-email
+        {
+            input
+            {
+                width: 95%;
+            }
+        }
+        textarea
+        {
+            width: 95%;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+    }
+}

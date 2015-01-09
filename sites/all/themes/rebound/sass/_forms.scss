@@ -26,6 +26,7 @@ label.option
 .form-actions
 {
     margin-bottom: 0;
+    clear: both;
     
     .form-submit
     {
@@ -70,6 +71,10 @@ form#webform-client-form-70 /*newsletter signup */
         label
         {
             display: none;
+        }
+        input
+        {
+            width: 95%;
         }
     }
     
@@ -137,11 +142,11 @@ form#webform-client-form-71 /* volunteer application */
             left: -99999px;
         }
     }
-    
     .webform-component--last-name,
     .webform-component--first-name
     {
-        display: inline-block;
+        float: left;
+        margin-bottom: 4px;
         
         input
         {
@@ -151,7 +156,7 @@ form#webform-client-form-71 /* volunteer application */
     }
     .webform-component--initial
     {
-        display: inline-block;
+        float: left;
         
         input
         {
@@ -160,7 +165,8 @@ form#webform-client-form-71 /* volunteer application */
     }
     .webform-component--occupation
     {
-        display: inline-block;
+        float: left;
+        clear: left;
         
         input
         {
@@ -170,8 +176,7 @@ form#webform-client-form-71 /* volunteer application */
     }
     .webform-component--date-of-birth
     {
-        display: inline-block;
-        vertical-align: top;
+        float: left;
         
         .form-item-submitted-date-of-birth-year input
         {
@@ -186,31 +191,33 @@ form#webform-client-form-71 /* volunteer application */
     .webform-component--street
     {
         margin-bottom: 8px;
+        clear: both;
     }
     .webform-component--city
     {
-        display: inline-block;
-        margin-top: -4px;
+        float: left;
+        margin-bottom: 8px;
         
         input
         {
             width: 176px;
-            margin-right: 4px;
+            margin-right: 8px;
         }
     }
     .webform-component--province
     {
-        display: inline-block;
+        float: left;
+        margin-bottom: 8px;
         
         input
         {
             width: 40px;
-            margin-right: 4px;
+            margin-right: 8px;
         }
     }
     .webform-component--postal-code
     {
-        display: inline-block;
+        float: left;
         
         input
         {
@@ -220,7 +227,7 @@ form#webform-client-form-71 /* volunteer application */
     .webform-component--phone,
     .webform-component--email
     {
-        display: inline-block;
+        float: left;
         
         input
         {
@@ -257,31 +264,33 @@ form#webform-client-form-71 /* volunteer application */
     .webform-component--business-address
     {
         margin-bottom: 8px;
+        clear: both;
     }
     .webform-component--business-city
     {
-        display: inline-block;
-        margin-top: -4px;
+        float: left;
+        margin-bottom: 8px;
         
         input
         {
             width: 176px;
-            margin-right: 4px;
+            margin-right: 8px;
         }
     }
     .webform-component--business-province
     {
-        display: inline-block;
+        float: left;
+        margin-bottom: 8px;
         
         input
         {
             width: 40px;
-            margin-right: 4px;
+            margin-right: 8px;
         }
     }
     .webform-component--business-postal-code
     {
-        display: inline-block;
+        float: left;
         
         input
         {
@@ -330,13 +339,22 @@ form#webform-client-form-71 /* volunteer application */
     .webform-component--doctor,
     .webform-component--doctor-phone
     {
-        display: inline-block;
+        float: left;
         
         input
         {
             width: 176px;
             margin-right: 12px;
         }
+    }
+    .webform-component--relationship,
+    .webform-component--medical-conditions,
+    .webform-component--where-did-you-hear,
+    .webform-component--phone,
+    .webform-component--business-phone,
+    .webform-component--how-do-you-prefer-to-be-contacted
+    {
+        clear: left;
     }
     .webform-component--available
     {

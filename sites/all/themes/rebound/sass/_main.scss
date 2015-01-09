@@ -350,15 +350,23 @@ body.i-am-rebound .page-wrapper
         padding: 0.25em;
         font-weight: bold;
         
-        &.pager-next a
+        &.pager-next,
+        &.pager-previous
         {
-            display: inline-block;
-            font-size: 0;
-            color: transparent;
-            width: 15px;
-            height: 16px;
-            background: url(../img/chevron-right.png) no-repeat center center;
-            vertical-align: top;
+            a
+            {
+                display: inline-block;
+                font-size: 0;
+                color: transparent;
+                width: 15px;
+                height: 16px;
+                background: url(../img/chevron-right.png) no-repeat center center;
+                vertical-align: top;
+            }
+        }
+        &.pager-previous a
+        {
+            background-image: url(../img/chevron-left.png);
         }
         
         a
@@ -420,6 +428,16 @@ body.page-photos
 body.calendar
 {
     width: auto;
+    
+    .region-content
+    {
+        clear: both;
+        
+        #block-system-main
+        {
+            margin-right: 0;
+        }
+    }
 }
 body.page-events .page-title
 {
