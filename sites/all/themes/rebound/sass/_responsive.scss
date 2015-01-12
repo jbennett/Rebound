@@ -77,6 +77,11 @@
 
 @media screen and (max-width:800px)
 {
+    .page-title h1
+    {
+        display: block;
+    }
+    
     .footer
     {
         .menu-about-us,
@@ -85,13 +90,40 @@
         {
             display: none;
         }
+        .social
+        {
+            top: 30px;
+            left: 200px;
+        }
+        .logos
+        {
+            top: 20px;
+            right: 160px;
+        }
+        .site-by-cci
+        {
+            bottom: auto;
+            left: 206px;
+            top: 108px;
+        }
+        &>div>div>div
+        {
+            min-height: 150px;
+        }
     }
     
     .view-about-us-content
     {
-        .views-row::before
+        .views-row
         {
-            display: none;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            
+            &::before
+            {
+                display: none;
+            }
         }
         
         .views-field-title
@@ -103,7 +135,7 @@
         
         .views-field-body
         {
-            margin-top: 75px;
+            margin-top: 48px;
             overflow: visible;
             
             &::before
@@ -113,12 +145,12 @@
                 width: 0px;
                 height: 0px;
                 border-style: solid;
-                border-width: 0 56px 56px 56px;
+                border-width: 0 28px 28px 28px;
                 border-color: transparent transparent #222f7e transparent;
                 position: absolute;
-                top: -56px;
+                top: -28px;
                 left: 50%;
-                margin-left: -56px;
+                margin-left: -28px;
             }
         }
     }
@@ -139,5 +171,200 @@
             -webkit-box-sizing: content-box;
             box-sizing: content-box;
         }
+    }
+    
+    .view-staff-content
+    {
+        .views-field-field-image
+        {
+            margin-right: 28px;
+        }
+        .body-container::before
+        {
+            border-width: 28px 28px 28px 0;
+            left: 230px;
+        }
+    }
+    
+    body.node-type-page.not-front,
+    body.node-type-webform
+    {
+        .page-title
+        {
+            margin-right: 0;
+            float: none;
+            width: auto;
+            text-align: center;
+        }
+        .region-content::before
+        {
+            border-width: 0 28px 28px 28px;
+            border-color: transparent transparent $blue-navy transparent;
+            position: static;
+            margin: 0 auto;
+        }
+    }
+    
+    .block.volunteer-apply-now
+    {
+        left: auto;
+        right: 0;
+        top: -75px;
+    }
+    
+    .view-news,
+    .view-news-page,
+    .view-events,
+    .view-event,
+    .view-archived-newsletters
+    {
+        .views-field-field-image
+        {
+            width: 200px;
+            text-align: left;
+            background-position: top left;
+        }
+        
+        .views-field-the-rest::before
+        {
+            border-width: 28px 28px 28px 0;
+            left: 172px;
+        }
+    }
+    .view-news-page,
+    .view-event
+    {
+        .views-field-field-image img
+        {
+            width: 156px;
+            height: auto;
+        }
+        .views-field-the-rest
+        {
+            top: 0;
+            margin-bottom: 0;
+        }
+    }
+    
+    .view-photo-gallery
+    {
+        .views-field-field-photos ul
+        {
+            text-align: center;
+        }
+    }
+    
+    body.i-am-rebound .page-wrapper
+    {
+        .page-title
+        {
+            padding: 0;
+        }
+        #block-system-main
+        {
+            margin-top: -115px;
+            padding-top: 115px;
+            min-height: 0;
+            
+            &::before
+            {
+                border-width: 0 28px 28px 28px;
+                border-color: transparent transparent $blue-navy transparent;
+                top: 87px;
+                left: 50%;
+                margin-left: -28px;
+            }
+        }
+    }
+    .view-i-am-rebound
+    {
+        .views-row
+        {
+            margin-top: 20px;
+        }
+        
+        .views-field-title
+        {
+            float: none;
+            width: auto;
+            margin-right: 0;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 0;
+            
+            h2
+            {
+                display: inline-block;
+                border-bottom: 4px solid white;
+            }
+        }
+        .views-field-field-image img
+        {
+            margin-top: 0;
+            margin-right: 48px;
+        }
+        .views-field-body::before
+        {
+            border-width: 28px 28px 28px 0;
+            left: 208px;
+        }
+        .views-field-title + .views-field-body::before
+        {
+            position: static;
+            margin: 0 auto;
+            border-width: 0 28px 28px 28px;
+            border-color: transparent transparent $blue-navy transparent;
+        }
+        .views-field-field-youtube-video-id
+        {
+            padding-left: 236px;
+        }
+    }
+    
+    body.contact-us .page-title
+    {
+        &::after
+        {
+            display: none;
+        }
+        
+        h1
+        {
+            margin-bottom: 0;
+        }
+    }
+    
+    .view-archived-newsletters .views-row
+    {
+        margin-right: 0;
+    }
+    
+    .view-primary-circles,
+    .view-red-circles
+    {
+        .views-field-field-link
+        {
+            opacity: 1;
+        }
+    }
+    .view-secondary-circles .views-row
+    {
+        .views-field-nothing
+        {
+            opacity: 1;
+            left: 0;
+        }
+        .views-field-nothing-1 .grower
+        {
+            width: 4000px;
+            height: 4000px;
+            margin-top: -2000px;
+            left: -2000px;
+            right: auto;
+        }
+    }
+    .view-photo-circles .views-field-field-image img
+    {
+        opacity: 1;
     }
 }
