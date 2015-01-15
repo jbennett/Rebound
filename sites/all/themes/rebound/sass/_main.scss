@@ -92,7 +92,7 @@ body.node-type-webform
     {
         position: relative;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -197,7 +197,7 @@ body.contact-us
     {
         float: none !important;
         
-        &::after
+        &:after
         {
             content: "";
             width: 280px;
@@ -213,7 +213,7 @@ body.contact-us
         font-size: 1.1em;
         margin-top: 20px;
         
-        &::before
+        &:before
         {
             border-width: 31px 31px 31px 0;
             left: 294px;
@@ -316,7 +316,7 @@ body.i-am-rebound .page-wrapper
         padding: 20px;
         margin-right: 0;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
