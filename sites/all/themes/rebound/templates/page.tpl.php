@@ -79,6 +79,7 @@
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo">
             <img src="<?php print $base_path.path_to_theme(); ?>/img/logo-rebound.png" alt="<?php print $site_name; ?>" />
         </a>
+        <a href="#" class="btn-menu">Open menu</a>
         
         <?php print render($page['navigation']); ?>
     </div></div></div></div>

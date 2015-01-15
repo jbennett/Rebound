@@ -27,7 +27,8 @@ body.front
     
     #block-block-12
     {
-        height: 640px;
+        height: 539px;
+        padding-top: 99px;
         width: 100%;
         background: url(../img/bg-home.jpg) no-repeat center center;
         background-size: cover;
@@ -109,60 +110,53 @@ body.front
     }
 }
 
-.view-primary-circles .views-row,
-.view-secondary-circles .views-row,
-.view-red-circles .views-row
-{
-    bottom: 0;
-}
-
-.view-primary-circles .views-row-1
+.view-primary-circles.view-display-id-block_1 .views-row-1
 {
     top: 100px;
     left: 0;
     bottom: auto;
 }
-.view-primary-circles .views-row-2
+.view-primary-circles.view-display-id-block_1 .views-row-2
 {
     top: 400px;
     right: 0;
     bottom: auto;
 }
-.view-primary-circles .views-row-3
+.view-primary-circles.view-display-id-block_2 .views-row
 {
     top: 1500px;
     right: 20px;
     bottom: auto;
 }
-.view-primary-circles .views-row-4
+.view-primary-circles.view-display-id-block_3 .views-row
 {
     top: 2350px;
     left: 20px;
     bottom: auto;
 }
-.view-secondary-circles.view-display-id-block .views-row-1
-{
-    bottom: 200px;
-}
-.view-secondary-circles.view-display-id-block_1 .views-row-1
+.view-secondary-circles.view-display-id-block_1 .views-row
 {
     top: 750px;
     left: 0;
     bottom: auto;
 }
-.view-secondary-circles.view-display-id-block_1 .views-row-2
+.view-secondary-circles.view-display-id-block_2 .views-row
 {
     top: 1850px;
     left: 0;
     bottom: auto;
 }
-.view-red-circles .views-row-1
+.view-secondary-circles.view-display-id-block_3 .views-row-1
+{
+    bottom: 200px;
+}
+.view-red-circles.view-display-id-block_1 .views-row
 {
     top: 1250px;
     left: 300px;
     bottom: auto;
 }
-.view-red-circles .views-row-2
+.view-red-circles.view-display-id-block_2 .views-row
 {
     top: 2250px;
     left: 600px;
@@ -222,14 +216,14 @@ body.front
         cursor: default;
         text-shadow: 0 0 4px rgba(0,0,0, 0.6);
         
-        &::before
+        &:before
         {
             content: "";
             position: absolute;
             left: -99999px;
         }
         
-        &:hover, &::before
+        &:hover, &:before
         {
             background-image: url(../img/icon-hover-to-navigate2.png);
         }

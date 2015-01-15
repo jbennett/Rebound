@@ -5,6 +5,7 @@ core = 7.x
 scripts[] = js/gsap/TweenMax.min.js
 scripts[] = js/jquery.scrollmagic.min.js
 scripts[] = js/home.js
+scripts[] = js/btn-menu.js
 scripts[] = js/jquery.throwable.js
 scripts[] = js/balls.js
 scripts[] = js/popups.js

@@ -38,7 +38,7 @@
         z-index: 1;
         margin-right: 33px;
         
-        &::before
+        &:before
         {
             content:"";
             position: absolute;
@@ -48,7 +48,7 @@
             background:$blue-medium;
         }
         
-        &::after
+        &:after
         {
             content:"";
             position: absolute;
@@ -91,7 +91,7 @@
             display: block;
         }
         
-        &::before
+        &:before
         {
             content:"";
             position: absolute;
@@ -101,7 +101,7 @@
             width: 9999px;
             background: $blue-light;
         }
-        &::after
+        &:after
         {
             content:"";
             position: absolute;
@@ -144,7 +144,7 @@
             z-index: 1;
         }
         
-        &::before
+        &:before
         {
             content:"";
             position: absolute;
@@ -156,7 +156,7 @@
             border-color: transparent;
             -moz-transform: scale(.9999);
         }
-        &::after
+        &:after
         {
             content:"";
             position: absolute;
@@ -172,11 +172,11 @@
         background-color: $blue-medium;
         background-image: url(../img/icon-mail.png);
         
-        &::before
+        &:before
         {
             border-right-color: $blue-medium;
         }
-        &::after
+        &:after
         {
             background: $blue-medium;
         }
@@ -188,11 +188,11 @@
         background-image: url(../img/icon-phone.png);
         font-weight: bold;
         
-        &::before
+        &:before
         {
             border-right-color: $blue-light;
         }
-        &::after
+        &:after
         {
             background: $blue-light;
         }
@@ -203,11 +203,11 @@
         background-color: $blue-medium;
         background-image: url(../img/icon-email.png);
         
-        &::before
+        &:before
         {
             border-right-color: $blue-medium;
         }
-        &::after
+        &:after
         {
             background: $blue-medium;
         }
@@ -220,11 +220,11 @@
         font-weight: bold;
         font-size: 0.9em;
         
-        &::before
+        &:before
         {
             border-right-color: $blue-light;
         }
-        &::after
+        &:after
         {
             background: $blue-light;
         }

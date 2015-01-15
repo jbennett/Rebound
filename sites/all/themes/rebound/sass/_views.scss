@@ -2,8 +2,15 @@
 {
     .view-content
     {
-        height: 850px;
         position: relative;
+        text-align: center;
+    }
+    
+    .views-row
+    {
+        display: inline-block;
+        position: relative;
+        margin: 5px;
     }
 }
 .view-about-us-row
@@ -14,7 +21,6 @@
     border-radius: 135px;
     cursor: pointer;
     width: auto !important;
-    position: absolute;
     transform: none !important;
     -webkit-transform: none !important;
     
@@ -31,6 +37,8 @@
     
     &:hover
     {
+        background: $blue-medium;
+        
         .views-field-title
         {
             display: none;
@@ -41,7 +49,6 @@
             display: block;
         }
     }
-
     
     .views-field-body
     {
@@ -84,75 +91,33 @@
         text-decoration: none;
     }
 }
-.view-about-us-row.views-row-1
+.view-about-us-row.views-row-1:hover
 {
-    top: 0;
-    left: 0;
-    
-    &:hover
-    {
-        background: $blue-medium;
-    }
+    background: $blue-medium;
 }
-.view-about-us-row.views-row-2
+.view-about-us-row.views-row-2:hover
 {
-    top: 0;
-    left: 270px;
-    
-    &:hover
-    {
-        background: $blue-navy;
-    }
+    background: $blue-navy;
 }
-.view-about-us-row.views-row-3
+.view-about-us-row.views-row-3:hover
 {
-    top: 0;
-    left: 600px;
-    
-    &:hover
-    {
-        background: $blue-light;
-    }
+    background: $blue-light;
 }
-.view-about-us-row.views-row-4
+.view-about-us-row.views-row-4:hover
 {
-    top: 270px;
-    left: 50px;
-    
-    &:hover
-    {
-        background: $blue-light;
-    }
+    background: $blue-light;
 }
-.view-about-us-row.views-row-5
+.view-about-us-row.views-row-5:hover
 {
-    top: 270px;
-    left: 320px;
-    
-    &:hover
-    {
-        background: $blue-medium;
-    }
+    background: $blue-medium;
 }
-.view-about-us-row.views-row-6
+.view-about-us-row.views-row-6:hover
 {
-    top: 270px;
-    left: 550px;
-    
-    &:hover
-    {
-        background: #6d7075;
-    }
+    background: #6d7075;
 }
-.view-about-us-row.views-row-7
+.view-about-us-row.views-row-7:hover
 {
-    top: 540px;
-    left: 50%;
-    
-    &:hover
-    {
-        background: $blue-navy;
-    }
+    background: $blue-navy;
 }
 
 .view-about-us-content
@@ -168,7 +133,7 @@
         padding: 20px;
         z-index: 10;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -226,15 +191,22 @@
     .view-content
     {
         min-height: 850px;
+        text-align: center;
+    }
+    
+    .views-row
+    {
+        margin: 5px;
     }
 }
 .view-programs-row
 {
     background: $blue-medium;
+    position: relative;
     color: white;
     border: 10px solid $blue-medium;
     border-radius: 135px;
-    float: left;
+    display: inline-block;
     cursor: pointer;
     width: auto !important;
     transform: none !important;
@@ -390,7 +362,7 @@
         position: relative;
         cursor: pointer;
         
-        &::after
+        &:after
         {
             content: "";
             position: absolute;
@@ -400,13 +372,13 @@
             bottom: 0;
             background: url(../img/icon-play.png) no-repeat center center;
         }
-        &:hover::after
+        &:hover:after
         {
             background-image: url(../img/icon-play-red.png);
         }
         &.open
         {
-            &::after
+            &:after
             {
                 display: none;
             }
@@ -436,7 +408,7 @@
     {
         position: relative;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -591,7 +563,7 @@
         position: relative;
         font-weight: bold;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -721,7 +693,7 @@
             min-height: 82px;
         }
         
-        &::before
+        &:before
         {
             border-width: 56px 56px 56px 0;
             left: 270px;
@@ -821,7 +793,7 @@
         position: relative;
         top: 75px;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -1079,7 +1051,7 @@
         {
             left: 50px;
             
-            &::after
+            &:before
             {
                 left: auto;
                 right: 242px;
@@ -1103,7 +1075,7 @@
         z-index: 3;
         transition: opacity 0.3s, left 0.5s;
         
-        &::after
+        &:before
         {
             content: "";
             display: block;
@@ -1384,7 +1356,7 @@
             padding: 12px 20px;
         }
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -1533,7 +1505,7 @@
     {
         position: relative;
         
-        &::before
+        &:before
         {
             content: "";
             display: block;
@@ -1565,7 +1537,7 @@
             position: relative;
             cursor: pointer;
             
-            &::after
+            &:after
             {
                 content: "";
                 position: absolute;
@@ -1575,14 +1547,14 @@
                 bottom: 0;
                 background: url(../img/icon-play.png) no-repeat center center;
             }
-            &:hover::after
+            &:hover:after
             {
                 background-image: url(../img/icon-play-red.png);
             }
         }
         &.open > div
         {
-            &::after
+            &:after
             {
                 display: none;
             }

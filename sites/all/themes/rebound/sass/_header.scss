@@ -5,6 +5,7 @@
     background: #71c4ea;
     position: relative;
     z-index: 100;
+    transition: background-color 0.5s;
     
     .region-navigation
     {
@@ -29,7 +30,7 @@
         text-align: center;
         z-index: 1;
         
-        &::before
+        &:before
         {
             content:"";
             position: absolute;
@@ -39,7 +40,7 @@
             background:$blue-medium;
         }
         
-        &::after
+        &:after
         {
             content:"";
             position: absolute;
@@ -93,7 +94,7 @@
             }
         }
         
-        &::before
+        &:before
         {
             content:"";
             position: absolute;
@@ -105,7 +106,7 @@
             border-color: transparent;
             -moz-transform: scale(.9999);
         }
-        &::after
+        &:after
         {
             content:"";
             position: absolute;
@@ -121,11 +122,11 @@
         background-color: $blue-medium;
         background-image: url(../img/icon-mail.png);
         
-        &::before
+        &:before
         {
             border-right-color: $blue-medium;
         }
-        &::after
+        &:after
         {
             background: $blue-medium;
         }
@@ -137,11 +138,11 @@
         background-image: url(../img/icon-phone.png);
         font-weight: bold;
         
-        &::before
+        &:before
         {
             border-right-color: $blue-dark;
         }
-        &::after
+        &:after
         {
             background: $blue-dark;
         }
@@ -151,11 +152,11 @@
         top: 66px;
         background-color: $blue-medium;
         
-        &::before
+        &:before
         {
             border-right-color: $blue-medium;
         }
-        &::after
+        &:after
         {
             background: $blue-medium;
         }
@@ -179,6 +180,11 @@
         {
             background-image: url(../img/tw.png);
         }
+    }
+    
+    .btn-menu
+    {
+        display: none;
     }
 }
 

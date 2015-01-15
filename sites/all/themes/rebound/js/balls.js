@@ -7,7 +7,10 @@
         var height = $(window).height() - 139;
         var width = $(window).width();
         var min = Math.ceil(container.find(".views-row").length/Math.floor((width+10)/270))*250;
-        if (height < min) height = min;
+        if (height < min)
+        {
+            return;
+        }
         container.height(height);
         
         var offset = container.offset();
