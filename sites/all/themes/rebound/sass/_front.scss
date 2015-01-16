@@ -30,9 +30,13 @@ body.front
         height: 539px;
         padding-top: 99px;
         width: 100%;
-        background: url(../img/bg-home.jpg) no-repeat center center;
+        background-image: url(../img/bg-home.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
         position: fixed;
+        
+        behavior: url("/sites/all/themes/rebound/css/backgroundsize.min.htc");
         
         & > .content
         {
@@ -51,6 +55,8 @@ body.front
             font-size: 2em;
             line-height: 100%;
             text-shadow: 1px 1px 2px rgba(0,0,0, 0.3);
+            
+            -ms-behavior: url(/sites/all/themes/rebound/css/PIE.htc);
             
             img
             {
@@ -75,6 +81,8 @@ body.front
     border-style: solid;
     position: absolute;
     margin-left: -50px;
+    
+    behavior: url(/sites/all/themes/rebound/css/PIE.htc);
     
     &.color-1
     {
