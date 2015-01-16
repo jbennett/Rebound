@@ -232,6 +232,7 @@ body.contact-us
         .address,
         .email,
         .phone,
+        .fax,
         .newsletter,
         .donate,
         .social
@@ -240,7 +241,7 @@ body.contact-us
             padding-left: 40px;
             line-height: 30px;
             margin-bottom: 18px;
-            width: 210px;
+            width: 200px;
             background-repeat: no-repeat;
             background-position: left center;
             
@@ -257,7 +258,17 @@ body.contact-us
         }
         .address
         {
+            line-height: 1.2;
+            width: auto;
+            float: none;
+            background-position: top left;
             background-image: url(../img/icon-white-address.png);
+            
+            &.left
+            {
+                float: left;
+                width: 220px;
+            }
         }
         .email
         {
@@ -265,11 +276,15 @@ body.contact-us
         }
         .phone
         {
-            clear: left;
             background-image: url(../img/icon-white-phone.png);
+        }
+        .fax
+        {
+            background-image: url(../img/icon-white-fax.png);
         }
         .newsletter
         {
+            clear: both;
             background-image: url(../img/icon-white-newsletter.png);
         }
         .donate
@@ -279,6 +294,7 @@ body.contact-us
         }
         .social
         {
+            clear: both;
             padding-left: 0;
             padding-right: 40px;
             
@@ -301,6 +317,12 @@ body.contact-us
             {
                 background-image: url(../img/tw.png);
             }
+        }
+        
+        h2
+        {
+            clear: both;
+            margin-bottom: 4px;
         }
     }
 }
@@ -453,3 +475,4 @@ body.page-events .page-title
 {
     float: left;
 }
+
