@@ -29,6 +29,15 @@
             .addTo(controller);
         });
         
+        var $headerCircle = $("#block-block-12 > .content");
+        var offset = $headerCircle.position();
+        var startTop = offset.top;
+        var endTop = $headerCircle.outerHeight() * -1;
+        var tween = new TweenMax.fromTo($headerCircle, 1, {"top":startTop+"px"}, {"top":endTop+"px"});
+        new ScrollScene({"offset": startTop-$headerCircle.outerHeight(), "duration":startTop})
+        .setTween(tween)
+        .addTo(controller);
+        
         var contentHeight = $(".main-wrapper").height();
         var contentOffset = $(".main-wrapper").offset();
         var contentTop = contentOffset.top;
@@ -41,7 +50,7 @@
             
             var tween = new TweenMax.fromTo($(this), 1, {"top":startTop+"px"}, {"top":endTop+"px"});
             
-            new ScrollScene({offset: triggerPosition, "duration":duration})
+            new ScrollScene({"offset": triggerPosition, "duration":duration})
             .setTween(tween)
             .addTo(controller);
         });
@@ -51,7 +60,6 @@
     {    
         var numCircles = 20;
         var numColors = 8;
-        var numPositions = 7;
         
         for (var i=0; i < numCircles; i++)
         {
