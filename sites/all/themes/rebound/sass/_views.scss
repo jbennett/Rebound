@@ -23,6 +23,7 @@
     width: auto !important;
     transform: none !important;
     -webkit-transform: none !important;
+    -ms-transform: none !important;
     
     behavior: url(/sites/all/themes/rebound/css/PIE.htc);
     
@@ -1263,10 +1264,6 @@
         }
     }
     
-    .views-field-nothing
-    {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-    }
     .body
     {
         display: table-cell;
@@ -1282,7 +1279,6 @@
     {
         position: relative;
         z-index: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
     
     a
@@ -1295,6 +1291,15 @@
         text-decoration: none;
         font-size: 0;
         z-index: 2;
+    }
+}
+.ie8 .view-staff
+{
+    .views-field-nothing,
+    .views-field-field-first-name,
+    .views-field-field-last-name
+    {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
 }
 
