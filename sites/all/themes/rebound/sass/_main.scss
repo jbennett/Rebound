@@ -470,6 +470,14 @@ body.calendar
         #block-system-main
         {
             margin-right: 0;
+            overflow: visible;
+            
+            .button
+            {
+                position: absolute;
+                top: -70px;
+                right: 0;
+            }
         }
     }
 }
