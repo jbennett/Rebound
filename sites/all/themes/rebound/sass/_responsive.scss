@@ -438,6 +438,13 @@
     }
     .navigation
     {
+        background: rgba(41,171,226, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        
         .region-navigation
         {
             opacity: 0;
@@ -511,6 +518,10 @@
                 opacity: 1;
             }
         }
+    }
+    body.not-front .page-wrapper
+    {
+        padding-top: 99px;
     }
     
     .footer
