@@ -1265,26 +1265,11 @@
         opacity: 0;
         transition: opacity 0.2s;
     }
-    .views-field-field-first-name
-    {
-        position: relative;
-        z-index: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    }
+    .views-field-field-first-name,
     .views-field-field-last-name
     {
         position: relative;
         z-index: 1;
-        border-bottom: 1px solid white;
-        padding-bottom: 2px;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    }
-    .views-field-field-title
-    {
-        position: relative;
-        z-index: 1;
-        font-style: italic;
-        padding-top: 2px;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
     
