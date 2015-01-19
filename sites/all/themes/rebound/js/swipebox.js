@@ -1,5 +1,5 @@
 (function($){    
     $(function(){
-        $('.swipebox').swipebox();
+        $('.swipebox, .view-program .views-field-field-photos a').swipebox();
     });
 })(jQuery);
