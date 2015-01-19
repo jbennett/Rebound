@@ -11,8 +11,11 @@ scripts[] = js/balls.js
 scripts[] = js/youtube.js
 scripts[] = js/program-photos.js
 scripts[] = js/map.js
+scripts[] = js/swipebox.js
+scripts[] = swipebox/js/jquery.swipebox.min.js
 scripts[] = js/placeholders.min.js
 
+stylesheets[all][] = swipebox/css/swipebox.min.css
 stylesheets[all][] = css/screen.css
 
 regions[navigation] = Navigation
