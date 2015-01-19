@@ -66,7 +66,8 @@
     }
     
     body.node-type-page.not-front,
-    body.node-type-webform
+    body.node-type-webform,
+    body.node-type-about-us
     {
         #block-system-main
         {
@@ -117,49 +118,6 @@
         }
     }
     
-    .view-about-us-content
-    {
-        .views-row
-        {
-            top: 0;
-            left: 20px;
-            right: 20px;
-            
-            &:before
-            {
-                display: none;
-            }
-        }
-        
-        .views-field-title
-        {
-            width: auto;
-            float: none;
-            margin-right: 0;
-        }
-        
-        .views-field-body
-        {
-            margin-top: 48px;
-            overflow: visible;
-            
-            &:before
-            {
-                content: "";
-                display: block;
-                width: 0px;
-                height: 0px;
-                border-style: solid;
-                border-width: 0 28px 28px 28px;
-                border-color: transparent transparent #222f7e transparent;
-                position: absolute;
-                top: -28px;
-                left: 50%;
-                margin-left: -28px;
-            }
-        }
-    }
-    
     form#webform-client-form-71 /* volunteer application */
     {    
         .webform-component-textfield,
@@ -198,7 +156,8 @@
     }
     
     body.node-type-page.not-front,
-    body.node-type-webform
+    body.node-type-webform,
+    body.node-type-about-us
     {
         .page-title
         {
@@ -641,42 +600,6 @@
     .region-content .circle
     {
         display: none;
-    }
-    
-    .view-about-us-content .views-row
-    {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: fixed;
-        z-index: 200;
-        padding-top: 25px;
-        
-        .close
-        {
-            top: 5px;
-            right: 5px;
-        }
-        
-        .views-field-body
-        {
-            position: absolute;
-            top: 80px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            
-            & > div
-            {
-                position: absolute;
-                left: 20px;
-                top: 20px;
-                right: 20px;
-                bottom: 20px;
-                overflow: auto;
-            }
-        }
     }
     
     .view-staff-content
