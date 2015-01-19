@@ -951,4 +951,13 @@
             margin: 0 2px;
         }
     }
+    
+    body.i-am-rebound
+    {
+        .page-wrapper .page-title h1,
+        .view-i-am-rebound .views-field-title h2
+        {
+            font-size: 2.25em;
+        }
+    }
 }
