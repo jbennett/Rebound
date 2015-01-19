@@ -128,7 +128,6 @@ form#webform-client-form-71 /* volunteer application */
     
     .webform-component--last-name,
     .webform-component--first-name,
-    .webform-component--initial,
     .webform-component--city,
     .webform-component--postal-code,
     .webform-component--province,
@@ -152,15 +151,6 @@ form#webform-client-form-71 /* volunteer application */
         {
             width: 176px;
             margin-right: 4px;
-        }
-    }
-    .webform-component--initial
-    {
-        float: left;
-        
-        input
-        {
-            width: 40px;
         }
     }
     .webform-component--occupation
