@@ -12,14 +12,15 @@
     
     function resizeHeader()
     {
-        $("#block-block-12, .region-header").height($(window).height());
+        $(".region-header").height($(window).height());
+        $("#block-block-12, #block-block-12>.content").height($(window).height() - 99);
     }
     
     function initParallax()
     {
         controller = new ScrollMagic();
         createDecorativeCircles();
-        parallaxScenes()
+        parallaxScenes();
     }
     function parallaxScenes()
     {
@@ -29,12 +30,13 @@
             .addTo(controller);
         });
         
-        var $headerCircle = $("#block-block-12 > .content");
+        var $headerCircle = $("#block-block-12 > .content > div");
         var offset = $headerCircle.position();
         var startTop = offset.top;
         var endTop = $headerCircle.outerHeight() * -1;
         var tween = new TweenMax.fromTo($headerCircle, 1, {"top":startTop+"px"}, {"top":endTop+"px"});
-        new ScrollScene({"offset": startTop-$headerCircle.outerHeight(), "duration":startTop})
+        var startOffset = ($(window).width() <= 480) ?  160 : 220;
+        new ScrollScene({"offset": startTop-startOffset, "duration":startTop*1.25})
         .setTween(tween)
         .addTo(controller);
         
