@@ -880,11 +880,22 @@
 
 @media screen and (max-width:480px)
 {
-    .view-events .view-header .button
+    .view-events .view-header
     {
-        float: left;
-        clear: both;
-        margin-bottom: 20px;
+        text-align: center;
+        
+        .button
+        {
+            float: none;
+            margin-bottom: 20px;
+        }
+    }
+    body.page-events
+    {
+        .page-title
+        {
+            float: none;
+        }
     }
     
     body.front #block-block-12>.content
