@@ -10,19 +10,24 @@
     
     function init()
     {    
-        $(".view-program .arrow-left")
-        .on("mousedown", leftMousedown)
-        .on("mouseup keyup", mouseup)
-        .on("keydown", keydown)
-        .click(click);
+        $(".view-program .arrow-left").on("mousedown touchstart", leftMousedown);
+        $(".view-program .arrow-right").on("mousedown touchstart", rightMousedown);
         
-        $(".view-program .arrow-right")
-        .on("mousedown", rightMousedown)
-        .on("mouseup keyup", mouseup)
+        $(".view-program .arrow-left, .view-program .arrow-right")
+        .on("mouseup keyup touchend", mouseup)
         .on("keydown", keydown)
+        .on("touchstart touchend touchcancel touchmove", absorbEvent)
         .click(click);
         
         $(window).resize(showHideArrows);
+    }
+    function absorbEvent(event) {
+        var e = event || window.event;
+        e.preventDefault && e.preventDefault();
+        e.stopPropagation && e.stopPropagation();
+        e.cancelBubble = true;
+        e.returnValue = false;
+        return false;
     }
     
     function container()
@@ -55,7 +60,7 @@
         }
         else
         {            
-            $ul.animate({"left":"+=5px"}, 10, "linear", function(){
+            $ul.animate({"left":"+=10px"}, 20, "linear", function(){
                 if (scrolling)
                 {
                     leftScroll();
@@ -81,7 +86,7 @@
         }
         else
         {
-            $ul.animate({"left":"-=5px"}, 10, "linear", function(){
+            $ul.animate({"left":"-=10px"}, 20, "linear", function(){
                 if (scrolling)
                 {
                     rightScroll();
