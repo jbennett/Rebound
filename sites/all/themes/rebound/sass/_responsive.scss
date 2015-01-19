@@ -901,6 +901,16 @@
     {
         height: 320px;
     }
+    
+    body.calendar
+    {
+        .main-wrapper>div>div,
+        .main-wrapper #block-system-main
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 }
 
 
