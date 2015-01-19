@@ -245,16 +245,24 @@
     .view-news-page,
     .view-event
     {
-        .views-field-field-image img
+        .views-field-field-image
         {
-            width: 156px;
-            height: auto;
+            img
+            {
+                width: 156px;
+                height: auto;
+            }
+            .noimage
+            {
+                display: none;
+            }
         }
         .views-field-the-rest
         {
             top: 0;
             margin-bottom: 0;
         }
+        
     }
     
     .view-photo-gallery
