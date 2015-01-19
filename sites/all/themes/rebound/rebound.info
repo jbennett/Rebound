@@ -8,7 +8,6 @@ scripts[] = js/home.js
 scripts[] = js/btn-menu.js
 scripts[] = js/jquery.throwable.js
 scripts[] = js/balls.js
-scripts[] = js/popups.js
 scripts[] = js/youtube.js
 scripts[] = js/program-photos.js
 scripts[] = js/map.js
