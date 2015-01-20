@@ -192,7 +192,7 @@
     {
         display: none;
         padding: 30px;
-        line-height: 85%;
+        line-height: 0.85;
         font-weight: bold;
         font-size: 0.9em;
         position: relative;
@@ -220,7 +220,7 @@
         padding-bottom: 3px;
         position: relative;
         z-index: 1;
-        text-shadow: 0 0 3px rgba(0,0,0, 0.4);
+        text-shadow: 0 0 10px rgba(0,0,0, 0.8);
     }
     
     .views-field-field-image img
