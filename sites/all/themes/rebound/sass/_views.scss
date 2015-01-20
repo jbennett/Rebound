@@ -620,13 +620,7 @@
 }
 .view-news-page,
 .view-event
-{
-    .views-row
-    {
-        margin-bottom: 0;
-        min-height: 300px;
-    }
-    
+{    
     .views-field-field-image
     {
         width: 326px;
@@ -650,10 +644,7 @@
     }
     
     .views-field-the-rest
-    {
-        top: -68px;
-        margin-bottom: -68px;
-        
+    {        
         & > div
         {
             min-height: 82px;
