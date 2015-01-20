@@ -1295,12 +1295,7 @@
 }
 .ie8 .view-staff
 {
-    .views-field-nothing,
-    .views-field-field-first-name,
-    .views-field-field-last-name
-    {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    }
+    display: none;
 }
 
 .view-staff-content
