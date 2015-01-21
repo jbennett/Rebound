@@ -490,6 +490,7 @@
     {
         clear: both;
         margin-bottom: 40px;
+        overflow: hidden;
     }
     .views-row-last
     {
@@ -620,14 +621,14 @@
 }
 .view-news-page,
 .view-event
-{    
+{
     .views-field-field-image
     {
         width: 326px;
         
         img
         {
-            border-radius: 110px;
+            border-radius: 113px;
             border: 3px solid white;
         }
         
