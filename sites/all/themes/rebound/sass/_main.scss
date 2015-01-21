@@ -6,7 +6,12 @@ body
 
 a
 {
-    color: $blue-light;
+    color:white;
+    
+    &:hover, &:focus
+    {
+        color: $blue-light;
+    }
 }
 
 .button
