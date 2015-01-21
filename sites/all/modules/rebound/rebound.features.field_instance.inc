@@ -647,7 +647,7 @@ function rebound_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -687,7 +687,50 @@ function rebound_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-home_primary_circle-field_link_opens_in_new_tab'
+  $field_instances['node-home_primary_circle-field_link_opens_in_new_tab'] = array(
+    'bundle' => 'home_primary_circle',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_opens_in_new_tab',
+    'label' => 'Link opens in new tab',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
     ),
   );
 
@@ -818,6 +861,49 @@ function rebound_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-home_red_circle-field_link_opens_in_new_tab'
+  $field_instances['node-home_red_circle-field_link_opens_in_new_tab'] = array(
+    'bundle' => 'home_red_circle',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_opens_in_new_tab',
+    'label' => 'Link opens in new tab',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
     ),
   );
 
@@ -993,6 +1079,49 @@ function rebound_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-home_secondary_circle-field_link_opens_in_new_tab'
+  $field_instances['node-home_secondary_circle-field_link_opens_in_new_tab'] = array(
+    'bundle' => 'home_secondary_circle',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_opens_in_new_tab',
+    'label' => 'Link opens in new tab',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 37,
     ),
   );
 
@@ -1863,6 +1992,7 @@ function rebound_field_default_field_instances() {
   t('Image');
   t('Leave blank to open a popup');
   t('Link');
+  t('Link opens in new tab');
   t('Link to Page');
   t('PDF');
   t('Photos');

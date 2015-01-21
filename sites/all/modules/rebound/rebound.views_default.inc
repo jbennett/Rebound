@@ -1427,13 +1427,24 @@ function rebound_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Link opens in new tab */
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['id'] = 'field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['table'] = 'field_data_field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['field'] = 'field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['label'] = '';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['alter']['text'] = '_blank';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['type'] = 'list_key';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['label'] = '';
   $handler->display->display_options['fields']['field_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link']['alter']['text'] = '<a href="[field_link]"><div>
+  $handler->display->display_options['fields']['field_link']['alter']['text'] = '<a href="[field_link]" target="[field_link_opens_in_new_tab]"><div>
 <div class="views-field-title">[title]</div>
 <div class="views-field-field-subtitle">[field_subtitle]</div>
 </div></a>';
@@ -1774,13 +1785,24 @@ $path = drupal_get_path_alias(\'node/\'.$next_nid);
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Link opens in new tab */
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['id'] = 'field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['table'] = 'field_data_field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['field'] = 'field_link_opens_in_new_tab';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['label'] = '';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['alter']['text'] = '_blank';
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_link_opens_in_new_tab']['type'] = 'list_key';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['label'] = '';
   $handler->display->display_options['fields']['field_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link']['alter']['text'] = '<a href="[field_link]"><div>
+  $handler->display->display_options['fields']['field_link']['alter']['text'] = '<a href="[field_link]" target="[field_link_opens_in_new_tab]"><div>
 <div class="views-field-title">[title]</div>
 <div class="views-field-field-subtitle">[field_subtitle]</div>
 </div></a>';
