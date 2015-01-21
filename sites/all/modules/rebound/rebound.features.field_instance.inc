@@ -59,7 +59,7 @@ function rebound_field_default_field_instances() {
     'bundle' => 'about_us',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Leave blank to open a popup',
+    'description' => 'Leave blank to open a new page with the same Title/Body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1990,7 +1990,7 @@ function rebound_field_default_field_instances() {
   t('Date');
   t('First Name');
   t('Image');
-  t('Leave blank to open a popup');
+  t('Leave blank to open a new page with the same Title/Body.');
   t('Link');
   t('Link opens in new tab');
   t('Link to Page');
