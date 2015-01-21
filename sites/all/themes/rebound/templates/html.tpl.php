@@ -47,7 +47,7 @@
 <!--[if !(IE 8)]><!-->  <html xmlns="http://www.w3.org/1999/xhtml" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"> <!--<![endif]-->
 <head>
   <?php print $head; ?>
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   <title><?php print $head_title; ?></title>
   <script src="//use.typekit.net/ycf3cjq.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
