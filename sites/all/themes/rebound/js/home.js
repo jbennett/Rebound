@@ -36,6 +36,10 @@
         var endTop = $headerCircle.outerHeight() * -1;
         var tween = new TweenMax.fromTo($headerCircle, 1, {"top":startTop+"px"}, {"top":endTop+"px"});
         var startOffset = ($(window).width() <= 480) ?  160 : 220;
+        if (startTop-startOffset <= 0)
+        {
+            startOffset = startTop;
+        }
         new ScrollScene({"offset": startTop-startOffset, "duration":startTop*1.25})
         .setTween(tween)
         .addTo(controller);
