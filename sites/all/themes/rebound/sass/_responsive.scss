@@ -919,7 +919,7 @@
 }
 
 
-@media screen and (max-width: 360px) and (max-height: 560px)
+@media screen and (max-width: 360px) and (max-height: 540px)
 {
     .navigation
     {
@@ -957,19 +957,19 @@
     }
     #block-system-main-menu .content ul a
     {
-        height: 48px;
+        height: 46px;
     }
     .navigation .social
     {
         height: 200px;
-        padding-top: 8px;
+        padding-top: 6px;
     }
 }
 @media screen and (max-width: 360px) and (max-height: 450px)
 {
     #block-system-main-menu .content ul a
     {
-        height: 36px;
+        height: 35px;
         font-size: 1em;
     }
     .navigation .social
