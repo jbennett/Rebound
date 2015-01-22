@@ -167,6 +167,10 @@ body.annual-reports
     {
         display: block;
     }
+    .block.about-us-back
+    {
+        display: none;
+    }
 }
 
 body.not-front
@@ -204,6 +208,10 @@ body.page-about-us-staff
                 padding: 0;
             }
         }
+    }
+    .block.about-us-back
+    {
+        display: none;
     }
 }
 
@@ -491,3 +499,26 @@ body.page-events .page-title
     float: left;
 }
 
+.block.about-us-back
+{
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 200px;
+    text-align: center;
+    
+    .content a
+    {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding-left: 18px;
+        background: url(../img/chevron-left.png) no-repeat left center;
+        
+        &:hover
+        {
+            border-bottom: 1px solid white;
+        }
+    }
+}
