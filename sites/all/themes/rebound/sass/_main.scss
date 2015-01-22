@@ -26,6 +26,12 @@ a
     border-bottom: 3px solid #13578d;
     font-size: 1.85em;
     font-weight: bold;
+    -webkit-appearance: none;
+    
+    &:hover, &:focus
+    {
+        color: white;
+    }
 }
 
 .region-content
