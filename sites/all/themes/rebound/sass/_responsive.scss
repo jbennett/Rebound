@@ -907,6 +907,15 @@
             font-size: 2.25em;
         }
     }
+    
+    .view-primary-circles,
+    .view-secondary-circles,
+    {
+        .views-row
+        {
+            float: none !important;
+        }
+    }
 }
 
 
