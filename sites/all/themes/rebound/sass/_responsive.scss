@@ -942,6 +942,10 @@
             height: 80px;
         }
     }
+    body.not-front .page-wrapper
+    {
+        padding-top: 80px;
+    }
     #block-system-main-menu .content ul a
     {
         height: 48px;
