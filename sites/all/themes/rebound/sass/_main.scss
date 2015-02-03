@@ -532,3 +532,18 @@ body.page-events .page-title
 {
     top: 95px;
 }
+
+ul.donors
+{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style: none;
+    
+    li
+    {
+        list-style: none;
+        padding: 2px 0 2px 25px;
+        background: url(../img/chevron-right.png) no-repeat left center;
+    }
+}

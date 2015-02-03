@@ -860,6 +860,13 @@
             padding-right: 0;
         }
     }
+    
+    ul.donors
+    {
+        -webkit-column-count: auto;
+        -moz-column-count: auto;
+        column-count: auto;
+    }
 }
 
 
