@@ -15,7 +15,7 @@
         
         var offset = container.offset();
         var options = {
-            gravity: {x: 0, y: 1}, 
+            gravity: {x: 0, y: 0.75}, 
             containment: [0, offset.top, width, offset.top + height], 
             shape: "circle",
             drag: false
