@@ -1403,19 +1403,53 @@
     .views-row
     {
         position: relative;
-        margin-bottom: 40px;
+        overflow: hidden;
+        padding-bottom: 40px;
         
-        &.views-row-last
+        &:last-child
         {
-            margin-bottom: 0;
+            padding-bottom: 0;
         }
+    }
+    
+    .views-field-field-image img
+    {
+        display: block;
+        width: 220px;
+        height: 220px;
+        border-radius: 114px;
+        float: left;
+        margin-right: 50px;
+        position: relative;
+        z-index: 1;
+        border: 4px solid white;
+        
+        behavior: url(/sites/all/themes/rebound/css/PIE.htc);
+    }
+    
+    .views-field-nothing
+    {
+        position: relative;
         
         & > div
         {
             overflow: hidden;
             background: $blue-navy;
-            min-height: 32px;
-            padding: 15px 20px;
+            padding: 12px 20px;
+        }
+        
+        &:before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 250px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 28px 28px 28px 0;
+            border-color: transparent $blue-navy transparent transparent;
         }
     }
     

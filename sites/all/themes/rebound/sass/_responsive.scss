@@ -629,6 +629,29 @@
         }
     }
     
+    .view-annual-reports
+    {
+        .views-field-field-image img
+        {
+            float: none;
+            margin: 0 auto;
+        }
+        
+        .views-field-nothing
+        {
+            padding-top: 10px;
+            margin-right: -20px;
+            
+            &:before
+            {
+                position: static;
+                margin: 0 auto;
+                border-width: 0 28px 28px 28px;
+                border-color: transparent transparent $blue-navy transparent;
+            }
+        }
+    }
+    
     .view-program
     {
         .views-field-title
