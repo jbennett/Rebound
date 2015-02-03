@@ -278,13 +278,13 @@
     .menu-other-links
     {
         float: left;
-        text-transform: uppercase;
         width: 90px;
         padding: 33px 45px;
+        font-size: 0.9em;
         
         h2
         {
-            font-size: 0.75em;
+            font-size: 1.1em;
             line-height: 100%;
             height: 2em;
             border-bottom: 2px solid white;
@@ -304,7 +304,6 @@
                 list-style: none;
                 margin: 5px 0 0 0;
                 padding: 0;
-                font-size: 0.65em;
             }
             
             a
@@ -322,11 +321,6 @@
         .content ul
         {
             padding-top: 0;
-            
-            li
-            {
-                font-size: 0.75em;
-            }
         }
     }
     

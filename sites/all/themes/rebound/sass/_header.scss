@@ -208,7 +208,6 @@
             margin: 0;
             padding: 2px 2px;
             max-width: 75px;
-            line-height: 100%;
             text-align: center;
             
             &:hover
@@ -220,13 +219,11 @@
         
         a
         {
-            font-size: 0.75em;
-            text-transform: uppercase;
             display: table-cell;
             vertical-align: middle;
             height: 2em;
             width: 100%;
-            line-height: 100%;
+            line-height: 0.9;
             color: white;
             font-weight: bold;
         }
