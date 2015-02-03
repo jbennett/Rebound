@@ -253,50 +253,6 @@
             }
         }
     }
-    .view-i-am-rebound
-    {
-        .views-row
-        {
-            margin-top: 20px;
-        }
-        
-        .views-field-title
-        {
-            float: none;
-            width: auto;
-            margin-right: 0;
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 0;
-            
-            h2
-            {
-                display: inline-block;
-                border-bottom: 4px solid white;
-            }
-        }
-        .views-field-field-image img
-        {
-            margin-top: 0;
-            margin-right: 48px;
-        }
-        .views-field-body:before
-        {
-            border-width: 28px 28px 28px 0;
-            left: 208px;
-        }
-        .views-field-title + .views-field-body:before
-        {
-            position: static;
-            margin: 0 auto;
-            border-width: 0 28px 28px 28px;
-            border-color: transparent transparent $blue-navy transparent;
-        }
-        .views-field-field-youtube-video-id
-        {
-            padding-left: 236px;
-        }
-    }
     
     body.contact-us .page-title
     {
@@ -752,7 +708,7 @@
         .views-field-field-image img
         {
             float: none;
-            margin: 0 auto;
+            margin: 0 auto 1em auto;
         }
         .views-field-body
         {
@@ -769,6 +725,18 @@
         .views-field-field-youtube-video-id
         {
             padding-left: 0;
+        }
+        .views-field-title
+        {
+            display: block;
+            text-align: center;
+            border-bottom: 0;
+            
+            h2
+            {
+                display: inline-block;
+                border-bottom: 4px solid white;
+            }
         }
     }
     
