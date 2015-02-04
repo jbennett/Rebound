@@ -21,24 +21,42 @@
         
         geocoder = new google.maps.Geocoder();
         
-        centerMap();
-        showMarker();
+        centerMap1();
+        showMarkers();
         
-        $(window).resize(centerMap);
+        $(".address1").click(function(){
+            centerMap1();
+        });
+        $(".address2").click(function(){
+            centerMap2();
+        })
+        $(".address3").click(function(){
+            centerMap3();
+        });
     }
     
-    function centerMap()
+    function centerMap1()
     {
-        getAddressLatLng(address(), showMapLatLng);
+        getAddressLatLng(address1(), showMapLatLng);
+    }
+    function centerMap2()
+    {
+        getAddressLatLng(address2(), showMapLatLng);
+    }
+    function centerMap3()
+    {
+        getAddressLatLng(address3(), showMapLatLng);
     }
     function showMapLatLng(latlng)
     {
         map.setCenter(latlng);
     }
     
-    function showMarker()
+    function showMarkers()
     {
-        getAddressLatLng(address(), showMarkerLatLng);
+        getAddressLatLng(address1(), showMarkerLatLng);
+        getAddressLatLng(address2(), showMarkerLatLng);
+        getAddressLatLng(address3(), showMarkerLatLng);
     }
     function showMarkerLatLng(latlng, address)
     {
@@ -55,9 +73,17 @@
         });
     }
     
-    function address()
+    function address1()
     {
         return "10 Lorne Cres., Sarnia, ON";
+    }
+    function address2()
+    {
+        return "411 Wingfield Street, Petrolia, ON";
+    }
+    function address3()
+    {
+        return "59 King St W, Forest, ON";
     }
     
     function getAddressLatLng(address, callback)
