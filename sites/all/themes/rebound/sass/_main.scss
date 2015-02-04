@@ -550,3 +550,10 @@ ul.donors
         background: url(../img/chevron-right.png) no-repeat left center;
     }
 }
+
+.two-columns
+{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
