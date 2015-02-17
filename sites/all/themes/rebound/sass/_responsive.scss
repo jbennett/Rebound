@@ -743,10 +743,11 @@
     .view-secondary-circles,
     .view-secondary-circles.view-display-id-block
     {
-        .views-field-field-image img
+        .views-field-field-image
         {
             float: none;
             margin: 0 auto;
+            text-align: center;
         }
         
         .views-field-nothing

@@ -998,16 +998,20 @@
         }
     }
     
-    .views-field-field-image img
+    .views-field-field-image
     {
-        float: left;
-        display: block;
-        border-radius: 125px;
         position: relative;
-        z-index: 3;
+        z-index: 4;
+        float: left;
         margin: 0 50px 0 0;
         
-        behavior: url(/sites/all/themes/rebound/css/PIE.htc);
+        img
+        {
+            display: inline-block;
+            border-radius: 125px;
+            
+            behavior: url(/sites/all/themes/rebound/css/PIE.htc);
+        }
     }
     &.view-display-id-block
     {

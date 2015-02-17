@@ -194,11 +194,23 @@ function rebound_views_default_views() {
   $handler->display->display_options['footer']['view']['field'] = 'view';
   $handler->display->display_options['footer']['view']['label'] = 'Financial Statements';
   $handler->display->display_options['footer']['view']['view_to_insert'] = 'financial_statements:default';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'circle_r110',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
@@ -209,17 +221,29 @@ function rebound_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Field: Content: PDF */
   $handler->display->display_options['fields']['field_pdf']['id'] = 'field_pdf';
   $handler->display->display_options['fields']['field_pdf']['table'] = 'field_data_field_pdf';
   $handler->display->display_options['fields']['field_pdf']['field'] = 'field_pdf';
   $handler->display->display_options['fields']['field_pdf']['label'] = '';
+  $handler->display->display_options['fields']['field_pdf']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pdf']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_pdf']['alter']['text'] = '<a href="[field_pdf]">View PDF</a>';
   $handler->display->display_options['fields']['field_pdf']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pdf']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pdf']['type'] = 'file_url_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
+<div class="views-field-field-body">[body]</div>
+<div class="views-field-field-pdf">[field_pdf]</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -754,16 +778,6 @@ function rebound_views_default_views() {
     'programs_services' => 0,
     'staff' => 0,
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -776,6 +790,16 @@ function rebound_views_default_views() {
     'image_style' => 'circle_r110',
     'image_link' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -1232,6 +1256,13 @@ function rebound_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'view-photo-galleries-row';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -1254,17 +1285,36 @@ function rebound_views_default_views() {
   );
   $handler->display->display_options['fields']['field_photos']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_photos']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_photos']['separator'] = '';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[path]">[title]</a>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Photos */
+  $handler->display->display_options['fields']['field_photos_1']['id'] = 'field_photos_1';
+  $handler->display->display_options['fields']['field_photos_1']['table'] = 'field_data_field_photos';
+  $handler->display->display_options['fields']['field_photos_1']['field'] = 'field_photos';
+  $handler->display->display_options['fields']['field_photos_1']['label'] = '';
+  $handler->display->display_options['fields']['field_photos_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_photos_1']['alter']['text'] = '<div data-href="[field_photos_1]"></div>';
+  $handler->display->display_options['fields']['field_photos_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_photos_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_photos_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_photos_1']['settings'] = array(
+    'url_type' => '1',
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_photos_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_photos_1']['separator'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1858,11 +1908,20 @@ $path = drupal_get_path_alias(\'node/\'.$next_nid);
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['text'] = '<a href="[path]">[field_image]</a>';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
@@ -1892,15 +1951,6 @@ $path = drupal_get_path_alias(\'node/\'.$next_nid);
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '1000',
   );
-  /* Field: Content: Path */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['path']['alter']['text'] = '<a href="[path]" class="read-more">Continue to Full Article</a>';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1909,7 +1959,7 @@ $path = drupal_get_path_alias(\'node/\'.$next_nid);
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>
 <div class="views-field-title">[title]</div>
 <div class="views-field-body">[body]</div>
-<div class="views-field-path">[path]</div>
+<div class="views-field-path"><a href="[path]" class="read-more">Continue to Full Article</a></div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
