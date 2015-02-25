@@ -226,7 +226,7 @@
         padding-bottom: 3px;
         position: relative;
         z-index: 2;
-        text-shadow: 0 0 10px rgba(0,0,0, 0.8);
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .views-field-field-image img
