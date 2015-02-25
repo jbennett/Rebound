@@ -6,6 +6,7 @@
         
         resizeHeader();
         $(window).resize(resizeHeader);
+        $("#block-block-13 .arrow").click(arrowClick);
         
         initParallax();
     });
@@ -14,6 +15,14 @@
     {
         $(".region-header").height($(window).height());
         $("#block-block-12, #block-block-12>.content").height($(window).height() - 99);
+    }
+    function arrowClick()
+    {
+        $("html, body").animate({
+                "scrollTop": $(window).height() + "px"
+        }, 800);
+        
+        return false;
     }
     
     function initParallax()

@@ -217,17 +217,19 @@ body.front
     left: 0;
     bottom: 15px;
     width: 100%;
-    text-align: center;
-    font-size: 1.3em;
     
-    .content
+    .hover
     {
-        display: inline-block;
+        display: block;
+        margin: 0 auto;
+        width: 238px;
         line-height: 27px;
         padding-left: 45px;
         background: url(../img/icon-hover-to-navigate.png) no-repeat left center;
         cursor: default;
         text-shadow: 0 0 4px rgba(0,0,0, 0.6);
+        text-align: center;
+        font-size: 1.3em;
         
         &:before
         {
@@ -240,5 +242,15 @@ body.front
         {
             background-image: url(../img/icon-hover-to-navigate2.png);
         }
+    }
+    .arrow
+    {
+        font-size: 0;
+        display: block;
+        width: 40px;
+        height: 30px;
+        margin: 0 auto;
+        background: url(../img/arrow-down.png) no-repeat center center;
+        cursor: pointer;
     }
 }
