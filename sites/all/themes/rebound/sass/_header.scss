@@ -1,11 +1,15 @@
 .navigation
 {
-    @extend .fixed-width;
     height: 99px;
     background: #71c4ea;
     position: relative;
     z-index: 100;
     transition: background-color 0.5s;
+    
+    & > div
+    {
+        padding: 0 12px;
+    }
     
     .region-navigation
     {
@@ -24,7 +28,8 @@
         display: block;
         float: left;
         height: 99px;
-        width: 115px;
+        width: 79px;
+        padding-left: 10px;
         background: $blue-medium;
         position: relative;
         text-align: center;
@@ -236,6 +241,7 @@
             line-height: 0.9;
             color: white;
             font-weight: 500;
+            font-size: 0.9375em;
         }
     }
 }
