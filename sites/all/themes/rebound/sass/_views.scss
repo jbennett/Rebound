@@ -170,24 +170,6 @@
         behavior: url(/sites/all/themes/rebound/css/PIE.htc);
     }
     
-    &:hover
-    {
-        .views-field-title
-        {
-            display: none;
-        }
-        
-        .views-field-nothing
-        {
-            display: block;
-        }
-        
-        .views-field-field-image
-        {
-            display: none;
-        }
-    }
-    
     .views-field-nothing
     {
         display: none;
@@ -226,7 +208,6 @@
         padding-bottom: 3px;
         position: relative;
         z-index: 2;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         filter: glow(color=#FF000000,strength=2);
         zoom: 1;
     }
