@@ -51,6 +51,7 @@ function _custom_mailchimp_submission($node, $submission)
 
 function _custom_mailchimp_subscribe($email, $listID)
 {
+    global $conf;
     $apikey = $conf['MAILCHIMP_API_KEY'];
     if ($apikey) {
         $customFields = array('CTYPE'=>'Written', 'COMMENTS'=>'Consented by submitting the form on the website', 'CDATE'=>date('Y-m-d'));
