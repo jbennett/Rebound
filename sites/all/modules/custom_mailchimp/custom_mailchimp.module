@@ -51,20 +51,18 @@ function _custom_mailchimp_submission($node, $submission)
 
 function _custom_mailchimp_subscribe($email, $listID)
 {
-    
-    
-    $apikey = 'aadcfbf94341043dd56f6639684fc8a5-us9';
-    $customFields = array('CTYPE'=>'Written', 'COMMENTS'=>'Consented by submitting the form on the website', 'CDATE'=>date('Y-m-d'));
-    
-    $mc = new Mailchimp($apikey);
-    
-    try
-    {
-        $result = $mc->lists->subscribe($listID, array('email'=>$email), $customFields, 'html', false, true);
-    }
-    catch (Mailchimp_Error $e)
-    {
-        drupal_set_message($e->getMessage());
+    $apikey = $conf['MAILCHIMP_API_KEY'];
+    if ($apikey) {
+        $customFields = array('CTYPE'=>'Written', 'COMMENTS'=>'Consented by submitting the form on the website', 'CDATE'=>date('Y-m-d'));
+        $mc = new Mailchimp($apikey);
+        try
+        {
+            $result = $mc->lists->subscribe($listID, array('email'=>$email), $customFields, 'html', false, true);
+        }
+        catch (Mailchimp_Error $e)
+        {
+            drupal_set_message($e->getMessage());
+        }
     }
 }
 ?>
