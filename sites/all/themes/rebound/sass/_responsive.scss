@@ -238,7 +238,14 @@
         .logos
         {
             top: 20px;
-            right: 160px;
+            right: 175px;
+            text-align: center;
+            
+            img
+            {
+                max-height: 50px;
+                width: auto !important;
+            }
         }
         .site-by-cci
         {
