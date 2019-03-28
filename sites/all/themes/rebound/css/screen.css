@@ -48,9 +48,11 @@ a {
   .region-content ul:last-child,
   .region-content ol:last-child {
     margin-bottom: 0; }
+
 .region-content ul,
 .region-content ol {
   margin-left: 20px; }
+
 .region-content iframe {
   max-width: 100%;
   display: block; }
@@ -94,6 +96,7 @@ body.node-type-about-us .page-title {
     padding-bottom: 5px;
     border-bottom: 4px solid white;
     font-size: 2.5em; }
+
 body.node-type-page.not-front .region-content,
 body.node-type-webform .region-content,
 body.node-type-about-us .region-content {
@@ -111,6 +114,7 @@ body.node-type-about-us .region-content {
     border-style: solid;
     border-width: 56px 56px 56px 0;
     border-color: transparent #222f7e transparent transparent; }
+
 body.node-type-page.not-front #block-system-main,
 body.node-type-webform #block-system-main,
 body.node-type-about-us #block-system-main {
@@ -124,20 +128,25 @@ body.node-type-about-us #block-system-main {
 body.page-about-us .page-wrapper,
 body.programs-and-services .page-wrapper {
   background: #ddeaf5; }
+
 body.page-about-us .page-title,
 body.programs-and-services .page-title {
   display: none; }
+
 body.page-about-us .region-content,
 body.programs-and-services .region-content {
   position: relative; }
+
 body.page-about-us .main-wrapper,
 body.programs-and-services .main-wrapper {
   position: relative; }
 
 body.annual-reports .page-wrapper {
   background: #29abe2; }
+
 body.annual-reports .page-title {
   display: block; }
+
 body.annual-reports .block.about-us-back {
   display: none; }
 
@@ -154,6 +163,7 @@ body.page-about-us-staff .main-wrapper {
     max-width: none; }
     body.page-about-us-staff .main-wrapper > div > div {
       padding: 0; }
+
 body.page-about-us-staff .block.about-us-back {
   display: none; }
 
@@ -166,6 +176,7 @@ body.contact-us .page-title {
     background: url(../img/bg-contact.png) no-repeat top center;
     float: left;
     margin: 20px 25px 0 20px; }
+
 body.contact-us .main-wrapper .region-content {
   font-size: 1.1em;
   margin-top: 20px; }
@@ -812,6 +823,7 @@ ul.donors {
 .view-about-us .view-content {
   position: relative;
   text-align: center; }
+
 .view-about-us .views-row {
   display: inline-block;
   position: relative;
@@ -903,6 +915,7 @@ ul.donors {
 .view-programs .view-content {
   min-height: 600px;
   text-align: center; }
+
 .view-programs .views-row {
   margin: 5px; }
 
@@ -956,7 +969,7 @@ ul.donors {
     padding-bottom: 3px;
     position: relative;
     z-index: 2;
-    filter: glow(color=red, strength=2);
+    filter: glow(color=#FF0000, strength=2);
     zoom: 1; }
   .view-programs-row .views-field-field-image img {
     position: absolute;
@@ -996,6 +1009,7 @@ ul.donors {
     padding-bottom: 5px;
     border-bottom: 4px solid white;
     font-size: 2.5em; }
+
 .view-program .buttons {
   float: left;
   clear: left;
@@ -1020,6 +1034,7 @@ ul.donors {
   .view-program .buttons .btn-next-program {
     padding-right: 18px;
     background: url(../img/chevron-right.png) no-repeat right center; }
+
 .view-program .views-field-field-youtube-video-id {
   overflow: hidden;
   margin-bottom: 20px;
@@ -1048,6 +1063,7 @@ ul.donors {
     top: 0;
     width: 100%;
     height: 100%; }
+
 .view-program .views-field-body {
   position: relative; }
   .view-program .views-field-body:before {
@@ -1067,6 +1083,7 @@ ul.donors {
     overflow: hidden;
     position: relative;
     min-height: 82px; }
+
 .view-program .views-field-field-image img {
   float: left;
   clear: left;
@@ -1076,6 +1093,7 @@ ul.donors {
   height: 200px;
   margin-right: 70px;
   behavior: url(/sites/all/themes/rebound/css/PIE.htc); }
+
 .view-program .close {
   position: absolute;
   right: -15px;
@@ -1086,6 +1104,7 @@ ul.donors {
   text-decoration: none;
   font-size: 0;
   color: transparent; }
+
 .view-program .views-field-field-photos {
   clear: both;
   position: relative;
@@ -1142,12 +1161,14 @@ ul.donors {
   clear: both;
   margin-bottom: 40px;
   overflow: hidden; }
+
 .view-news .views-row-last,
 .view-news-page .views-row-last,
 .view-events .views-row-last,
 .view-event .views-row-last,
 .view-archived-newsletters .views-row-last {
   margin-bottom: 0; }
+
 .view-news .views-field-field-image,
 .view-news-page .views-field-field-image,
 .view-events .views-field-field-image,
@@ -1168,6 +1189,7 @@ ul.donors {
   .view-archived-newsletters .views-field-field-image img {
     border-radius: 75px;
     border: 3px solid white; }
+
 .view-news .views-field-the-rest,
 .view-news-page .views-field-the-rest,
 .view-events .views-field-the-rest,
@@ -1203,6 +1225,7 @@ ul.donors {
   .view-archived-newsletters .views-field-the-rest img {
     max-width: 100%;
     height: auto !important; }
+
 .view-news .views-field-title,
 .view-news-page .views-field-title,
 .view-events .views-field-title,
@@ -1231,6 +1254,7 @@ ul.donors {
     .view-archived-newsletters .views-field-title a:hover {
       border-bottom: 2px solid white;
       margin-bottom: -2px; }
+
 .view-news .views-field-field-date,
 .view-news-page .views-field-field-date,
 .view-events .views-field-field-date,
@@ -1259,6 +1283,7 @@ ul.donors {
   .view-archived-newsletters .views-field-field-date .day {
     font-size: 2.25em;
     line-height: 80%; }
+
 .view-news .views-field-body,
 .view-news-page .views-field-body,
 .view-events .views-field-body,
@@ -1268,6 +1293,7 @@ ul.donors {
   line-height: 100%;
   font-size: 0.9em;
   margin-bottom: 1em; }
+
 .view-news .views-field-path,
 .view-news-page .views-field-path,
 .view-events .views-field-path,
@@ -1308,19 +1334,24 @@ ul.donors {
     width: 320px;
     height: 229px;
     z-index: 1; }
+
 .view-news-page .views-field-the-rest > div,
 .view-event .views-field-the-rest > div {
   min-height: 82px; }
+
 .view-news-page .views-field-the-rest:before,
 .view-event .views-field-the-rest:before {
   border-width: 56px 56px 56px 0;
   left: 270px; }
+
 .view-news-page .views-field-field-date,
 .view-event .views-field-field-date {
   margin: 0 12px 10px 0; }
+
 .view-news-page .views-field-body,
 .view-event .views-field-body {
   padding-left: 0; }
+
 .view-news-page .views-field-path,
 .view-event .views-field-path {
   padding-left: 0;
@@ -1335,6 +1366,7 @@ ul.donors {
     background: #222f7e;
     overflow: hidden;
     padding: 15px; }
+
 .view-archived-newsletters .views-field-field-pdf {
   padding-left: 75px; }
   .view-archived-newsletters .views-field-field-pdf a {
@@ -1356,6 +1388,7 @@ ul.donors {
   padding-bottom: 40px; }
   .view-photo-galleries .views-row:last-child {
     padding-bottom: 0; }
+
 .view-photo-galleries .views-field-field-photos img {
   display: block;
   width: 220px;
@@ -1367,6 +1400,7 @@ ul.donors {
   z-index: 1;
   border: 4px solid white;
   behavior: url(/sites/all/themes/rebound/css/PIE.htc); }
+
 .view-photo-galleries .views-field-title {
   position: relative;
   top: 75px; }
@@ -1495,6 +1529,7 @@ ul.donors {
 .view-red-circles .views-row {
   width: 250px;
   height: 250px; }
+
 .view-red-circles .views-field-field-link {
   border-color: #ed1c24; }
   .view-red-circles .views-field-field-link > div {
@@ -1504,6 +1539,7 @@ ul.donors {
     .view-red-circles .views-field-field-link a > div {
       width: 200px;
       height: 200px; }
+
 .view-red-circles .views-field-title {
   font-size: 2em; }
 
@@ -1525,6 +1561,7 @@ ul.donors {
     margin-top: -2000px;
     left: -2000px;
     right: auto; }
+
 .view-secondary-circles .views-field-field-image {
   position: relative;
   z-index: 4;
@@ -1534,10 +1571,12 @@ ul.donors {
     display: inline-block;
     border-radius: 125px;
     behavior: url(/sites/all/themes/rebound/css/PIE.htc); }
+
 .view-secondary-circles.view-display-id-block .views-row:hover .views-field-nothing,
 .view-secondary-circles.view-display-id-block .views-row.active .views-field-nothing {
   opacity: 1;
   left: 0; }
+
 .view-secondary-circles.view-display-id-block .views-row:hover .views-field-nothing-1 .grower,
 .view-secondary-circles.view-display-id-block .views-row.active .views-field-nothing-1 .grower {
   width: 4000px;
@@ -1545,9 +1584,11 @@ ul.donors {
   margin-top: -2000px;
   right: -2000px;
   left: auto; }
+
 .view-secondary-circles.view-display-id-block .views-field-field-image img {
   float: right;
   margin: 0 0 0 50px; }
+
 .view-secondary-circles.view-display-id-block .views-field-nothing {
   left: 50px; }
   .view-secondary-circles.view-display-id-block .views-field-nothing:before {
@@ -1555,9 +1596,11 @@ ul.donors {
     right: 242px;
     border-width: 58px 0 58px 58px;
     border-color: transparent transparent transparent #222f7e; }
+
 .view-secondary-circles.view-display-id-block .views-field-nothing-1 .grower {
   left: auto;
   right: 125px; }
+
 .view-secondary-circles .views-field-nothing {
   opacity: 0;
   position: relative;
@@ -1580,6 +1623,7 @@ ul.donors {
     overflow: hidden;
     background: #222f7e;
     padding: 25px; }
+
 .view-secondary-circles .views-field-title {
   font-size: 2.5em;
   text-transform: uppercase;
@@ -1587,6 +1631,7 @@ ul.donors {
   margin-bottom: 10px;
   border-bottom: 4px solid white;
   display: inline-block; }
+
 .view-secondary-circles .views-field-nothing-1 {
   position: absolute;
   left: 0;
@@ -1613,8 +1658,10 @@ ul.donors {
     margin-left: 0;
     transition: all 1s ease-in-out;
     behavior: url(/sites/all/themes/rebound/css/PIE.htc); }
+
 .view-secondary-circles .views-field-path {
   padding-top: 0.75em; }
+
 .view-secondary-circles a.read-more {
   display: inline-block;
   color: white;
@@ -1723,6 +1770,7 @@ ul.donors {
     opacity: 1; }
   .view-staff-content .views-row > div > div {
     position: relative; }
+
 .view-staff-content .views-field-field-image {
   float: left;
   width: 220px;
@@ -1733,6 +1781,7 @@ ul.donors {
   background: #1b75bc url(../img/bg-staff.png) no-repeat bottom center; }
   .view-staff-content .views-field-field-image img {
     border-radius: 220px; }
+
 .view-staff-content .body-container {
   position: relative; }
   .view-staff-content .body-container > div {
@@ -1750,11 +1799,14 @@ ul.donors {
     border-style: solid;
     border-width: 56px 56px 56px 0;
     border-color: transparent #222f7e transparent transparent; }
+
 .view-staff-content .name h2 {
   font-size: 1.75em; }
+
 .view-staff-content .title {
   font-style: italic;
   margin-bottom: 0.5em; }
+
 .view-staff-content .back-to-top {
   position: absolute;
   right: 24px;
@@ -1771,6 +1823,7 @@ ul.donors {
   transition: opacity 0.5s; }
   .view-staff-content .back-to-top:hover, .view-staff-content .back-to-top:active {
     text-decoration: underline; }
+
 .view-staff-content .views-row-odd .back-to-top {
   color: #29abe2;
   background-image: url(../img/chevron-up-blue.png); }
@@ -1783,6 +1836,7 @@ ul.donors {
   .view-annual-reports .views-row:last-child,
   .view-job-opportunities .views-row:last-child {
     padding-bottom: 0; }
+
 .view-annual-reports .views-field-field-image img,
 .view-job-opportunities .views-field-field-image img {
   display: block;
@@ -1795,6 +1849,7 @@ ul.donors {
   z-index: 1;
   border: 4px solid white;
   behavior: url(/sites/all/themes/rebound/css/PIE.htc); }
+
 .view-annual-reports .views-field-nothing,
 .view-job-opportunities .views-field-nothing {
   position: relative; }
@@ -1815,9 +1870,11 @@ ul.donors {
     border-style: solid;
     border-width: 28px 28px 28px 0;
     border-color: transparent #222f7e transparent transparent; }
+
 .view-annual-reports .views-field-title,
 .view-job-opportunities .views-field-title {
   margin-bottom: 5px; }
+
 .view-annual-reports .views-field-field-pdf a,
 .view-job-opportunities .views-field-field-pdf a {
   display: inline-block;
@@ -1840,6 +1897,7 @@ ul.donors {
   background: #29abe2;
   padding: 20px;
   margin-top: 40px; }
+
 .view-i-am-rebound .views-field-title {
   text-transform: uppercase;
   font-weight: bold;
@@ -1849,6 +1907,7 @@ ul.donors {
   margin-bottom: 1em; }
   .view-i-am-rebound .views-field-title h2 {
     font-size: 2.5em; }
+
 .view-i-am-rebound .views-field-field-image img {
   display: block;
   width: 180px;
@@ -1858,6 +1917,7 @@ ul.donors {
   float: left;
   clear: left;
   margin-right: 50px; }
+
 .view-i-am-rebound .views-field-body {
   position: relative; }
   .view-i-am-rebound .views-field-body:before {
@@ -1876,6 +1936,7 @@ ul.donors {
     background: #222f7e;
     padding: 15px;
     min-height: 32px; }
+
 .view-i-am-rebound .views-field-field-youtube-video-id {
   padding-left: 275px;
   padding-top: 20px; }
@@ -1948,6 +2009,7 @@ label.option {
 
 .form-type-checkbox input {
   float: left; }
+
 .form-type-checkbox label {
   padding-left: 20px;
   display: block; }
@@ -1969,15 +2031,19 @@ form#webform-client-form-70 {
 form#webform-client-form-71 label,
 form#webform-client-form-71 h2 {
   text-transform: uppercase; }
+
 form#webform-client-form-71 .webform-component-textfield input,
 form#webform-client-form-71 .webform-component-email input {
   width: 380px; }
+
 form#webform-client-form-71 textarea {
   width: 380px;
   -webkit-box-sizing: content-box;
   box-sizing: content-box; }
+
 form#webform-client-form-71 .webform-component-markup {
   margin-bottom: 0; }
+
 form#webform-client-form-71 .webform-component--last-name label,
 form#webform-client-form-71 .webform-component--first-name label,
 form#webform-client-form-71 .webform-component--city label,
@@ -1988,6 +2054,7 @@ form#webform-client-form-71 .webform-component--business-postal-code label,
 form#webform-client-form-71 .webform-component--business-province label {
   position: absolute;
   left: -99999px; }
+
 form#webform-client-form-71 .webform-component--last-name,
 form#webform-client-form-71 .webform-component--first-name {
   float: left;
@@ -1996,12 +2063,14 @@ form#webform-client-form-71 .webform-component--first-name {
   form#webform-client-form-71 .webform-component--first-name input {
     width: 176px;
     margin-right: 4px; }
+
 form#webform-client-form-71 .webform-component--occupation {
   float: left;
   clear: left; }
   form#webform-client-form-71 .webform-component--occupation input {
     width: 176px;
     margin-right: 4px; }
+
 form#webform-client-form-71 .webform-component--date-of-birth {
   float: left; }
   form#webform-client-form-71 .webform-component--date-of-birth .form-item-submitted-date-of-birth-year input {
@@ -2009,25 +2078,30 @@ form#webform-client-form-71 .webform-component--date-of-birth {
   form#webform-client-form-71 .webform-component--date-of-birth input.webform-calendar {
     margin-left: -4px;
     vertical-align: middle; }
+
 form#webform-client-form-71 .webform-component--street {
   margin-bottom: 8px;
   clear: both; }
+
 form#webform-client-form-71 .webform-component--city {
   float: left;
   margin-bottom: 8px; }
   form#webform-client-form-71 .webform-component--city input {
     width: 176px;
     margin-right: 8px; }
+
 form#webform-client-form-71 .webform-component--province {
   float: left;
   margin-bottom: 8px; }
   form#webform-client-form-71 .webform-component--province input {
     width: 40px;
     margin-right: 8px; }
+
 form#webform-client-form-71 .webform-component--postal-code {
   float: left; }
   form#webform-client-form-71 .webform-component--postal-code input {
     width: 125px; }
+
 form#webform-client-form-71 .webform-component--phone,
 form#webform-client-form-71 .webform-component--email {
   float: left; }
@@ -2035,11 +2109,13 @@ form#webform-client-form-71 .webform-component--email {
   form#webform-client-form-71 .webform-component--email input {
     width: 176px;
     margin-right: 12px; }
+
 form#webform-client-form-71 .webform-component--how-do-you-prefer-to-be-contacted > label {
   display: inline-block;
   width: 160px;
   margin-right: 34px;
   vertical-align: middle; }
+
 form#webform-client-form-71 .webform-component--how-do-you-prefer-to-be-contacted .form-checkboxes {
   display: inline-block;
   vertical-align: middle; }
@@ -2048,29 +2124,35 @@ form#webform-client-form-71 .webform-component--how-do-you-prefer-to-be-contacte
     margin: 0; }
   form#webform-client-form-71 .webform-component--how-do-you-prefer-to-be-contacted .form-checkboxes label {
     padding-right: 30px; }
+
 form#webform-client-form-71 .webform-component--business-address {
   margin-bottom: 8px;
   clear: both; }
+
 form#webform-client-form-71 .webform-component--business-city {
   float: left;
   margin-bottom: 8px; }
   form#webform-client-form-71 .webform-component--business-city input {
     width: 176px;
     margin-right: 8px; }
+
 form#webform-client-form-71 .webform-component--business-province {
   float: left;
   margin-bottom: 8px; }
   form#webform-client-form-71 .webform-component--business-province input {
     width: 40px;
     margin-right: 8px; }
+
 form#webform-client-form-71 .webform-component--business-postal-code {
   float: left; }
   form#webform-client-form-71 .webform-component--business-postal-code input {
     width: 125px; }
+
 form#webform-client-form-71 .webform-component--can-we-call-you-at-work > label {
   display: inline-block;
   margin-right: 24px;
   vertical-align: middle; }
+
 form#webform-client-form-71 .webform-component--can-we-call-you-at-work .form-radios {
   display: inline-block;
   vertical-align: middle; }
@@ -2080,8 +2162,10 @@ form#webform-client-form-71 .webform-component--can-we-call-you-at-work .form-ra
   form#webform-client-form-71 .webform-component--can-we-call-you-at-work .form-radios label {
     padding-right: 20px;
     vertical-align: middle; }
+
 form#webform-client-form-71 .webform-component--areas .form-checkboxes {
   margin-left: 30px; }
+
 form#webform-client-form-71 .webform-component--reference-name,
 form#webform-client-form-71 .webform-component--reference-phone,
 form#webform-client-form-71 .webform-component--reference-name-2,
@@ -2101,6 +2185,7 @@ form#webform-client-form-71 .webform-component--doctor-phone {
   form#webform-client-form-71 .webform-component--doctor-phone input {
     width: 176px;
     margin-right: 12px; }
+
 form#webform-client-form-71 .webform-component--relationship,
 form#webform-client-form-71 .webform-component--medical-conditions,
 form#webform-client-form-71 .webform-component--where-did-you-hear,
@@ -2108,12 +2193,14 @@ form#webform-client-form-71 .webform-component--phone,
 form#webform-client-form-71 .webform-component--business-phone,
 form#webform-client-form-71 .webform-component--how-do-you-prefer-to-be-contacted {
   clear: left; }
+
 form#webform-client-form-71 .webform-component--available .form-checkboxes {
   margin-left: 30px; }
   form#webform-client-form-71 .webform-component--available .form-checkboxes .form-item {
     display: inline-block;
     vertical-align: top;
     width: 160px; }
+
 form#webform-client-form-71 .webform-component--seminars-during-these-times {
   margin-bottom: 8px; }
   form#webform-client-form-71 .webform-component--seminars-during-these-times .form-checkboxes {
@@ -2122,14 +2209,17 @@ form#webform-client-form-71 .webform-component--seminars-during-these-times {
       display: inline-block;
       vertical-align: top;
       margin-right: 30px; }
+
 form#webform-client-form-71 .webform-component--seminars-other label {
   font-weight: normal;
   padding-left: 30px;
   display: inline-block;
   margin-right: 8px; }
+
 form#webform-client-form-71 .webform-component--seminars-other input {
   display: inline-block;
   width: 176px; }
+
 form#webform-client-form-71 .webform-component--acknowledge {
   font-weight: bold; }
 
@@ -2140,14 +2230,17 @@ body.front .navigation {
   left: 0;
   width: 100%;
   z-index: 100; }
+
 body.front .page-title {
   display: none; }
+
 body.front .main-wrapper {
   background: #ddeaf5;
   padding: 0;
   position: relative;
   height: 3250px;
   overflow: hidden; }
+
 body.front #block-block-12 {
   height: 539px;
   padding-top: 99px;
@@ -2182,6 +2275,7 @@ body.front #block-block-12 {
         width: auto !important;
         display: block;
         margin: 10px auto 20px auto; }
+
 body.front .main-wrapper .block-views {
   position: static; }
 
@@ -2316,6 +2410,7 @@ body.front .main-wrapper .block-views {
 @media screen and (min-width: 1200px) {
   .navigation > div {
     padding: 0 10%; } }
+
 @media screen and (max-width: 980px) {
   #block-system-main-menu .content ul {
     padding: 0;
@@ -2341,7 +2436,6 @@ body.front .main-wrapper .block-views {
         background: #1b75bc; }
     #block-system-main-menu .content ul .job-opportunities {
       display: table-cell; }
-
   .navigation {
     background: rgba(41, 171, 226, 0.6);
     position: fixed;
@@ -2394,15 +2488,14 @@ body.front .main-wrapper .block-views {
       position: absolute;
       top: 0;
       right: 0; }
-
   body.open-menu .navigation {
     background: #29abe2; }
     body.open-menu .navigation .region-navigation {
       right: 0;
       opacity: 1; }
-
   body.not-front .page-wrapper {
     padding-top: 99px; } }
+
 @media screen and (max-width: 960px) {
   .region-footer {
     text-align: center; }
@@ -2425,24 +2518,21 @@ body.front .main-wrapper .block-views {
     .region-footer .menu-other-links {
       padding-left: 15px;
       padding-right: 10px; }
-
   .view-red-circles .views-row-2 {
     left: auto;
     right: 5px; }
-
   .view-photo-circles .views-row-1 {
     top: 300px; }
-
   body.node-type-page.not-front #block-system-main,
   body.node-type-webform #block-system-main,
   body.node-type-about-us #block-system-main {
     margin-right: 0; } }
+
 @media screen and (max-width: 800px) {
   .page-title {
     text-align: center; }
     .page-title h1 {
       display: inline-block; }
-
   .footer .menu-about-us,
   .footer .menu-programs-services,
   .footer .menu-other-links {
@@ -2463,7 +2553,6 @@ body.front .main-wrapper .block-views {
     top: 108px; }
   .footer > div > div > div {
     min-height: 150px; }
-
   form#webform-client-form-71 .webform-component-textfield input,
   form#webform-client-form-71 .webform-component-email input {
     width: 95%; }
@@ -2471,7 +2560,6 @@ body.front .main-wrapper .block-views {
     width: 95%;
     -webkit-box-sizing: content-box;
     box-sizing: content-box; }
-
   .view-staff-content .views-field-field-image {
     margin-right: 28px; }
   .view-staff-content .body-container {
@@ -2479,7 +2567,6 @@ body.front .main-wrapper .block-views {
     .view-staff-content .body-container:before {
       border-width: 28px 28px 28px 0;
       left: 250px; }
-
   body.node-type-page.not-front .page-title,
   body.node-type-webform .page-title,
   body.node-type-about-us .page-title {
@@ -2494,12 +2581,10 @@ body.front .main-wrapper .block-views {
     border-color: transparent transparent #222f7e transparent;
     position: static;
     margin: 0 auto; }
-
   .block.volunteer-apply-now {
     left: auto;
     right: 0;
     top: -75px; }
-
   .view-news .views-field-field-image,
   .view-news-page .views-field-field-image,
   .view-events .views-field-field-image,
@@ -2515,7 +2600,6 @@ body.front .main-wrapper .block-views {
   .view-archived-newsletters .views-field-the-rest:before {
     border-width: 28px 28px 28px 0;
     left: 172px; }
-
   .view-news-page .views-field-field-image img,
   .view-event .views-field-field-image img {
     width: 156px;
@@ -2527,10 +2611,8 @@ body.front .main-wrapper .block-views {
   .view-event .views-field-the-rest {
     top: 0;
     margin-bottom: 0; }
-
   .view-photo-gallery .views-field-field-photos ul {
     text-align: center; }
-
   body.i-am-rebound .page-wrapper .page-title {
     padding: 0; }
   body.i-am-rebound .page-wrapper #block-system-main {
@@ -2543,19 +2625,15 @@ body.front .main-wrapper .block-views {
       top: 87px;
       left: 50%;
       margin-left: -28px; }
-
   body.contact-us .page-title:after {
     display: none; }
   body.contact-us .page-title h1 {
     margin-bottom: 0; }
-
   .view-archived-newsletters .views-row {
     margin-right: 0; }
-
   .view-primary-circles .views-field-field-link,
   .view-red-circles .views-field-field-link {
     opacity: 1; }
-
   .view-secondary-circles .views-row .views-field-nothing {
     opacity: 1;
     left: 0; }
@@ -2565,15 +2643,13 @@ body.front .main-wrapper .block-views {
     margin-top: -2000px;
     left: -2000px;
     right: auto; }
-
   .view-photo-circles .views-field-field-image img {
     opacity: 1; }
-
   #block-block-13 {
     display: none; }
-
   body.calendar .region-content #block-system-main .button {
     display: none; } }
+
 @media screen and (max-width: 680px) {
   .footer {
     padding-top: 100px; }
@@ -2613,10 +2689,8 @@ body.front .main-wrapper .block-views {
       left: 0;
       width: 100%;
       text-align: center; }
-
   body.front .main-wrapper {
     height: auto; }
-
   .view-primary-circles .views-row,
   .view-red-circles .views-row,
   .view-secondary-circles .views-row {
@@ -2628,7 +2702,6 @@ body.front .main-wrapper .block-views {
     .view-red-circles .views-row > div,
     .view-secondary-circles .views-row > div {
       position: relative; }
-
   .view-secondary-circles .views-row {
     padding: 0; }
     .view-secondary-circles .views-row > div {
@@ -2637,16 +2710,13 @@ body.front .main-wrapper .block-views {
     left: -20px;
     right: -20px;
     width: auto; }
-
   .view-primary-circles.view-display-id-block_1 .views-row-2,
   .view-primary-circles.view-display-id-block_2 .views-row,
   .view-primary-circles.view-display-id-block_3 .views-row {
     float: right; }
-
   #block-views-photo-circles-block,
   .region-content .circle {
     display: none; }
-
   .view-staff-content .views-field-field-image {
     float: none;
     margin: 0 auto; }
@@ -2658,7 +2728,6 @@ body.front .main-wrapper .block-views {
       margin: 0 auto;
       border-width: 0 28px 28px 28px;
       border-color: transparent transparent #222f7e transparent; }
-
   .view-annual-reports .views-field-field-image img {
     float: none;
     margin: 0 auto; }
@@ -2670,7 +2739,6 @@ body.front .main-wrapper .block-views {
       margin: 0 auto;
       border-width: 0 28px 28px 28px;
       border-color: transparent transparent #222f7e transparent; }
-
   .view-program .views-field-title {
     float: none;
     width: auto;
@@ -2692,16 +2760,13 @@ body.front .main-wrapper .block-views {
     border-color: transparent transparent #222f7e transparent; }
   .view-program .views-field-field-youtube-video-id {
     margin-top: 10px; }
-
   body.node-type-page.volunteer .region-content {
     padding-top: 60px; }
-
   .block.volunteer-apply-now {
     position: static;
     text-align: center;
     margin-top: -100px;
     margin-bottom: 40px; }
-
   .view-news .views-field-field-image,
   .view-news-page .views-field-field-image,
   .view-events .views-field-field-image,
@@ -2721,7 +2786,6 @@ body.front .main-wrapper .block-views {
     border-color: transparent transparent #222f7e transparent;
     width: 0;
     height: 0; }
-
   .view-photo-galleries .views-field-field-photos img {
     float: none;
     margin: 0 auto; }
@@ -2733,7 +2797,6 @@ body.front .main-wrapper .block-views {
       margin: 0 auto;
       border-width: 0 28px 28px 28px;
       border-color: transparent transparent #222f7e transparent; }
-
   .view-i-am-rebound .views-field-field-image img {
     float: none;
     margin: 0 auto 1em auto; }
@@ -2753,7 +2816,6 @@ body.front .main-wrapper .block-views {
     .view-i-am-rebound .views-field-title h2 {
       display: inline-block;
       border-bottom: 4px solid white; }
-
   .view-secondary-circles .views-field-field-image,
   .view-secondary-circles.view-display-id-block .views-field-field-image {
     float: none;
@@ -2768,21 +2830,18 @@ body.front .main-wrapper .block-views {
   .view-secondary-circles .views-field-nothing > div,
   .view-secondary-circles.view-display-id-block .views-field-nothing > div {
     padding: 20px; }
-
   .view-programs-row:hover .views-field-title {
     display: inline-block; }
   .view-programs-row:hover .views-field-nothing {
     display: none; }
   .view-programs-row:hover .views-field-field-image {
     display: block; }
-
   .view-about-us-row:hover {
     background-color: transparent; }
     .view-about-us-row:hover .views-field-title {
       display: inline-block; }
     .view-about-us-row:hover .views-field-body {
       display: none; }
-
   .view-staff .page-title {
     text-align: center; }
   .view-staff h1 {
@@ -2790,16 +2849,15 @@ body.front .main-wrapper .block-views {
     margin-bottom: 0; }
   .view-staff .view-content {
     display: none; } }
+
 @media screen and (max-width: 480px) {
   .view-events .view-header {
     text-align: center; }
     .view-events .view-header .button {
       float: none;
       margin-bottom: 20px; }
-
   body.page-events .page-title {
     float: none; }
-
   body.front #block-block-12 > .content > div {
     width: 280px;
     height: 280px;
@@ -2807,20 +2865,18 @@ body.front .main-wrapper .block-views {
     margin-top: -160px;
     margin-left: -160px;
     font-size: 1.8em; }
-
   #gmap {
     height: 320px; }
-
   body.calendar .main-wrapper > div > div,
   body.calendar .main-wrapper #block-system-main {
     padding-left: 0;
     padding-right: 0; }
-
   ul.donors,
   .two-columns {
     -webkit-column-count: auto;
     -moz-column-count: auto;
     column-count: auto; } }
+
 @media screen and (max-width: 350px) {
   .footer .address,
   .footer .phone,
@@ -2834,14 +2890,13 @@ body.front .main-wrapper .block-views {
     height: auto; }
   .footer .logos a {
     margin: 0 2px; }
-
   body.i-am-rebound .page-wrapper .page-title h1,
   body.i-am-rebound .view-i-am-rebound .views-field-title h2 {
     font-size: 2.25em; }
-
   .view-primary-circles .views-row,
   .view-secondary-circles .views-row {
     float: none !important; } }
+
 @media screen and (max-width: 360px) and (max-height: 540px) {
   .navigation {
     height: 80px; }
@@ -2856,23 +2911,23 @@ body.front .main-wrapper .block-views {
       top: 80px; }
     .navigation .btn-menu {
       height: 80px; }
-
   body.not-front .page-wrapper {
     padding-top: 80px; }
-
   #block-system-main-menu .content ul a {
     height: 46px; }
-
   .navigation .social {
     height: 200px;
     padding-top: 6px; } }
+
 @media screen and (max-width: 360px) and (max-height: 450px) {
   #block-system-main-menu .content ul a {
     height: 35px;
     font-size: 1em; }
-
   .navigation .social {
     padding-top: 5px; }
     .navigation .social .content a {
       width: 30px;
       height: 30px; } }
+
+.d-flex {
+  display: flex; }
