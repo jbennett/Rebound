@@ -1,0 +1,15 @@
+.sq-form-container {
+  border: 1px solid red;
+}
+
+.sq-input {
+  border: 1px solid #29abe2;
+}
+
+.sq-input-container+.sq-input-container {
+  margin-top: 1rem;
+}
+
+.sq-input--error {
+  border-color: red;
+}

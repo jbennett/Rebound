@@ -1,0 +1,40 @@
+<?php
+
+function webform_square_field_webform_component_info() {
+  $components = array();
+  $components['square_field'] = array(
+    'label' => t('Square Payment Field'),
+    'description' => t('Allow the form to process payments via Sqaure'),
+    'features' => array(
+      'csv' => TRUE,
+      'email' => TRUE,
+      'email_address' => FALSE,
+      'email_name' => FALSE,
+      'required' => FALSE,
+      'title_display' => FALSE,
+      'title_inline' => FALSE,
+      'conditional' => FALSE,
+      'group' => FALSE,
+      'spam_analysis' => FALSE,
+      'attachment' => FALSE,
+    ),
+    'file' => 'components/square.inc'
+  );
+
+  return $components;
+}
+
+function webform_square_field_form_alter(&$form, &$form_state, $form_id) {
+  // if (substr($form_id, 0, 20) !== 'webform_client_form_') { return; }
+  // $has_payment = false;
+  // foreach($form['submitted'] as $field) {
+  //   if ($field['#is_payment']) { $has_payment = true; }
+  // }
+  // if (!$has_payment) { return; }
+
+  // $form['actions']['submit']['#attributes']['onclick'] = "requestCardNonce(event)";
+  // change tactic, attach from JS side
+
+
+  // dpm($form_id);
+}

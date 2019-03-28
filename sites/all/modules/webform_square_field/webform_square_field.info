@@ -1,0 +1,5 @@
+name = Square Payments
+description = Add payments to webforms via Square
+core = 7.x
+package = Webform
+dependencies[] = ctools 
