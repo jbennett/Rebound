@@ -1,399 +1,363 @@
 input[type=text],
 input[type=email],
 input[type=password],
-textarea
-{
-    border: 1px solid $blue-light;
-    border-radius: 2px;
-    line-height: 2;
-    padding: 0 5px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.3) inset;
-}
-textarea
-{
-    line-height: 1.5;
+textarea {
+  border: 1px solid $blue-light;
+  border-radius: 2px;
+  line-height: 2;
+  padding: 0 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3) inset;
 }
 
-label.option
-{
-    font-weight: inherit;
+textarea {
+  line-height: 1.5;
 }
 
-.form-item
-{
-    margin-top: 0;
-}
-.form-actions
-{
-    margin-bottom: 0;
-    clear: both;
-    
-    .form-submit
-    {
-        display: inline-block;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1.5em;
-        line-height: 46px;
-        padding: 0 46px;
-        color: white;
-        background: $blue-medium;
-        border: 0;
-        border-bottom: 2px solid #13578d;
-        border-radius: 4px;
-        cursor: pointer;
-        -webkit-appearance: none;
-    }
-}
-.form-required
-{
-    display: none;
+label.option {
+  font-weight: inherit;
 }
 
-.form-type-checkbox
-{
-    input
-    {
-        float: left;
-    }
-    label
-    {
-        padding-left: 20px;
-        display: block;
-    }
+.form-item {
+  margin-top: 0;
 }
 
-form#webform-client-form-70 /*newsletter signup */
-{
+.form-actions {
+  margin-bottom: 0;
+  clear: both;
+
+  .form-submit {
+    display: inline-block;
+    text-transform: uppercase;
     font-weight: bold;
-    
-    .webform-component--email
-    {
-        label
-        {
-            display: none;
-        }
-        input
-        {
-            width: 95%;
-        }
-    }
-    
-    .webform-component--lists
-    {
-        .form-item
-        {
-            text-transform: uppercase;
-        }
-    }
-    
-    .form-checkboxes
-    {
-        margin-left: 50px;
-    }
-    
-    .form-actions
-    {
-        text-align: center;
-        margin-bottom: 1.5em;
-    }
+    font-size: 1.5em;
+    line-height: 46px;
+    padding: 0 46px;
+    color: white;
+    background: $blue-medium;
+    border: 0;
+    border-bottom: 2px solid #13578d;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
 }
 
-form#webform-client-form-71 /* volunteer application */
-{
-    label,
-    h2
-    {
-        text-transform: uppercase;
+.form-required {
+  display: none;
+}
+
+.form-type-checkbox {
+  input {
+    float: left;
+  }
+
+  label {
+    padding-left: 20px;
+    display: block;
+  }
+}
+
+form#webform-client-form-70
+
+/*newsletter signup */
+  {
+  font-weight: bold;
+
+  .webform-component--email {
+    label {
+      display: none;
     }
-    
-    .webform-component-textfield,
-    .webform-component-email
-    {
-        input
-        {
-            width: 380px;
-        }
+
+    input {
+      width: 95%;
     }
-    textarea
-    {
-        width: 380px;
-        -webkit-box-sizing: content-box;
-        box-sizing: content-box;
+  }
+
+  .webform-component--lists {
+    .form-item {
+      text-transform: uppercase;
     }
-    
-    .webform-component-markup
-    {
-        margin-bottom: 0;
+  }
+
+  .form-checkboxes {
+    margin-left: 50px;
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+}
+
+form#webform-client-form-71
+
+/* volunteer application */
+  {
+
+  label,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .webform-component-textfield,
+  .webform-component-email {
+    input {
+      width: 380px;
     }
-    
-    .webform-component--last-name,
-    .webform-component--first-name,
-    .webform-component--city,
-    .webform-component--postal-code,
-    .webform-component--province,
-    .webform-component--business-city,
-    .webform-component--business-postal-code,
-    .webform-component--business-province
-    {
-        label
-        {
-            position: absolute;
-            left: -99999px;
-        }
+  }
+
+  textarea {
+    width: 380px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+
+  .webform-component-markup {
+    margin-bottom: 0;
+  }
+
+  .webform-component--last-name,
+  .webform-component--first-name,
+  .webform-component--city,
+  .webform-component--postal-code,
+  .webform-component--province,
+  .webform-component--business-city,
+  .webform-component--business-postal-code,
+  .webform-component--business-province {
+    label {
+      position: absolute;
+      left: -99999px;
     }
-    .webform-component--last-name,
-    .webform-component--first-name
-    {
-        float: left;
-        margin-bottom: 4px;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 4px;
-        }
+  }
+
+  .webform-component--last-name,
+  .webform-component--first-name {
+    float: left;
+    margin-bottom: 4px;
+
+    input {
+      width: 176px;
+      margin-right: 4px;
     }
-    .webform-component--occupation
-    {
-        float: left;
-        clear: left;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 4px;
-        }
+  }
+
+  .webform-component--occupation {
+    float: left;
+    clear: left;
+
+    input {
+      width: 176px;
+      margin-right: 4px;
     }
-    .webform-component--date-of-birth
-    {
-        float: left;
-        
-        .form-item-submitted-date-of-birth-year input
-        {
-            line-height: 1.5;
-        }
-        input.webform-calendar
-        {
-            margin-left: -4px;
-            vertical-align: middle;
-        }
+  }
+
+  .webform-component--date-of-birth {
+    float: left;
+
+    .form-item-submitted-date-of-birth-year input {
+      line-height: 1.5;
     }
-    .webform-component--street
-    {
-        margin-bottom: 8px;
-        clear: both;
+
+    input.webform-calendar {
+      margin-left: -4px;
+      vertical-align: middle;
     }
-    .webform-component--city
-    {
-        float: left;
-        margin-bottom: 8px;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 8px;
-        }
+  }
+
+  .webform-component--street {
+    margin-bottom: 8px;
+    clear: both;
+  }
+
+  .webform-component--city {
+    float: left;
+    margin-bottom: 8px;
+
+    input {
+      width: 176px;
+      margin-right: 8px;
     }
-    .webform-component--province
-    {
-        float: left;
-        margin-bottom: 8px;
-        
-        input
-        {
-            width: 40px;
-            margin-right: 8px;
-        }
+  }
+
+  .webform-component--province {
+    float: left;
+    margin-bottom: 8px;
+
+    input {
+      width: 40px;
+      margin-right: 8px;
     }
-    .webform-component--postal-code
-    {
-        float: left;
-        
-        input
-        {
-            width: 125px;
-        }
+  }
+
+  .webform-component--postal-code {
+    float: left;
+
+    input {
+      width: 125px;
     }
-    .webform-component--phone,
-    .webform-component--email
-    {
-        float: left;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 12px;
-        }
+  }
+
+  .webform-component--phone,
+  .webform-component--email {
+    float: left;
+
+    input {
+      width: 176px;
+      margin-right: 12px;
     }
-    .webform-component--how-do-you-prefer-to-be-contacted
-    {
-        & > label
-        {
-            display: inline-block;
-            width: 160px;
-            margin-right: 34px;
-            vertical-align: middle;
-        }
-        .form-checkboxes
-        {
-            display: inline-block;
-            vertical-align: middle;
-            
-            .form-item
-            {
-                display: inline-block;
-                margin: 0;
-            }
-            
-            label
-            {
-                padding-right: 30px;
-            }
-        }
+  }
+
+  .webform-component--how-do-you-prefer-to-be-contacted {
+    &>label {
+      display: inline-block;
+      width: 160px;
+      margin-right: 34px;
+      vertical-align: middle;
     }
-    .webform-component--business-address
-    {
-        margin-bottom: 8px;
-        clear: both;
+
+    .form-checkboxes {
+      display: inline-block;
+      vertical-align: middle;
+
+      .form-item {
+        display: inline-block;
+        margin: 0;
+      }
+
+      label {
+        padding-right: 30px;
+      }
     }
-    .webform-component--business-city
-    {
-        float: left;
-        margin-bottom: 8px;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 8px;
-        }
+  }
+
+  .webform-component--business-address {
+    margin-bottom: 8px;
+    clear: both;
+  }
+
+  .webform-component--business-city {
+    float: left;
+    margin-bottom: 8px;
+
+    input {
+      width: 176px;
+      margin-right: 8px;
     }
-    .webform-component--business-province
-    {
-        float: left;
-        margin-bottom: 8px;
-        
-        input
-        {
-            width: 40px;
-            margin-right: 8px;
-        }
+  }
+
+  .webform-component--business-province {
+    float: left;
+    margin-bottom: 8px;
+
+    input {
+      width: 40px;
+      margin-right: 8px;
     }
-    .webform-component--business-postal-code
-    {
-        float: left;
-        
-        input
-        {
-            width: 125px;
-        }
+  }
+
+  .webform-component--business-postal-code {
+    float: left;
+
+    input {
+      width: 125px;
     }
-    .webform-component--can-we-call-you-at-work
-    {
-        & > label
-        {
-            display: inline-block;
-            margin-right: 24px;
-            vertical-align: middle;
-        }
-        .form-radios
-        {
-            display: inline-block;
-            vertical-align: middle;
-            
-            .form-item
-            {
-                display: inline-block;
-                margin: 0;
-            }
-            
-            label
-            {
-                padding-right: 20px;
-                vertical-align: middle;
-            }
-        }
+  }
+
+  .webform-component--can-we-call-you-at-work {
+    &>label {
+      display: inline-block;
+      margin-right: 24px;
+      vertical-align: middle;
     }
-    .webform-component--areas
-    {
-        .form-checkboxes
-        {
-            margin-left: 30px;
-        }
+
+    .form-radios {
+      display: inline-block;
+      vertical-align: middle;
+
+      .form-item {
+        display: inline-block;
+        margin: 0;
+      }
+
+      label {
+        padding-right: 20px;
+        vertical-align: middle;
+      }
     }
-    .webform-component--reference-name,
-    .webform-component--reference-phone,
-    .webform-component--reference-name-2,
-    .webform-component--reference-phone-2,
-    .webform-component--emergency-contact-name,
-    .webform-component--emergency-contact-phone,
-    .webform-component--doctor,
-    .webform-component--doctor-phone
-    {
-        float: left;
-        
-        input
-        {
-            width: 176px;
-            margin-right: 12px;
-        }
+  }
+
+  .webform-component--areas {
+    .form-checkboxes {
+      margin-left: 30px;
     }
-    .webform-component--relationship,
-    .webform-component--medical-conditions,
-    .webform-component--where-did-you-hear,
-    .webform-component--phone,
-    .webform-component--business-phone,
-    .webform-component--how-do-you-prefer-to-be-contacted
-    {
-        clear: left;
+  }
+
+  .webform-component--reference-name,
+  .webform-component--reference-phone,
+  .webform-component--reference-name-2,
+  .webform-component--reference-phone-2,
+  .webform-component--emergency-contact-name,
+  .webform-component--emergency-contact-phone,
+  .webform-component--doctor,
+  .webform-component--doctor-phone {
+    float: left;
+
+    input {
+      width: 176px;
+      margin-right: 12px;
     }
-    .webform-component--available
-    {
-        .form-checkboxes
-        {
-            margin-left: 30px;
-            
-            .form-item
-            {
-                display: inline-block;
-                vertical-align: top;
-                width: 160px;
-            }
-        }
+  }
+
+  .webform-component--relationship,
+  .webform-component--medical-conditions,
+  .webform-component--where-did-you-hear,
+  .webform-component--phone,
+  .webform-component--business-phone,
+  .webform-component--how-do-you-prefer-to-be-contacted {
+    clear: left;
+  }
+
+  .webform-component--available {
+    .form-checkboxes {
+      margin-left: 30px;
+
+      .form-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 160px;
+      }
     }
-    .webform-component--seminars-during-these-times
-    {
-        margin-bottom: 8px;
-        
-        .form-checkboxes
-        {
-            margin-left: 30px;
-            
-            .form-item
-            {
-                display: inline-block;
-                vertical-align: top;
-                margin-right: 30px;
-            }
-        }
+  }
+
+  .webform-component--seminars-during-these-times {
+    margin-bottom: 8px;
+
+    .form-checkboxes {
+      margin-left: 30px;
+
+      .form-item {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 30px;
+      }
     }
-    .webform-component--seminars-other
-    {
-        label
-        {
-            font-weight: normal;
-            padding-left: 30px;
-            display: inline-block;
-            margin-right: 8px;
-        }
-        input
-        {
-            display: inline-block;
-            width: 176px;
-        }
+  }
+
+  .webform-component--seminars-other {
+    label {
+      font-weight: normal;
+      padding-left: 30px;
+      display: inline-block;
+      margin-right: 8px;
     }
-    .webform-component--acknowledge
-    {
-        font-weight: bold;
+
+    input {
+      display: inline-block;
+      width: 176px;
     }
+  }
+
+  .webform-component--acknowledge {
+    font-weight: bold;
+  }
 }
