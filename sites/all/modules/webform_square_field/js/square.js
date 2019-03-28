@@ -1,5 +1,6 @@
-function webformSquareBootstrap(appId, formNid) {
+function webformSquareBootstrap(appId, formNid, price) {
   var formId = 'webform-client-form-' + formNid;
+
   var paymentForm = new SqPaymentForm({
     // Initialize the payment form elements
     applicationId: appId,
@@ -36,10 +37,12 @@ function webformSquareBootstrap(appId, formNid) {
     },
     postalCode: {
       elementId: 'sq-postal-code-' + formNid,
-      placeholder: '12345'
+      placeholder: '1A1 A1A'
     },
     callbacks: {
       createPaymentRequest: function () {
+        var subtotal = getSubtotal();
+        debugger;
         return {
           requestShippingAddress: false,
           requestBillingInfo: true,
@@ -47,13 +50,13 @@ function webformSquareBootstrap(appId, formNid) {
           countryCode: "CA",
           total: {
             label: "Sarnia-Lambton Rebound",
-            amount: "100",
+            amount: subtotal,
             pending: false
           },
           lineItems: [
             {
               label: "Subtotal",
-              amount: "100",
+              amount: subtotal,
               pending: false
             }
           ]
@@ -61,20 +64,18 @@ function webformSquareBootstrap(appId, formNid) {
       },
       cardNonceResponseReceived: function (errors, nonce, cardData) {
         if (errors) {
-          document.getElementById('error-' + formId).innerHTML = '';
+          document.getElementById('error-' + formNid).innerHTML = '';
           errors.forEach(function (error) {
-            document.getElementById('error-' + formId).innerHTML += error.message + '<br>';
+            document.getElementById('error-' + formNid).innerHTML += error.message + '<br>';
           });
 
           return;
         }
         document.getElementById('card-nonce-' + formNid).value = nonce;
-        // document.getElementById(formId).submit();
-
+        document.getElementById(formId).submit();
       },
       unsupportedBrowserDetected: function () { },
       inputEventReceived: function (inputEvent) {
-        console.log(inputEvent);
         switch (inputEvent.eventType) {
           case 'focusClassAdded':
             /* HANDLE AS DESIRED */
@@ -83,11 +84,11 @@ function webformSquareBootstrap(appId, formNid) {
             /* HANDLE AS DESIRED */
             break;
           case 'errorClassAdded':
-            document.getElementById("error").innerHTML = "Please fix card information errors before continuing.";
+            document.getElementById('error-' + formNid).innerHTML = "Please fix card information errors before continuing.";
             break;
           case 'errorClassRemoved':
             /* HANDLE AS DESIRED */
-            document.getElementById("error").style.display = "none";
+            document.getElementById('error-' + formNid).style.display = "none";
             break;
           case 'cardBrandChanged':
             /* HANDLE AS DESIRED */
@@ -104,11 +105,30 @@ function webformSquareBootstrap(appId, formNid) {
   if (SqPaymentForm.isSupportedBrowser()) {
     paymentForm.build();
     paymentForm.recalculateSize();
-    document.querySelector('#' + formId + ' input[type=submit]').onclick = (function (event) { requestCardNonce(event, paymentForm); });
-  }
-}
+    document.querySelector('#' + formId + ' input[type=submit]').onclick = function (event) {
+      event.preventDefault();
+      paymentForm.requestCardNonce();
+    };
 
-function requestCardNonce(event, form) {
-  event.preventDefault();
-  form.requestCardNonce();
+    var quantityField = document.querySelector('#sq-quantity-' + formNid)
+    quantityField.onchange = udpateSubtotalText;
+    quantityField.oninput = udpateSubtotalText;
+    quantityField.onkeyup = udpateSubtotalText;
+  }
+
+  function udpateSubtotalText(event) {
+    document.getElementById('sq-card-price-' + formNid).innerHTML = 'Your total is: $' + getSubtotal() + '.';
+  }
+
+  function getSubtotal() {
+    var quantity = getQuantity();
+    var subtotal = parseFloat(price) * quantity;
+
+    return subtotal;
+  }
+
+  function getQuantity() {
+    var element = document.querySelector('#sq-quantity-' + formNid);
+    return parseInt(element.value, 10);
+  }
 }

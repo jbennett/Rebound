@@ -130,7 +130,8 @@ body.node-type-about-us {
 }
 
 body.page-about-us,
-body.programs-and-services {
+body.programs-and-services,
+body.node-type-fundraising-page {
 
   .page-wrapper {
     background: $blue-very-very-light;
@@ -169,7 +170,8 @@ body.not-front {
   }
 }
 
-body.node-type-programs-services .main-wrapper {
+body.node-type-programs-services .main-wrapper,
+body.node-type-fundraising-page .main-wrapper {
   padding: 20px 0;
 
   &>div>div {

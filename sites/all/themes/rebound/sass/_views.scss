@@ -229,7 +229,8 @@
   }
 }
 
-.view-program {
+.view-program,
+body.node-type-fundraising-page .main-wrapper {
   .views-field-title {
     float: left;
     width: 200px;
@@ -324,7 +325,8 @@
     }
   }
 
-  .views-field-body {
+  .views-field-body,
+  .node .main-content {
     position: relative;
 
     &:before {
@@ -438,6 +440,11 @@
       border: 2px solid white;
     }
   }
+}
+
+body.node-type-fundraising-page .main-wrapper .node .main-content:before {
+  left: auto;
+  right: 100%;
 }
 
 .view-news,

@@ -85,11 +85,9 @@
   <?php print $user_picture; ?>
 
   <div class="d-flex">
-    <div class="">
+    <div class="views-field-title">
       <?php print render($title_prefix); ?>
-        <?php if (!$page): ?>
-          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <?php endif; ?>
+        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php print render($title_suffix); ?>
 
       <?php if ($display_submitted): ?>
@@ -99,7 +97,7 @@
       <?php endif; ?>
     </div>
 
-    <div class="">
+    <div class="main-content flex-auto">
       <div class="content"<?php print $content_attributes; ?>>
         <?php
           // We hide the comments and links now so that we can render them later.
