@@ -35,16 +35,6 @@ function _webform_edit_square_field($component) {
     '#required' => TRUE,
     '#maxlength' => 255,
   );
-  // $form['extra']['multiple'] = array(
-  //   '#type' => 'select',
-  //   '#title' => t('Allow Multiple'),
-  //   '#description' => t('Allow the user to purchase more than one item.'),
-  //   '#default_value' => $component['extra']['multiple'],
-  //   '#options' => array(
-  //     0 => t('No'),
-  //     1 => t('Yes'),
-  //   ),
-  // );
   $form['extra']['choices'] = array(
     '#type' => 'textfield',
     '#title' => t('Allow Options'),
@@ -112,15 +102,15 @@ function _webform_render_square_field_view($component, $value = NULL, $filter = 
     '#weight' => $component['weight'],
     '#attributes' => array('class' => array('sq-form-container')),
   );
+
   if ($component['extra']['choices'] == 1) {
-    $element['quantity'] = array(
+    $element['quantity'][] = array(
       '#type' => 'textfield',
-      '#title' => t('Quantity'),
-      '#value' => $value['quantity'],
+      '#title' => t("Quantity"),
+      '#value' => $value['quantity'][0],
       '#disabled' => true,
     );
   } else {
-    $element['quantity'] = array();
     for ($i = 1; $i <= $component['extra']['choices']; $i++) {
       $element['quantity'][] = array(
         '#type' => 'textfield',
@@ -130,6 +120,7 @@ function _webform_render_square_field_view($component, $value = NULL, $filter = 
       );
     }
   }
+  
 
   $element['total'] = array(
     '#type' => 'textfield',
@@ -180,7 +171,8 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
 
   if ($component['extra']['choices'] == 1) {
     $quantity = 1;
-    $element['quantity'] = array(
+    $element['quantity'] = array();
+    $element['quantity'][] = array(
       '#type' => 'textfield',
       '#title' => t('Quantity'),
       '#attributes' => array(
@@ -236,14 +228,13 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
 
 
 function _webform_submit_square_field($component, $value) {
-  if (is_null($value['sq_transaction_id'])) { return $value; }
-  
-  if ($component['extra']['choices'] == 1) {
-    $quantity = $value['quantity'];
-  } else {
-    $quantity = array_sum($value['quantity']);
-    $value['quantity_array'] = json_encode($value['quantity']);
+  $value['quantity_array'] = json_encode($value['quantity']);
+
+  if (isset($value['sq_transaction_id'])) { 
+    return $value;
   }
+  
+  $quantity = array_sum($value['quantity']);
   $amount = $component['extra']['price'] * $quantity;
 
   if (is_null($value['sq_guid'])) {
@@ -269,8 +260,8 @@ function _webform_submit_square_field($component, $value) {
   );
   
   try {
-    // $chargeResult = $api->charge($component['extra']['sq_location_id'], $requestBody);
-    // $value['sq_transaction_id'] = $chargeResult->getTransaction()->getId();
+    $chargeResult = $api->charge($component['extra']['sq_location_id'], $requestBody);
+    $value['sq_transaction_id'] = $chargeResult->getTransaction()->getId();
   } catch(Exception $e) {
     dpm($e);
   }
@@ -279,18 +270,32 @@ function _webform_submit_square_field($component, $value) {
 }
 
 function _webform_display_square_field($component, $value, $format = 'html') {
-  $value = _square_decode_values($values);
   $element = array(
     '#weight' => $component['weight'],
   );
   
-  $element['quantity'] = array(
-    '#title' => 'Quantity',
-    '#theme' => 'webform_display_square_field',
-    '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
-    '#format' => $format,
-    '#value' => _square_get_quantity($value),
-  );
+  if ($component['extra']['choices'] == 1) {
+    $element['quantity'] = array(
+      '#title' => 'Quantity',
+      '#theme' => 'webform_display_square_field',
+      '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
+      '#format' => $format,
+      '#value' => _square_get_quantity($value),
+    );
+  } else {
+    $quantity = 0;
+    $quantities = json_decode($value['quantity_array']);
+    $element['quantity'] = array();
+    for ($i = 1; $i <= $component['extra']['choices']; $i++) {
+      $element['quantity'][] = array(
+        '#title' => "{$component['extra']['choice_label']} #{$i}",
+        '#theme' => 'webform_display_square_field',
+        '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
+        '#format' => $format,
+        '#value' => $quantities[$i - 1],
+      );
+    }
+  }
   $element['sq_nonce'] = array(
     '#title' => 'sq_nonce',
     '#theme' => 'webform_display_square_field',
@@ -309,28 +314,8 @@ function _webform_display_square_field($component, $value, $format = 'html') {
   return $element;
 }
 
-function _square_decode_values($values) {
-  if (isset($values['quantity_array']) && is_string($values['quantity_array'])) {
-    $values['quantity_array'] = json_decode($values['quantity_array']);
-  }
-
-  return $values;
-}
-
-function _square_encode_values($values) {
-  if (isset($values['quantity_array']) && is_array($values['quantity_array'])) {
-    $values['quantity_array'] = json_encode($values['quantity_array']);
-  }
-
-  return $values;
-}
-
 function _square_get_quantity($values) {
-  if (isset($value['quantity_array'])) {
-    return array_sum($value['quantity_array']);
-  } else {
-    return array_sum($value['quantity']);
-  }
+  return array_sum(json_decode($values['quantity_array']));
 }
 
 function theme_webform_display_square_field($variables) {
@@ -340,7 +325,6 @@ function theme_webform_display_square_field($variables) {
 }
 
 function _webform_table_square_field($component, $value) {
-  dpm($value);
   return check_plain(empty($value[0]) ? '' : $value[0]);
 }
 
