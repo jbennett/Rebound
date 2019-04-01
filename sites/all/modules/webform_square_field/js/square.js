@@ -42,7 +42,6 @@ function webformSquareBootstrap(appId, formNid, price) {
     callbacks: {
       createPaymentRequest: function () {
         var subtotal = getSubtotal();
-        debugger;
         return {
           requestShippingAddress: false,
           requestBillingInfo: true,
@@ -110,10 +109,12 @@ function webformSquareBootstrap(appId, formNid, price) {
       paymentForm.requestCardNonce();
     };
 
-    var quantityField = document.querySelector('#sq-quantity-' + formNid)
-    quantityField.onchange = udpateSubtotalText;
-    quantityField.oninput = udpateSubtotalText;
-    quantityField.onkeyup = udpateSubtotalText;
+    var $quantityField = jQuery('.sq-quantity-select');
+    console.log($quantityField);
+    console.log($quantityField.length);
+    $quantityField.on('change', udpateSubtotalText);
+    $quantityField.on('input', udpateSubtotalText);
+    $quantityField.on('keyup', udpateSubtotalText);
   }
 
   function udpateSubtotalText(event) {
@@ -128,7 +129,9 @@ function webformSquareBootstrap(appId, formNid, price) {
   }
 
   function getQuantity() {
-    var element = document.querySelector('#sq-quantity-' + formNid);
-    return parseInt(element.value, 10);
+    var $quantityField = jQuery('.sq-quantity-select');
+    return $quantityField.toArray().reduce(function (acc, current) {
+      return acc + parseInt(current.value, 10);
+    }, 0);
   }
 }

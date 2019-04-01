@@ -35,15 +35,27 @@ function _webform_edit_square_field($component) {
     '#required' => TRUE,
     '#maxlength' => 255,
   );
-  $form['extra']['multiple'] = array(
-    '#type' => 'select',
-    '#title' => t('Allow Multiple'),
-    '#description' => t('Allow the user to purchase more than one item.'),
-    '#default_value' => $component['extra']['multiple'],
-    '#options' => array(
-      0 => t('No'),
-      1 => t('Yes'),
-    ),
+  // $form['extra']['multiple'] = array(
+  //   '#type' => 'select',
+  //   '#title' => t('Allow Multiple'),
+  //   '#description' => t('Allow the user to purchase more than one item.'),
+  //   '#default_value' => $component['extra']['multiple'],
+  //   '#options' => array(
+  //     0 => t('No'),
+  //     1 => t('Yes'),
+  //   ),
+  // );
+  $form['extra']['choices'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Allow Options'),
+    '#description' => t('Number of options the user has to select between.'),
+    '#default_value' => $component['extra']['choices'] || 1,
+  );
+  $form['extra']['choice_label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Choices'),
+    '#description' => t('Label to use options, ie House #1.'),
+    '#default_value' => $component['extra']['choice_label'],
   );
   $form['extra']['sq_app_id'] = array(
     '#type' => 'textfield',
@@ -72,7 +84,18 @@ function _webform_render_square_field($component, $value = NULL, $filter = TRUE)
 }
 
 function _webform_render_square_field_view($component, $value = NULL, $filter = TRUE) {
-  $quantity = isset($value['quantity']) ? $value['quantity'] : 1;
+  if ($component['extra']['choices'] == 1) {
+    $quantity = isset($value['quantity']) ? $value['quantity'] : 1;
+  } else {
+    if (isset($value['quantity'])) {
+      $value['quantity'] = json_decode($value['quantity_array']);
+    } else {
+      $value['quantity'] = array();
+    }
+
+    $quantity = array_sum($value['quantity']);
+  }
+  
   $price = $component['extra']['price'];
   $subtotal = $price * $quantity;
 
@@ -89,14 +112,25 @@ function _webform_render_square_field_view($component, $value = NULL, $filter = 
     '#weight' => $component['weight'],
     '#attributes' => array('class' => array('sq-form-container')),
   );
-  if (!!$component['extra']['multiple']) {
+  if ($component['extra']['choices'] == 1) {
     $element['quantity'] = array(
       '#type' => 'textfield',
       '#title' => t('Quantity'),
       '#value' => $value['quantity'],
       '#disabled' => true,
     );
+  } else {
+    $element['quantity'] = array();
+    for ($i = 1; $i <= $component['extra']['choices']; $i++) {
+      $element['quantity'][] = array(
+        '#type' => 'textfield',
+        '#title' => t("{$component['extra']['choice_label']} #{$i}"),
+        '#value' => $value['quantity'][$i - 1],
+        '#disabled' => true,
+      );
+    }
   }
+
   $element['total'] = array(
     '#type' => 'textfield',
     '#title' => 'Total',
@@ -116,10 +150,7 @@ function _webform_render_square_field_view($component, $value = NULL, $filter = 
 }
 
 function _webform_render_square_field_edit($component, $value = NULL, $filter = TRUE) {
-  $quantity = 1;
   $price = $component['extra']['price'];
-  $subtotal = $price * $quantity;
-
   drupal_add_js('https://js.squareup.com/v2/paymentform', 'external');
   drupal_add_js('/'. drupal_get_path('module', 'webform_square_field') . '/js/square.js', array(
     'type' => 'file',
@@ -145,21 +176,44 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
     '#weight' => $component['weight'],
     '#attributes' => array('class' => array('sq-form-container')),
   );
-  if (!!$component['extra']['multiple']) {
+
+
+  if ($component['extra']['choices'] == 1) {
+    $quantity = 1;
     $element['quantity'] = array(
       '#type' => 'textfield',
       '#title' => t('Quantity'),
       '#attributes' => array(
         ' type' => 'number', // leave space
         'step' => '1',
+        'class' => array('sq-quantity-select'),
       ),
       '#default_value' => 1,
       '#size' => 60,
       '#required' => TRUE,
       '#maxlength' => 4,
-      '#id' => 'sq-quantity-'. $component['nid'],
     );
+  } else {
+    $quantity = 0;
+    $element['quantity'] = array();
+    for ($i = 1; $i <= $component['extra']['choices']; $i++) {
+      $element['quantity'][] = array(
+        '#type' => 'textfield',
+        '#title' => t("{$component['extra']['choice_label']} #{$i}"),
+        '#attributes' => array(
+          ' type' => 'number', // leave space
+          'step' => '1',
+          'class' => array('sq-quantity-select'),
+        ),
+        '#default_value' => 0,
+        '#size' => 60,
+        '#required' => TRUE,
+        '#maxlength' => 4,
+      );
+    }
   }
+
+  $subtotal = $price * $quantity;
   $element['sq_pricing'] = array('#markup' => '<div class="sq-input-container" id="sq-card-price-'. $component['nid'] .'">Your total is: $'. $subtotal .'.</div>');
   $element['sq_card_number'] = array('#markup' => '<div class="sq-input-container"><span class="label">Card Number</span><div id="sq-card-number-'. $component['nid'] .'"></div></div>');
   $element['sq_cvv'] = array('#markup' => '<div class="sq-input-container"><span class="label">CVV</span><div id="sq-cvv-'. $component['nid'] .'"></div></div>');
@@ -184,8 +238,14 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
 function _webform_submit_square_field($component, $value) {
   if (is_null($value['sq_transaction_id'])) { return $value; }
   
-  $sq_location = 'CBASED6TEXYrD1HVyXfU1jKhi8wgAQ';
-  $amount = $component['extra']['price'] * $value['quantity'];
+  if ($component['extra']['choices'] == 1) {
+    $quantity = $value['quantity'];
+  } else {
+    $quantity = array_sum($value['quantity']);
+    $value['quantity_array'] = json_encode($value['quantity']);
+  }
+  $amount = $component['extra']['price'] * $quantity;
+
   if (is_null($value['sq_guid'])) {
     $value['sq_guid'] = sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
   }
@@ -209,8 +269,8 @@ function _webform_submit_square_field($component, $value) {
   );
   
   try {
-    $chargeResult = $api->charge($component['extra']['sq_location_id'], $requestBody);
-    $value['sq_transaction_id'] = $chargeResult->getTransaction()->getId();
+    // $chargeResult = $api->charge($component['extra']['sq_location_id'], $requestBody);
+    // $value['sq_transaction_id'] = $chargeResult->getTransaction()->getId();
   } catch(Exception $e) {
     dpm($e);
   }
@@ -219,6 +279,7 @@ function _webform_submit_square_field($component, $value) {
 }
 
 function _webform_display_square_field($component, $value, $format = 'html') {
+  $value = _square_decode_values($values);
   $element = array(
     '#weight' => $component['weight'],
   );
@@ -228,7 +289,7 @@ function _webform_display_square_field($component, $value, $format = 'html') {
     '#theme' => 'webform_display_square_field',
     '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
     '#format' => $format,
-    '#value' => $value['quantity'],
+    '#value' => _square_get_quantity($value),
   );
   $element['sq_nonce'] = array(
     '#title' => 'sq_nonce',
@@ -246,6 +307,30 @@ function _webform_display_square_field($component, $value, $format = 'html') {
   );
 
   return $element;
+}
+
+function _square_decode_values($values) {
+  if (isset($values['quantity_array']) && is_string($values['quantity_array'])) {
+    $values['quantity_array'] = json_decode($values['quantity_array']);
+  }
+
+  return $values;
+}
+
+function _square_encode_values($values) {
+  if (isset($values['quantity_array']) && is_array($values['quantity_array'])) {
+    $values['quantity_array'] = json_encode($values['quantity_array']);
+  }
+
+  return $values;
+}
+
+function _square_get_quantity($values) {
+  if (isset($value['quantity_array'])) {
+    return array_sum($value['quantity_array']);
+  } else {
+    return array_sum($value['quantity']);
+  }
 }
 
 function theme_webform_display_square_field($variables) {
