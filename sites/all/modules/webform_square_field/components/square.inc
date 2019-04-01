@@ -228,13 +228,16 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
 
 
 function _webform_submit_square_field($component, $value) {
-  $value['quantity_array'] = json_encode($value['quantity']);
+  if (is_array($value['quantity'])) {
+    $value['quantity_array'] = json_encode($value['quantity']);
+    $value['quantity'] = array_sum($value['quantity']);
+  }
 
-  if (isset($value['sq_transaction_id'])) { 
+  if (!!$value['sq_transaction_id']) { 
     return $value;
   }
   
-  $quantity = array_sum($value['quantity']);
+  $quantity = $value['quantity'];
   $amount = $component['extra']['price'] * $quantity;
 
   if (is_null($value['sq_guid'])) {
@@ -265,7 +268,7 @@ function _webform_submit_square_field($component, $value) {
   } catch(Exception $e) {
     dpm($e);
   }
-
+dpm($value);
   return $value;
 }
 
@@ -330,11 +333,35 @@ function _webform_table_square_field($component, $value) {
 
 function _webform_csv_headers_square_field($component, $export_options) {
   $header = array();
-  $header[0] = 'asd';
-  $header[1] = 'Square dToken';
+  $header[0] = 'Payment Details';
+  $header[] = 'Transaction ID';
+  if ($component['extra']['choices'] == 1) {
+    $header[] = 'Quantity';
+  } else {
+    for ($i = 1; $i <= $component['extra']['choices']; $i++) {
+      $header[] = "{$component['extra']['choice_label']} #{$i}";
+    }
+  }
+
+  $header = array('', '');
+  $header[] = $export_options['header_keys'] ? $component['form_key'] : $component['name'];
   return $header;
 }
 
 function _webform_csv_data_square_field($component, $export_options, $value) {
-  return !isset($value[0]) ? '' : $value[0];
+  $fields = array();
+  $fields[] = 'Transaction ID: ' . $value['sq_transaction_id'];
+  $quantities = json_decode($value['quantity_array']);
+
+  for ($i = 1; $i <= $component['extra']['choices']; $i++) {
+    $q = $quantities[$i - 1];
+
+    if ($component['extra']['choices'] == 1) {
+      $fields[] = "Quantity: {$i}";
+    } else {
+      $fields[] = "{$component['extra']['choice_label']} #{$i}: {$q}";
+    }
+  }
+
+  return implode(', ', $fields);
 }
