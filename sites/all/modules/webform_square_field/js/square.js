@@ -110,8 +110,6 @@ function webformSquareBootstrap(appId, formNid, price) {
     };
 
     var $quantityField = jQuery('.sq-quantity-select');
-    console.log($quantityField);
-    console.log($quantityField.length);
     $quantityField.on('change', udpateSubtotalText);
     $quantityField.on('input', udpateSubtotalText);
     $quantityField.on('keyup', udpateSubtotalText);
@@ -131,7 +129,13 @@ function webformSquareBootstrap(appId, formNid, price) {
   function getQuantity() {
     var $quantityField = jQuery('.sq-quantity-select');
     return $quantityField.toArray().reduce(function (acc, current) {
-      return acc + parseInt(current.value, 10);
+      var currentValue = parseInt(current.value, 10);
+      if (isNaN(currentValue) || currentValue < 0) {
+        currentValue = 0;
+        current.value = 0;
+      }
+
+      return acc + currentValue;
     }, 0);
   }
 }

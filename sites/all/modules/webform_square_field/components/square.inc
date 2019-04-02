@@ -178,6 +178,7 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
       '#attributes' => array(
         ' type' => 'number', // leave space
         'step' => '1',
+        'min' => '0',
         'class' => array('sq-quantity-select'),
       ),
       '#default_value' => 1,
@@ -268,7 +269,7 @@ function _webform_submit_square_field($component, $value) {
   } catch(Exception $e) {
     dpm($e);
   }
-dpm($value);
+
   return $value;
 }
 
