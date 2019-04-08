@@ -35,11 +35,20 @@ function _webform_edit_square_field($component) {
     '#required' => TRUE,
     '#maxlength' => 255,
   );
+  $form['extra']['limit'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Quantity Limit'),
+    '#description' => t('Do you want to limit quantity to be sold?'),
+    '#default_value' => $component['extra']['limit'],
+    '#size' => 60,
+    '#required' => TRUE,
+    '#maxlength' => 255,
+  );
   $form['extra']['choices'] = array(
     '#type' => 'textfield',
     '#title' => t('Allow Options'),
     '#description' => t('Number of options the user has to select between.'),
-    '#default_value' => $component['extra']['choices'] || 1,
+    '#default_value' => ($component['extra']['choices'] ? $component['extra']['choices'] : 1),
   );
   $form['extra']['choice_label'] = array(
     '#type' => 'textfield',
@@ -166,6 +175,7 @@ function _webform_render_square_field_edit($component, $value = NULL, $filter = 
     '#title' => 'Payment Info',
     '#weight' => $component['weight'],
     '#attributes' => array('class' => array('sq-form-container')),
+    '#element_validate' => array('_webform_square_field_limit_validation'),
   );
 
 
@@ -268,6 +278,7 @@ function _webform_submit_square_field($component, $value) {
     $value['sq_transaction_id'] = $chargeResult->getTransaction()->getId();
   } catch(Exception $e) {
     dpm($e);
+    form_set_error('payment', 'Credit card failed');
   }
 
   return $value;
@@ -365,4 +376,26 @@ function _webform_csv_data_square_field($component, $export_options, $value) {
   }
 
   return implode(', ', $fields);
+}
+
+function _webform_square_field_limit_validation($element, &$form_state) {
+  $limit = intval($element['#webform_component']['extra']['limit']);
+  if ($limit == 0) { return; }
+
+  $current = db_query(
+    "SELECT sum(data) FROM webform_submitted_data WHERE nid=:nid AND no='quantity';",
+    array(':nid' => $element['#webform_component']['nid'])
+  )->fetchField();
+  $quantity = 0;
+  foreach ($element['quantity'] as $key => $value) {
+    if (is_int($key)) {
+      $quantity += intval($element['quantity'][$key]['#value']);    
+    }
+  }
+
+  if ($quantity + $current > $limit) {
+    $key = implode('][', array_merge($element['#parents'], array('quantity')));
+    $max = $limit - $current;
+    form_set_error($key, "Sorry, only $max available.");
+  }
 }
