@@ -2455,6 +2455,9 @@ body.front .main-wrapper .block-views {
     background: url(../img/arrow-down.png) no-repeat center center;
     cursor: pointer; }
 
+img {
+  max-width: 100%; }
+
 @media screen and (min-width: 1200px) {
   .navigation > div {
     padding: 0 10%; } }
