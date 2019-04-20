@@ -2,6 +2,24 @@
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@media screen and (min-width: 681px) {
+  .flex-md-column {
+    flex-direction: column;
+  }
+
+  .flex-md-row {
+    flex-direction: row;
+  }
+}
+
 .flex-auto {
   flex: 1;
 }

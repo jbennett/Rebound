@@ -2022,7 +2022,8 @@ textarea {
   border-radius: 2px;
   line-height: 2;
   padding: 0 5px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3) inset; }
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3) inset;
+  max-width: 97%; }
 
 textarea {
   line-height: 1.5; }
@@ -2786,26 +2787,39 @@ body.front .main-wrapper .block-views {
       margin: 0 auto;
       border-width: 0 28px 28px 28px;
       border-color: transparent transparent #222f7e transparent; }
-  .view-program .views-field-title {
+  .view-program .views-field-title,
+  body.node-type-fundraising-page .main-wrapper .views-field-title {
     float: none;
     width: auto;
     margin-right: 0;
     margin-bottom: 10px; }
-    .view-program .views-field-title h2 {
+    .view-program .views-field-title h2,
+    body.node-type-fundraising-page .main-wrapper .views-field-title h2 {
       display: inline-block; }
-  .view-program .buttons {
+  .view-program .buttons,
+  body.node-type-fundraising-page .main-wrapper .buttons {
     float: none;
     margin: 0 auto; }
-  .view-program .views-field-field-image img {
+  .view-program .views-field-field-image img,
+  body.node-type-fundraising-page .main-wrapper .views-field-field-image img {
     display: block;
     float: none;
     margin: 10px auto; }
-  .view-program .views-field-body:before {
+  .view-program .views-field-body:before,
+  .view-program .main-content::before,
+  body.node-type-fundraising-page .main-wrapper .views-field-body:before,
+  body.node-type-fundraising-page .main-wrapper .main-content::before {
     margin: 0 auto;
     position: static;
     border-width: 0 28px 28px 28px;
     border-color: transparent transparent #222f7e transparent; }
-  .view-program .views-field-field-youtube-video-id {
+  .view-program .main-content::before,
+  body.node-type-fundraising-page .main-wrapper .main-content::before {
+    position: static !important;
+    border-width: 0 28px 28px 28px !important;
+    border-color: transparent transparent #222f7e transparent !important; }
+  .view-program .views-field-field-youtube-video-id,
+  body.node-type-fundraising-page .main-wrapper .views-field-field-youtube-video-id {
     margin-top: 10px; }
   body.node-type-page.volunteer .region-content {
     padding-top: 60px; }
@@ -2978,6 +2992,18 @@ body.front .main-wrapper .block-views {
 
 .d-flex {
   display: flex; }
+
+.flex-column {
+  flex-direction: column; }
+
+.flex-row {
+  flex-direction: row; }
+
+@media screen and (min-width: 681px) {
+  .flex-md-column {
+    flex-direction: column; }
+  .flex-md-row {
+    flex-direction: row; } }
 
 .flex-auto {
   flex: 1; }

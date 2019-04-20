@@ -84,7 +84,7 @@
 
   <?php print $user_picture; ?>
 
-  <div class="d-flex">
+  <div class="d-flex flex-column flex-md-row">
     <div class="views-field-title">
       <?php print render($title_prefix); ?>
         <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>

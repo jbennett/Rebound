@@ -556,7 +556,8 @@
     }
   }
 
-  .view-program {
+  .view-program,
+  body.node-type-fundraising-page .main-wrapper {
     .views-field-title {
       float: none;
       width: auto;
@@ -579,11 +580,18 @@
       margin: 10px auto;
     }
 
-    .views-field-body:before {
+    .views-field-body:before,
+    .main-content::before {
       margin: 0 auto;
       position: static;
       border-width: 0 28px 28px 28px;
       border-color: transparent transparent $blue-navy transparent;
+    }
+
+    .main-content::before {
+      position: static !important;
+      border-width: 0 28px 28px 28px !important;
+      border-color: transparent transparent $blue-navy transparent !important;
     }
 
     .views-field-field-youtube-video-id {
