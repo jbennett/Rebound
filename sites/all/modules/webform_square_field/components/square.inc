@@ -369,7 +369,7 @@ function _webform_csv_data_square_field($component, $export_options, $value) {
     $q = $quantities[$i - 1];
 
     if ($component['extra']['choices'] == 1) {
-      $fields[] = "Quantity: {$i}";
+      $fields[] = "Quantity: {$q}";
     } else {
       $fields[] = "{$component['extra']['choice_label']} #{$i}: {$q}";
     }
